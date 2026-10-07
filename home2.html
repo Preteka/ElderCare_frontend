@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Care Experience – ElderCare | Stay Connected. Stay Informed.</title>
+  <meta name="description"
+    content="ElderCare keeps families connected with daily attendance, activity updates, wellness tracking and care communication for your senior loved one.">
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/home2.css">
+
+  <!-- Theme / Direction init (no FOUC) -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- 1. COMMON NAVBAR -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         SECTION 1: HERO (ORGANIC IMAGE COMPOSITION & FLOATING DATA)
+         ============================================================ -->
+    <section class="h2-hero-section" id="h2-hero">
+      <div class="h2-hero-bg-decor" aria-hidden="true"></div>
+      <div class="container">
+        <div class="h2-hero-grid">
+
+          <!-- Left Content -->
+          <div class="h2-hero-content reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">SMARTER CARE FOR FAMILIES</span>
+              <h1 class="h2-hero-title">
+                Stay Connected.<br>
+                Stay Informed.<br>
+                <span class="heading-highlight">Care With Confidence.</span>
+              </h1>
+            </div>
+            <p class="h2-hero-description">
+              A thoughtful care experience that helps families stay connected with daily attendance, activity updates,
+              wellness tracking, and care communication – all in one warm and welcoming place.
+            </p>
+            <div class="h2-hero-btn-group">
+              <a href="services.html" class="btn btn-primary" id="h2HeroExploreBtn">
+                <span>Explore Family Care</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </a>
+              <a href="#h2-how" class="btn btn-outline" id="h2HeroHowBtn">
+                <span>How It Works</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Organic Composition -->
+          <div class="h2-hero-image-wrapper reveal-right">
+            <div class="h2-hero-composition">
+
+              <!-- Primary Organic Image -->
+              <div class="h2-hero-img-primary">
+                <img src="assets/images/home2_hero_senior.jpg"
+                  alt="Senior woman and caregiver sharing a warm, joyful moment" width="480" height="560"
+                  loading="eager">
+              </div>
+
+              <!-- Secondary Overlapping Image -->
+              <div class="h2-hero-img-secondary">
+                <img src="assets/images/hero-senior-care-2.png"
+                  alt="Senior woman smiling warmly in daytime activity session" width="260" height="240"
+                  loading="eager">
+              </div>
+
+              <!-- Floating Card 1: Today's Care -->
+              <div class="h2-floating-card-care" aria-label="Today's Care Status Widget">
+                <div class="h2-card-header">
+                  <div class="h2-card-header-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                  </div>
+                  <span class="h2-card-title">Today's Care</span>
+                </div>
+                <ul class="h2-care-checklist">
+                  <li class="h2-care-item">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Activity Completed</span>
+                  </li>
+                  <li class="h2-care-item">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Wellness Check</span>
+                  </li>
+                  <li class="h2-care-item">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Family Update Sent</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Floating Card 2: 98% Satisfaction -->
+              <div class="h2-floating-badge-sat">
+                <div class="h2-sat-value">98%</div>
+                <div class="h2-sat-label">Family Satisfaction<br>Rating</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2: PROBLEM → SOLUTION (VISUAL TRANSFORMATION)
+         ============================================================ -->
+    <section class="h2-section h2-problem-section" id="h2-problem">
+      <div class="container">
+        <div class="h2-problem-grid">
+
+          <!-- Left: The Challenge -->
+          <div class="h2-challenge-col reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">THE CHALLENGE</span>
+              <h2 class="h2-challenge-heading">
+                Caring From A Distance<br>
+                <span class="heading-highlight">Can Feel Difficult.</span>
+              </h2>
+            </div>
+            <ul class="h2-challenge-list">
+              <li class="h2-challenge-card-item">
+                <div class="h2-challenge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                </div>
+                <div class="h2-challenge-item-text">
+                  <strong>Missed Daily Updates</strong>
+                  <span>No easy way to know how your loved one's day is going while balancing work and family.</span>
+                </div>
+              </li>
+              <li class="h2-challenge-card-item">
+                <div class="h2-challenge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                    <line x1="2" y1="2" x2="22" y2="22" />
+                  </svg>
+                </div>
+                <div class="h2-challenge-item-text">
+                  <strong>Limited Visibility</strong>
+                  <span>Families frequently worry about daily wellness, nutrition, and activity participation.</span>
+                </div>
+              </li>
+              <li class="h2-challenge-card-item">
+                <div class="h2-challenge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    <line x1="2" y1="2" x2="22" y2="22" />
+                  </svg>
+                </div>
+                <div class="h2-challenge-item-text">
+                  <strong>Disconnected Communication</strong>
+                  <span>Caregivers and families often lack a unified, transparent update channel.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: The ElderCare Solution -->
+          <div class="h2-solution-wrapper reveal-right">
+            <span class="h2-solution-label">THE ELDERCARE SOLUTION</span>
+            <h2 class="h2-solution-heading">
+              Everything Families Need,<br>
+              <span class="heading-highlight">In One Caring Experience.</span>
+            </h2>
+            <div class="h2-solution-media-box">
+              <img src="assets/images/hero_senior_care.jpg"
+                alt="Compassionate caregiver supporting senior gentleman with smile" width="500" height="260"
+                loading="lazy">
+            </div>
+            <div class="h2-solution-pill-tags">
+              <span class="h2-solution-pill">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+                Daily Attendance Tracking
+              </span>
+              <span class="h2-solution-pill">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+                Activity &amp; Program Reports
+              </span>
+              <span class="h2-solution-pill">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+                Wellness Logs &amp; Health Checks
+              </span>
+              <span class="h2-solution-pill">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+                Regular Family Updates
+              </span>
+              <span class="h2-solution-pill">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+                Direct Care Communication Channel
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3: FEATURE SHOWCASE (ASYMMETRIC LAYOUT)
+         ============================================================ -->
+    <section class="h2-section h2-features-section" id="h2-features">
+      <div class="container">
+
+        <div class="h2-features-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">A BETTER WAY TO STAY CONNECTED</span>
+            <h2 class="section-heading">
+              Care That Keeps<br>
+              <span class="heading-highlight">Families Close.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-features-asym-grid reveal-up">
+
+          <!-- 1. Large Feature Card: Daily Attendance -->
+          <div class="h2-feature-large-card">
+            <img src="assets/images/service_daycare.jpg" alt="Senior smiling at day care center check-in"
+              class="h2-feature-large-bg" width="560" height="440" loading="lazy">
+            <div class="h2-feature-large-overlay"></div>
+            <div class="h2-feature-large-content">
+              <span class="h2-feature-live-badge">
+                <span class="h2-feature-live-dot"></span>
+                Daily Attendance
+              </span>
+              <h3 class="h2-feature-large-title">Arrived Today at 09:05 AM</h3>
+              <p class="h2-feature-large-desc">
+                Know exactly when your loved one arrives and departs each day, with verified check-in notifications and
+                complete daily oversight.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Small Card: Activity Reports -->
+          <div class="h2-feature-small-card">
+            <div class="h2-feature-small-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h3 class="h2-feature-small-title">Activity Reports</h3>
+            <p class="h2-feature-small-desc">
+              Detailed updates on recreational programs, social interactions, and daily group engagement.
+            </p>
+          </div>
+
+          <!-- 3. Small Card: Wellness Tracking -->
+          <div class="h2-feature-small-card">
+            <div class="h2-feature-small-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <h3 class="h2-feature-small-title">Wellness Tracking</h3>
+            <p class="h2-feature-small-desc">
+              Daily vitals observations, mood indicators, and physical wellness records shared transparently.
+            </p>
+          </div>
+
+          <!-- 4. Small Card: Family Updates -->
+          <div class="h2-feature-small-card">
+            <div class="h2-feature-small-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0" />
+              </svg>
+            </div>
+            <h3 class="h2-feature-small-title">Family Updates</h3>
+            <p class="h2-feature-small-desc">
+              Timely notifications and photo updates sent directly so family members are never left wondering.
+            </p>
+          </div>
+
+          <!-- 5. Small Card: Care Communication -->
+          <div class="h2-feature-small-card">
+            <div class="h2-feature-small-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3 class="h2-feature-small-title">Care Communication</h3>
+            <p class="h2-feature-small-desc">
+              A direct communication line between families and our dedicated care team for questions or adjustments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4: INTERACTIVE FEATURE PREVIEW (TABS)
+         ============================================================ -->
+    <section class="h2-section h2-tabs-section" id="h2-tabs">
+      <div class="container">
+
+        <div class="h2-tabs-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">EXPERIENCE THE DIFFERENCE</span>
+            <h2 class="section-heading">
+              Everything Families Need<br>
+              <span class="heading-highlight">To Stay Connected.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-tabs-container reveal-up">
+
+          <!-- Tab Navigation -->
+          <div class="h2-tab-nav" role="tablist">
+            <button class="h2-tab-btn is-active" data-tab="daily" role="tab" aria-selected="true">Daily Care</button>
+            <button class="h2-tab-btn" data-tab="activities" role="tab" aria-selected="false">Activities</button>
+            <button class="h2-tab-btn" data-tab="wellness" role="tab" aria-selected="false">Wellness</button>
+            <button class="h2-tab-btn" data-tab="updates" role="tab" aria-selected="false">Family Updates</button>
+          </div>
+
+          <!-- Tab Panels -->
+          <div class="h2-tab-panels">
+
+            <!-- Panel 1: Daily Care -->
+            <div class="h2-tab-panel is-active" id="tab-panel-daily" role="tabpanel">
+              <div class="h2-tab-panel-content">
+                <h3 class="h2-tab-panel-title">Daily Attendance &amp; Safe Supervision</h3>
+                <p class="h2-tab-panel-desc">
+                  From morning greeting to evening departure, our digital check-in ensures your loved one's presence is
+                  instantly confirmed and communicated to your phone.
+                </p>
+                <ul class="h2-tab-panel-points">
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Automated arrival &amp; departure time stamps</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Nutritional meal &amp; hydration check-ins</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Dedicated caregiver assignment</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="h2-tab-media-box">
+                <img src="assets/images/about_senior_activity.jpg" alt="Daily care and senior check-in" width="460"
+                  height="280" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Panel 2: Activities -->
+            <div class="h2-tab-panel" id="tab-panel-activities" role="tabpanel">
+              <div class="h2-tab-panel-content">
+                <h3 class="h2-tab-panel-title">Engaging Activities &amp; Enrichment</h3>
+                <p class="h2-tab-panel-desc">
+                  Every day features stimulating games, music therapy, creative art sessions, and light physical
+                  movement
+                  crafted specifically for senior vitality.
+                </p>
+                <ul class="h2-tab-panel-points">
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Cognitive puzzles &amp; memory-building exercises</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Music therapy &amp; interactive storytelling</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Daily participation logs shared with families</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="h2-tab-media-box">
+                <img src="assets/images/service_activity.jpg" alt="Seniors engaging in recreational activity"
+                  width="460" height="280" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Panel 3: Wellness -->
+            <div class="h2-tab-panel" id="tab-panel-wellness" role="tabpanel">
+              <div class="h2-tab-panel-content">
+                <h3 class="h2-tab-panel-title">Proactive Health &amp; Wellness Tracking</h3>
+                <p class="h2-tab-panel-desc">
+                  Our licensed nursing team monitors vitals, medication adherence, and general mood, offering families a
+                  clear, regular window into physical wellness.
+                </p>
+                <ul class="h2-tab-panel-points">
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Blood pressure, pulse &amp; temperature logs</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Gentle physiotherapy &amp; mobility assistance</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Professional nursing notes on file</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="h2-tab-media-box">
+                <img src="assets/images/service_wellness.jpg" alt="Health and wellness check session" width="460"
+                  height="280" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Panel 4: Family Updates -->
+            <div class="h2-tab-panel" id="tab-panel-updates" role="tabpanel">
+              <div class="h2-tab-panel-content">
+                <h3 class="h2-tab-panel-title">Transparent Family Communication</h3>
+                <p class="h2-tab-panel-desc">
+                  Receive reassuring photo summaries, activity highlights, and direct caregiver messaging so you always
+                  feel present in your loved one's day.
+                </p>
+                <ul class="h2-tab-panel-points">
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Evening summary messages &amp; photos</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Direct phone &amp; message access to coordinators</span>
+                  </li>
+                  <li class="h2-tab-point">
+                    <span class="h2-check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Special dietary or care note adjustments on demand</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="h2-tab-media-box">
+                <img src="assets/images/home2_family_experience.jpg" alt="Family reviewing care updates on device"
+                  width="460" height="280" loading="lazy">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 5: HOW IT WORKS (ANIMATED INTERACTIVE TIMELINE)
+         ============================================================ -->
+    <section class="h2-section h2-how-section" id="h2-how">
+      <div class="container">
+
+        <div class="h2-how-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">HOW ELDERCARE WORKS</span>
+            <h2 class="section-heading">
+              Simple For Families.<br>
+              <span class="heading-highlight">Meaningful For Seniors.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-steps-track reveal-up">
+
+          <!-- Step 1 -->
+          <div class="h2-step">
+            <div class="h2-step-number">01</div>
+            <h3 class="h2-step-title">Join ElderCare</h3>
+            <p class="h2-step-desc">
+              Complete a simple enrollment and share your loved one's care preferences with our dedicated team.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="h2-step">
+            <div class="h2-step-number">02</div>
+            <h3 class="h2-step-title">Plan Their Day</h3>
+            <p class="h2-step-desc">
+              Our coordinators create a personalised daily schedule suited to their interests, mobility, and needs.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="h2-step">
+            <div class="h2-step-number">03</div>
+            <h3 class="h2-step-title">Stay Connected</h3>
+            <p class="h2-step-desc">
+              Receive daily updates, activity reports, and wellness summaries for complete peace of mind.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="h2-step">
+            <div class="h2-step-number">04</div>
+            <h3 class="h2-step-title">Feel Reassured</h3>
+            <p class="h2-step-desc">
+              Know your loved one is safe, engaged, and genuinely cared for throughout every single day.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6: EDITORIAL IMAGE STORYTELLING
+         ============================================================ -->
+    <section class="h2-story-banner-section container" id="h2-story">
+      <div class="h2-story-banner reveal-up">
+        <img src="assets/images/commitment_couple.jpg"
+          alt="Happy senior couple smiling warmly together in serene center lounge" class="h2-story-bg" width="1200"
+          height="400" loading="lazy">
+        <div class="h2-story-overlay"></div>
+        <div class="h2-story-content">
+          <blockquote class="h2-story-quote">
+            "Every day is an opportunity to connect, move and thrive."
+          </blockquote>
+          <a href="services.html" class="btn btn-primary" id="storyExploreBtn">
+            <span>Explore Our Programs</span>
+            <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="10" x2="16" y2="10"></line>
+              <polyline points="10 4 16 10 10 16"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7: WHO IT HELPS (USE CASES)
+         ============================================================ -->
+    <section class="h2-section h2-usecases-section" id="h2-usecases">
+      <div class="container">
+
+        <div class="h2-usecases-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">DESIGNED FOR EVERY FAMILY</span>
+            <h2 class="section-heading">
+              Support That Fits<br>
+              <span class="heading-highlight">Different Family Needs.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-usecases-grid reveal-up">
+
+          <!-- Tile 1 -->
+          <div class="h2-usecase-card">
+            <img src="assets/images/blog_1.jpg" alt="Working professional family member" class="h2-usecase-bg"
+              width="300" height="360" loading="lazy">
+            <div class="h2-usecase-overlay"></div>
+            <div class="h2-usecase-body">
+              <span class="h2-usecase-tag">Working Families</span>
+              <h3 class="h2-usecase-title">Peace of Mind While You Work</h3>
+              <p class="h2-usecase-desc">
+                Stay updated through the day without interrupting your busy schedule. Know your parent is safe and
+                happy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="h2-usecase-card">
+            <img src="assets/images/home2_family_experience.jpg" alt="Family living in another city connecting"
+              class="h2-usecase-bg" width="300" height="360" loading="lazy">
+            <div class="h2-usecase-overlay"></div>
+            <div class="h2-usecase-body">
+              <span class="h2-usecase-tag">Families Living Away</span>
+              <h3 class="h2-usecase-title">Stay Close, Even From Afar</h3>
+              <p class="h2-usecase-desc">
+                Even if you're in another city, you'll always know how your loved one's day went with regular reports.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="h2-usecase-card">
+            <img src="assets/images/service_activity.jpg" alt="Active seniors participating in art"
+              class="h2-usecase-bg" width="300" height="360" loading="lazy">
+            <div class="h2-usecase-overlay"></div>
+            <div class="h2-usecase-body">
+              <span class="h2-usecase-tag">Active Seniors</span>
+              <h3 class="h2-usecase-title">Enriching Days for Active Elders</h3>
+              <p class="h2-usecase-desc">
+                Seniors who love to stay socially and physically active thrive in our structured programme environment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="h2-usecase-card">
+            <img src="assets/images/service_wellness.jpg" alt="Care partner consulting on wellness"
+              class="h2-usecase-bg" width="300" height="360" loading="lazy">
+            <div class="h2-usecase-overlay"></div>
+            <div class="h2-usecase-body">
+              <span class="h2-usecase-tag">Care Partners</span>
+              <h3 class="h2-usecase-title">Support for Primary Caregivers</h3>
+              <p class="h2-usecase-desc">
+                Get essential daytime respite while knowing your loved one is in experienced, compassionate hands.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 8: STATISTICS STRIP (ANIMATED COUNTER)
+         ============================================================ -->
+    <section class="h2-stats-section" id="h2-stats" aria-label="ElderCare Impact Statistics">
+      <div class="container">
+        <div class="stats-grid reveal-up">
+
+          <div class="stat-item">
+            <div class="stat-number" data-count="15+">15+</div>
+            <div class="stat-label">Years of Care</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number" data-count="500+">500+</div>
+            <div class="stat-label">Families Supported</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number" data-count="20+">20+</div>
+            <div class="stat-label">Care Programs</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number" data-count="98%">98%</div>
+            <div class="stat-label">Family Satisfaction</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 9: PRICING TEASER
+         ============================================================ -->
+    <section class="h2-section h2-pricing-section" id="h2-pricing">
+      <div class="container">
+
+        <div class="h2-pricing-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">CARE PLANS</span>
+            <h2 class="section-heading">
+              Flexible Plans For<br>
+              <span class="heading-highlight">Every Family.</span>
+            </h2>
+          </div>
+          <p class="section-description" style="margin: 1rem auto 0; text-align: center; max-width: 520px;">
+            Choose a plan that matches your loved one's care needs. All plans include daily support and family
+            communication.
+          </p>
+        </div>
+
+        <div class="h2-pricing-grid reveal-up">
+
+          <!-- Plan 1 -->
+          <div class="h2-pricing-card">
+            <span class="h2-plan-label">Plan 01</span>
+            <h3 class="h2-plan-name">Day Care</h3>
+            <p class="h2-plan-desc">Essential daytime care with meals, supervision and social engagement.</p>
+            <ul class="h2-plan-features">
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Daily attendance &amp; supervision</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Nutritious meals &amp; snacks</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Family update messages</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="h2-pricing-cta" id="plan1CtaBtn">
+              <span>Enquire Now</span>
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+                <polyline points="8 2 14 8 8 14"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Plan 2 (Featured) -->
+          <div class="h2-pricing-card featured">
+            <span class="h2-featured-badge">Most Popular</span>
+            <span class="h2-plan-label">Plan 02</span>
+            <h3 class="h2-plan-name">Wellness &amp; Activities</h3>
+            <p class="h2-plan-desc">
+              Complete day care plus therapeutic programs, wellness tracking and detailed activity reports.
+            </p>
+            <ul class="h2-plan-features">
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Everything in Day Care</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Wellness &amp; vitals logs</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Activity &amp; program reports</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Therapeutic group sessions</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="h2-pricing-cta" id="plan2CtaBtn">
+              <span>Enquire Now</span>
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+                <polyline points="8 2 14 8 8 14"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Plan 3 -->
+          <div class="h2-pricing-card">
+            <span class="h2-plan-label">Plan 03</span>
+            <h3 class="h2-plan-name">Complete Care</h3>
+            <p class="h2-plan-desc">
+              Our most comprehensive care plan with dedicated family coordination and customized therapy.
+            </p>
+            <ul class="h2-plan-features">
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Everything in Wellness Plan</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Personal care coordinator</span>
+              </li>
+              <li class="h2-plan-feature">
+                <span class="h2-plan-check">
+                  <svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <polyline points="1 4 3 6.5 7 1"></polyline>
+                  </svg>
+                </span>
+                <span>Priority family communication</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="h2-pricing-cta" id="plan3CtaBtn">
+              <span>Enquire Now</span>
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+                <polyline points="8 2 14 8 8 14"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 10: FAMILY EXPERIENCE (EMOTIONAL SPLIT)
+         ============================================================ -->
+    <section class="h2-section h2-experience-section" id="h2-experience">
+      <div class="container">
+        <div class="h2-experience-grid">
+
+          <!-- Left Image -->
+          <div class="h2-experience-img-box reveal-left">
+            <img src="assets/images/home2_family_experience.jpg"
+              alt="Senior man and caregiver reviewing daily updates together" width="520" height="480" loading="lazy">
+          </div>
+
+          <!-- Right Content -->
+          <div class="h2-experience-content reveal-right">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">THE ELDERCARE EXPERIENCE</span>
+              <h2 class="section-heading">
+                A Day Of Care That<br>
+                <span class="heading-highlight">Families Can Feel Good About.</span>
+              </h2>
+            </div>
+            <p class="section-description">
+              From arrival to drop-off, every part of your loved one's day is designed with warmth, dignity and purpose.
+            </p>
+            <ul class="h2-experience-benefits">
+              <li class="h2-benefit-item">
+                <div class="h2-benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <div class="h2-benefit-text">
+                  <strong>Safe Daily Care</strong>
+                  <span>A secure and supervised environment where every senior is attended to.</span>
+                </div>
+              </li>
+              <li class="h2-benefit-item">
+                <div class="h2-benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  </svg>
+                </div>
+                <div class="h2-benefit-text">
+                  <strong>Meaningful Activities</strong>
+                  <span>Engaging programs that spark joy, creativity and social connection.</span>
+                </div>
+              </li>
+              <li class="h2-benefit-item">
+                <div class="h2-benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                </div>
+                <div class="h2-benefit-text">
+                  <strong>Wellness Awareness</strong>
+                  <span>Regular health checks and wellness logs help you stay fully informed.</span>
+                </div>
+              </li>
+              <li class="h2-benefit-item">
+                <div class="h2-benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </div>
+                <div class="h2-benefit-text">
+                  <strong>Regular Communication</strong>
+                  <span>Our care team stays in touch so families are never left in the dark.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 11: "A DAY AT ELDERCARE" SCHEDULE TIMELINE
+         ============================================================ -->
+    <section class="h2-section h2-schedule-section" id="h2-schedule">
+      <div class="container">
+
+        <div class="h2-schedule-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">DAILY ROUTINE</span>
+            <h2 class="section-heading">
+              A Day Filled With<br>
+              <span class="heading-highlight">Care &amp; Connection.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-schedule-track reveal-up">
+
+          <!-- 09:00 AM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">09:00 AM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Arrival &amp; Welcome</h3>
+            <p class="h2-schedule-desc">Warm morning greeting, attendance confirmation and light breakfast tea.</p>
+          </div>
+
+          <!-- 10:00 AM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">10:00 AM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Morning Movement</h3>
+            <p class="h2-schedule-desc">Gentle chair yoga, mobility stretches and guided physical vitality routines.</p>
+          </div>
+
+          <!-- 11:30 AM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">11:30 AM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Wellness Check</h3>
+            <p class="h2-schedule-desc">Routine vital logs, hydration reminders and medication coordination.</p>
+          </div>
+
+          <!-- 01:00 PM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">01:00 PM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Nutritious Lunch</h3>
+            <p class="h2-schedule-desc">Freshly prepared balanced meal followed by relaxed social conversations.</p>
+          </div>
+
+          <!-- 03:00 PM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">03:00 PM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Creative Programs</h3>
+            <p class="h2-schedule-desc">Music therapy, cognitive brain games, artisan painting and group gardening.</p>
+          </div>
+
+          <!-- 04:30 PM -->
+          <div class="h2-schedule-card">
+            <span class="h2-schedule-time">04:30 PM</span>
+            <div class="h2-schedule-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3 class="h2-schedule-title">Family Summary</h3>
+            <p class="h2-schedule-desc">Daily care log dispatched to families and comfortable departure wrap-up.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============================================================
+         SECTION 13: MINI FAQ ACCORDION
+         ============================================================ -->
+    <section class="h2-section h2-faq-section" id="h2-faq">
+      <div class="container">
+
+        <div class="h2-faq-header reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow">FREQUENTLY ASKED</span>
+            <h2 class="section-heading">
+              Questions From<br>
+              <span class="heading-highlight">Caring Families.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="h2-faq-list reveal-up" role="list">
+
+          <div class="h2-faq-item" role="listitem">
+            <button class="h2-faq-question" aria-expanded="false" id="faq1Btn">
+              <span>What does a typical day at ElderCare look like?</span>
+              <span class="h2-faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"></line>
+                  <line x1="1" y1="7" x2="13" y2="7"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="h2-faq-answer" role="region">
+              <div class="h2-faq-answer-inner">
+                A typical day includes a warm welcome and breakfast, followed by structured morning activities such as
+                yoga or group games. Afternoons include therapy sessions, creative arts and social interaction. Seniors
+                enjoy nutritious meals throughout the day and our care team provides constant, attentive support.
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-faq-item" role="listitem">
+            <button class="h2-faq-question" aria-expanded="false" id="faq2Btn">
+              <span>How do you keep families informed about their loved one's day?</span>
+              <span class="h2-faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"></line>
+                  <line x1="1" y1="7" x2="13" y2="7"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="h2-faq-answer" role="region">
+              <div class="h2-faq-answer-inner">
+                Families receive daily attendance confirmations, activity summaries and wellness check updates via our
+                Family Login portal. Our care coordinators also proactively reach out whenever there is anything
+                important to share, ensuring complete transparency.
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-faq-item" role="listitem">
+            <button class="h2-faq-question" aria-expanded="false" id="faq3Btn">
+              <span>Is ElderCare suitable for seniors with memory or mobility challenges?</span>
+              <span class="h2-faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"></line>
+                  <line x1="1" y1="7" x2="13" y2="7"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="h2-faq-answer" role="region">
+              <div class="h2-faq-answer-inner">
+                Yes. Our experienced care team is trained to support seniors with a wide range of needs including
+                memory care, limited mobility and cognitive challenges. We personalise each senior's program and
+                provide the appropriate level of assistance throughout the day.
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-faq-item" role="listitem">
+            <button class="h2-faq-question" aria-expanded="false" id="faq4Btn">
+              <span>What are your operating hours and how does transportation work?</span>
+              <span class="h2-faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"></line>
+                  <line x1="1" y1="7" x2="13" y2="7"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="h2-faq-answer" role="region">
+              <div class="h2-faq-answer-inner">
+                We operate Monday through Saturday from 8:00 AM to 6:00 PM. Families can arrange drop-off and pick-up
+                directly. For those who require assistance, we can connect you with trusted local transport partners.
+                Please contact us to discuss your specific scheduling needs.
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-faq-item" role="listitem">
+            <button class="h2-faq-question" aria-expanded="false" id="faq5Btn">
+              <span>How do I enrol my loved one with ElderCare?</span>
+              <span class="h2-faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"></line>
+                  <line x1="1" y1="7" x2="13" y2="7"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="h2-faq-answer" role="region">
+              <div class="h2-faq-answer-inner">
+                Start by reaching out through our Contact page or calling our care team directly. We'll schedule a
+                brief conversation to understand your loved one's needs, after which we'll arrange a free introductory
+                visit. Enrolment is simple and our team will guide you through every step.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 14: FINAL CTA BANNER
+         ============================================================ -->
+    <section class="h2-cta-section" id="h2-cta">
+      <div class="container">
+        <div class="cta-banner reveal-up">
+          <div class="cta-bg-art" aria-hidden="true"></div>
+          <div class="cta-content-row">
+            <div class="cta-left">
+              <div class="section-heading-wrap align-left">
+                <span class="section-eyebrow">JOIN OUR COMMUNITY</span>
+                <h2 class="section-heading">
+                  Give Your Loved One A Day Filled<br>
+                  <span class="heading-highlight">With Care, Connection &amp; Joy.</span>
+                </h2>
+              </div>
+            </div>
+            <div class="cta-right">
+              <p class="cta-desc">
+                Discover how ElderCare keeps seniors happy and families informed – every single day.
+              </p>
+              <div class="cta-btn-group">
+                <a href="services.html" class="btn btn-primary" id="h2CtaExploreBtn">
+                  <span>Explore Services</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+                <a href="contact.html" class="btn btn-outline" id="h2CtaContactBtn">
+                  <span>Contact Us</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 15. COMMON FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home2.js"></script>
+
+</body>
+
+</html>

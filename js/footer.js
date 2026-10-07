@@ -1,0 +1,158 @@
+/**
+ * ElderCare - Footer Component Logic & Renderer
+ */
+
+const FOOTER_HTML = `
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & About -->
+        <div class="footer-col footer-col-brand">
+          <a href="{{PREFIX}}index.html" class="footer-brand" aria-label="ElderCare Homepage">
+            <img src="{{PREFIX}}assets/logo/logo.png" alt="ElderCare logo" data-light-src="{{PREFIX}}assets/logo/logo.png" data-dark-src="{{PREFIX}}assets/logo/logo.png" />
+            <div class="footer-brand-text">
+              <span class="footer-brand-name">ElderCare</span>
+              <span class="footer-brand-tagline">SENIOR DAY CARE &amp; ACTIVITY CENTER</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            A safe, supportive and enriching environment where seniors stay active and enjoy meaningful days while families stay connected and reassured.
+          </p>
+          <div class="footer-social-links" aria-label="Social media profiles">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="{{PREFIX}}index.html">Home 1</a></li>
+            <li><a href="{{PREFIX}}home2.html">Home 2</a></li>
+            <li><a href="{{PREFIX}}about.html">About Us</a></li>
+            <li><a href="{{PREFIX}}services.html">Services</a></li>
+            <li><a href="{{PREFIX}}blog.html">Blog</a></li>
+            <li><a href="{{PREFIX}}contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-nav-list">
+            <li><a href="{{PREFIX}}service-details.html?service=daycare">Senior Day Care</a></li>
+            <li><a href="{{PREFIX}}service-details.html?service=wellness">Wellness Programs</a></li>
+            <li><a href="{{PREFIX}}service-details.html?service=activities">Activities &amp; Recreation</a></li>
+            <li><a href="{{PREFIX}}service-details.html?service=therapy">Therapy Sessions</a></li>
+            <li><a href="{{PREFIX}}service-details.html?service=health">Health Monitoring</a></li>
+            <li><a href="{{PREFIX}}service-details.html?service=family">Family Care Updates</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Us -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <span class="contact-text">123 Care Street, Coimbatore, Tamil Nadu 641001</span>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <a href="tel:+919876543210" class="contact-text contact-link">+91 98765 43210</a>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <a href="mailto:info@eldercare.com" class="contact-text contact-link">info@eldercare.com</a>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <span class="contact-text">Mon - Sat: 8:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-container bottom-flex">
+      <p class="copyright-text">&copy; <span class="copyright-year">2026</span> ElderCare. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <span class="divider">|</span>
+        <a href="#">Terms &amp; Conditions</a>
+        <span class="divider">|</span>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+
+function getElderCareFooterPrefix() {
+  const path = window.location.pathname.replace(/\\/g, '/');
+  if (path.includes('/user/') || path.includes('/admin/')) {
+    return '../';
+  }
+  return '';
+}
+
+function renderFooter(targetContainer) {
+  const container = targetContainer || document.getElementById('footer-container');
+  if (!container) return;
+
+  const prefix = getElderCareFooterPrefix();
+  container.innerHTML = FOOTER_HTML.replace(/\{\{PREFIX\}\}/g, prefix);
+  initFooter();
+}
+
+function initFooter() {
+  const copyrightYear = document.querySelectorAll('.copyright-year');
+  copyrightYear.forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+}

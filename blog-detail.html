@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article – ElderCare Journal</title>
+  <meta name="description" content="Read insightful articles and practical advice for supporting senior wellness, independence, and everyday happiness from ElderCare." />
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="css/blog-detail.css" />
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Dynamic Navbar Injected by navbar.js -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- INVALID / NOT FOUND ARTICLE WRAPPER (FALLBACK) -->
+    <div id="articleNotFoundWrapper" style="display: none;">
+      <section class="article-not-found-section">
+        <div class="container">
+          <div class="article-not-found-box">
+            <div class="not-found-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h1 class="not-found-title">Article Not Found</h1>
+            <p class="not-found-desc">The article you're looking for may have been moved, renamed, or is currently unavailable.</p>
+            <a href="blog.html" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Back to Blog</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MAIN DYNAMIC ARTICLE WRAPPER -->
+    <div id="articleContentWrapper">
+
+      <!-- 1. ARTICLE HEADER SECTION -->
+      <header class="article-header-section">
+        <div class="article-header-decor" aria-hidden="true"></div>
+        <div class="container">
+          <div id="articleHeaderContainer">
+            <!-- Injected by blog-detail.js -->
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. COVER IMAGE SECTION -->
+      <section class="article-cover-section">
+        <div class="container">
+          <div id="articleCoverContainer">
+            <!-- Injected by blog-detail.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ARTICLE CONTENT & SIDEBAR SECTION (70% / 30%) -->
+      <section class="article-main-section">
+        <div class="container">
+          <div class="article-layout-grid">
+
+            <!-- Left: Article Prose & Author Bio -->
+            <article class="article-content-column">
+              <div class="article-prose" id="articleProseContainer">
+                <!-- Injected by blog-detail.js -->
+              </div>
+
+              <!-- Author Box -->
+              <div id="articleAuthorBoxContainer">
+                <!-- Injected by blog-detail.js -->
+              </div>
+            </article>
+
+            <!-- Right: Sidebar Widgets -->
+            <aside class="article-sidebar" aria-label="Article Sidebar">
+              
+              <!-- Categories Widget -->
+              <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Categories</h3>
+                <ul class="sidebar-category-list" id="sidebarCategoriesList">
+                  <!-- Injected by blog-detail.js -->
+                </ul>
+              </div>
+
+              <!-- Recent Posts Widget -->
+              <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Recent Articles</h3>
+                <div class="sidebar-recent-list" id="sidebarRecentList">
+                  <!-- Injected by blog-detail.js -->
+                </div>
+              </div>
+
+              <!-- ElderCare CTA Widget -->
+              <div class="sidebar-widget sidebar-widget-cta">
+                <div class="sidebar-cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <h3 class="sidebar-cta-title">Stay Connected With ElderCare</h3>
+                <p class="sidebar-cta-desc">
+                  Discover a safe, supportive environment where seniors can stay active, connected and cared for.
+                </p>
+                <a href="services.html" class="btn btn-primary sidebar-cta-btn">
+                  <span>Explore Our Services</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. RELATED POSTS (YOU MAY ALSO LIKE) -->
+      <section class="related-posts-section">
+        <div class="container">
+          <div class="related-header">
+            <span class="section-eyebrow">CONTINUE READING</span>
+            <h2 class="related-header-title">You May Also Like</h2>
+          </div>
+          <div class="blog-cards-grid" id="relatedPostsGrid">
+            <!-- Injected by blog-detail.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FINAL CTA SECTION -->
+      <section class="cta-section" id="cta">
+        <div class="container">
+          <div class="cta-banner reveal-up">
+            <div class="cta-bg-art" aria-hidden="true"></div>
+            <div class="cta-content-row">
+              <div class="cta-left">
+                <div class="section-heading-wrap align-left">
+                  <span class="section-eyebrow">SUPPORTING FAMILIES EVERY DAY</span>
+                  <h2 class="section-heading">
+                    Let's Make Every Day<br>
+                    <span class="heading-highlight">A Little More Meaningful.</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="cta-right">
+                <p class="cta-desc">
+                  Whether you're exploring senior day care for the first time or seeking an active, loving community for your loved one, our compassionate team is here to guide you.
+                </p>
+                <div class="cta-btn-group">
+                  <a href="services.html" class="btn btn-primary" id="detailCtaExploreBtn">
+                    <span>Explore Services</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="4" y1="10" x2="16" y2="10"></line>
+                      <polyline points="10 4 16 10 10 16"></polyline>
+                    </svg>
+                  </a>
+                  <a href="contact.html" class="btn btn-outline" id="detailCtaContactBtn">
+                    <span>Contact Us</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="4" y1="10" x2="16" y2="10"></line>
+                      <polyline points="10 4 16 10 10 16"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Dynamic Footer Injected by footer.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/blog-data.js"></script>
+  <script src="js/blog-detail.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

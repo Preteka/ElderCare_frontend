@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services – ElderCare | Care Designed Around Every Senior</title>
+  <meta name="description" content="Explore ElderCare's editorial range of senior day care, engaging activity programs, wellness monitoring, nutritious meals, and family support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <!-- NAVBAR CONTAINER -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- ====================================================================
+         1. HERO SECTION (2-COLUMN EDITORIAL COMPOSITION)
+         ==================================================================== -->
+    <section class="svc-hero" id="services-hero">
+      <div class="svc-hero-decor-blob" aria-hidden="true"></div>
+      <div class="svc-hero-botanical" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="svc-hero-grid">
+          
+          <!-- LEFT CONTENT -->
+          <div class="svc-hero-content reveal-left">
+            <span class="section-eyebrow">OUR SERVICES</span>
+            <h1 class="svc-hero-title">
+              Care Designed Around<br>
+              <span class="heading-highlight">Every Senior.</span>
+            </h1>
+            <p class="svc-hero-desc">
+              From meaningful daily activities to personalized support, ElderCare provides thoughtful programs that help seniors stay active, connected and cared for.
+            </p>
+            <div class="svc-hero-btn-group">
+              <a href="#all-services" class="btn btn-primary" id="heroExploreBtn">
+                <span>Explore Our Services</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </a>
+              <a href="contact.html" class="btn btn-outline" id="heroContactBtn">
+                <span>Talk to Our Team</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT EDITORIAL IMAGE COMPOSITION -->
+          <div class="svc-hero-composition reveal-right" aria-hidden="true">
+            <!-- Main Senior Care Image -->
+            <div class="svc-hero-main-img-box">
+              <img src="assets/images/hero_senior_care.jpg" alt="Senior smiling with caregiver at ElderCare center" onerror="this.src='assets/images/service_daycare.jpg'">
+            </div>
+
+            <!-- Overlapping Smaller Image -->
+            <div class="svc-hero-sub-img-box">
+              <img src="assets/images/commitment_sub.jpg" alt="Seniors engaging in joyful activities" onerror="this.src='assets/images/service_activity.jpg'">
+            </div>
+
+            <!-- Floating Badge: Trusted Care -->
+            <div class="svc-floating-badge badge-top">
+              <div class="svc-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="svc-badge-text">
+                <span class="svc-badge-val">4.9 / 5.0 Rating</span>
+                <span class="svc-badge-label">Trusted Family Care</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge: 6+ Programs -->
+            <div class="svc-floating-badge badge-bottom">
+              <div class="svc-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="svc-badge-text">
+                <span class="svc-badge-val">6+ Programs</span>
+                <span class="svc-badge-label">Tailored Support</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. SERVICE INTRODUCTION (EDITORIAL & TYPOGRAPHIC STATS)
+         ==================================================================== -->
+    <section class="svc-section bg-white" id="service-intro">
+      <div class="container">
+        <div class="svc-intro-grid reveal-up">
+          
+          <div class="svc-intro-left">
+            <span class="section-eyebrow">CARE THAT FITS REAL LIFE</span>
+            <h2 class="svc-intro-title">
+              More Than Care.<br>
+              <span class="heading-highlight">A Place to Belong.</span>
+            </h2>
+          </div>
+
+          <div class="svc-intro-right">
+            <p class="svc-intro-lead">
+              Every service at ElderCare is thoughtfully designed to support independence, connection and everyday wellbeing. Families can choose the care and activities that best fit their loved one’s routine.
+            </p>
+            
+            <div class="svc-intro-stats">
+              <div class="svc-stat-item">
+                <span class="svc-stat-num">6+</span>
+                <span class="svc-stat-label">Care Services</span>
+              </div>
+              <div class="svc-stat-item">
+                <span class="svc-stat-num">100%</span>
+                <span class="svc-stat-label">Family Focused</span>
+              </div>
+              <div class="svc-stat-item">
+                <span class="svc-stat-num">1</span>
+                <span class="svc-stat-label">Welcoming Community</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. FEATURED SERVICE SECTION (WARM CREAM HIGHLIGHT)
+         ==================================================================== -->
+    <section class="svc-section bg-cream" id="featured-service">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">FEATURED HIGHLIGHT</span>
+          <h2>Our Most Cherished Daytime Program</h2>
+          <p>A comprehensive day of compassionate care, social engagement, and holistic peace of mind.</p>
+        </div>
+
+        <div class="svc-featured-card reveal-up">
+          
+          <!-- IMAGE BOX WITH BADGE -->
+          <div class="svc-featured-img-wrap">
+            <img src="assets/images/service_daycare.jpg" alt="Day Care and Companionship program">
+            <div class="svc-featured-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+              <span>Family Favourite</span>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="svc-featured-content">
+            <span class="section-eyebrow">MOST POPULAR</span>
+            <h3 class="svc-featured-title">Day Care &amp; Companionship</h3>
+            <p class="svc-featured-desc">
+              Comfortable daytime care with meaningful activities, companionship and attentive support. Designed to keep seniors joyful and socially connected while families focus on their daily work.
+            </p>
+
+            <div class="svc-featured-checklist">
+              <div class="svc-checklist-item">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 8.5 6.5 12 13 4"/></svg>
+                <span>Personal attention &amp; routine support</span>
+              </div>
+              <div class="svc-checklist-item">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 8.5 6.5 12 13 4"/></svg>
+                <span>Meaningful daily activities &amp; yoga</span>
+              </div>
+              <div class="svc-checklist-item">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 8.5 6.5 12 13 4"/></svg>
+                <span>Nutritious meals &amp; refreshment care</span>
+              </div>
+              <div class="svc-checklist-item">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 8.5 6.5 12 13 4"/></svg>
+                <span>Daily photo &amp; wellbeing updates</span>
+              </div>
+            </div>
+
+            <div class="svc-featured-footer">
+              <div class="svc-featured-price">
+                <span class="p-label">Monthly Enrollment</span>
+                <span class="p-amount">From ₹12,000 / mo</span>
+              </div>
+              <div class="svc-featured-actions">
+                <a href="service-details.html?id=day-care" class="btn btn-outline" id="viewFeaturedServiceBtn">
+                  <span>View Service</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                </a>
+                <a href="service-details.html?id=day-care" class="btn btn-primary js-book-now-link" data-id="day-care" id="bookFeaturedServiceBtn">
+                  <span>Book This Service</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. ALL SERVICES (ASYMMETRIC EDITORIAL GRID WITH CATEGORY FILTER)
+         ==================================================================== -->
+    <section class="svc-section bg-white" id="all-services">
+      <div class="container">
+        
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">EXPLORE OUR PROGRAMS</span>
+          <h2>Find the Right Support for Your Loved One</h2>
+          <p>Explore flexible services created around comfort, connection and everyday wellbeing.</p>
+        </div>
+
+        <!-- CATEGORY FILTER PILLS -->
+        <div class="svc-filter-bar reveal-up" role="tablist" aria-label="Service category filter">
+          <button type="button" class="svc-filter-pill js-svc-filter active" data-filter="all">All Services</button>
+          <button type="button" class="svc-filter-pill js-svc-filter" data-filter="care">Care &amp; Comfort</button>
+          <button type="button" class="svc-filter-pill js-svc-filter" data-filter="enrichment">Enrichment &amp; Joy</button>
+          <button type="button" class="svc-filter-pill js-svc-filter" data-filter="wellness">Wellbeing</button>
+          <button type="button" class="svc-filter-pill js-svc-filter" data-filter="nutrition">Nutrition</button>
+          <button type="button" class="svc-filter-pill js-svc-filter" data-filter="family">Family Support</button>
+        </div>
+
+        <!-- ASYMMETRIC SERVICES GRID -->
+        <div class="svc-asym-grid" id="servicesAsymGrid">
+          
+          <!-- ROW 1, CARD 1 (SPAN 2): Day Care & Companionship (Split Type A) -->
+          <article class="svc-card-item span-2 card-type-split reveal-up" data-category="care" id="card_day-care">
+            <div class="svc-card-split-img">
+              <img src="assets/images/service_daycare.jpg" alt="Day Care & Companionship" loading="lazy">
+            </div>
+            <div class="svc-card-split-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Care &amp; Comfort</span>
+              </div>
+              <h3 class="svc-card-title">Day Care &amp; Companionship</h3>
+              <p class="svc-card-desc">
+                Comfortable daytime care with meaningful activities, companionship and attentive support in a cheerful environment.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹12,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=day-care" class="btn btn-outline" id="learn_day-care">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=day-care" class="btn btn-primary" id="book_day-care">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROW 1, CARD 2 (SPAN 1): Senior Activity Programs (Stacked Type B) -->
+          <article class="svc-card-item span-1 card-type-stacked reveal-up" data-category="enrichment" id="card_activity-programs">
+            <div class="svc-card-top-img">
+              <img src="assets/images/service_activity.jpg" alt="Senior Activity Programs" loading="lazy">
+            </div>
+            <div class="svc-card-stacked-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Enrichment &amp; Joy</span>
+              </div>
+              <h3 class="svc-card-title">Senior Activity Programs</h3>
+              <p class="svc-card-desc">
+                Engaging activities designed to encourage movement, creativity, confidence and social connection every day.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹8,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=activity-programs" class="btn btn-outline" id="learn_activity-programs">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=activity-programs" class="btn btn-primary" id="book_activity-programs">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROW 2, CARD 3 (SPAN 1): Wellness & Daily Check-ins (Stacked Type B) -->
+          <article class="svc-card-item span-1 card-type-stacked reveal-up" data-category="wellness" id="card_wellness-checkins">
+            <div class="svc-card-top-img">
+              <img src="assets/images/service_wellness.jpg" alt="Wellness & Daily Check-ins" loading="lazy">
+            </div>
+            <div class="svc-card-stacked-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Wellbeing</span>
+              </div>
+              <h3 class="svc-card-title">Wellness &amp; Daily Check-ins</h3>
+              <p class="svc-card-desc">
+                Regular wellbeing observations and supportive daily check-ins to help families stay informed and reassured.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹6,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=wellness-checkins" class="btn btn-outline" id="learn_wellness-checkins">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=wellness-checkins" class="btn btn-primary" id="book_wellness-checkins">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROW 2, CARD 4 (SPAN 2): Meals & Nutrition Support (Split Type A) -->
+          <article class="svc-card-item span-2 card-type-split reveal-up" data-category="nutrition" id="card_meals-nutrition">
+            <div class="svc-card-split-img">
+              <img src="assets/images/service_health.jpg" alt="Meals & Nutrition Support" loading="lazy">
+            </div>
+            <div class="svc-card-split-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Nutrition &amp; Dining</span>
+              </div>
+              <h3 class="svc-card-title">Meals &amp; Nutrition Support</h3>
+              <p class="svc-card-desc">
+                Balanced, freshly prepared meals, herbal teas, and thoughtful dietary accommodation for every senior's health needs.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹5,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=meals-nutrition" class="btn btn-outline" id="learn_meals-nutrition">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=meals-nutrition" class="btn btn-primary" id="book_meals-nutrition">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROW 3, CARD 5 (SPAN 2): Family Support & Updates (Split Type A) -->
+          <article class="svc-card-item span-2 card-type-split reveal-up" data-category="family" id="card_family-support">
+            <div class="svc-card-split-img">
+              <img src="assets/images/home2_family_experience.jpg" alt="Family Support & Updates" loading="lazy">
+            </div>
+            <div class="svc-card-split-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Family Support</span>
+              </div>
+              <h3 class="svc-card-title">Family Support &amp; Updates</h3>
+              <p class="svc-card-desc">
+                Stay connected with regular photo logs, daily check-in alerts and ongoing caregiver communication.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹4,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=family-support" class="btn btn-outline" id="learn_family-support">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=family-support" class="btn btn-primary" id="book_family-support">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ROW 3, CARD 6 (SPAN 1): Personalised Senior Care (Stacked Type B) -->
+          <article class="svc-card-item span-1 card-type-stacked reveal-up" data-category="care" id="card_personalised-care">
+            <div class="svc-card-top-img">
+              <img src="assets/images/about_senior_activity.jpg" alt="Personalised Senior Care" loading="lazy">
+            </div>
+            <div class="svc-card-stacked-body">
+              <div class="svc-card-header">
+                <span class="svc-card-category-badge">Bespoke Care</span>
+              </div>
+              <h3 class="svc-card-title">Personalised Senior Care</h3>
+              <p class="svc-card-desc">
+                Flexible one-on-one care options designed around individual routines, preferences and family schedules.
+              </p>
+              <div class="svc-card-footer">
+                <span class="svc-card-price-text">From ₹15,000 / month</span>
+                <div class="svc-card-btns">
+                  <a href="service-details.html?id=personalised-care" class="btn btn-outline" id="learn_personalised-care">
+                    <span>Learn More</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </a>
+                  <a href="service-details.html?id=personalised-care" class="btn btn-primary" id="book_personalised-care">
+                    <span>Book Service</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. WHY FAMILIES CHOOSE ELDERCARE (3 LARGE FEATURE BLOCKS)
+         ==================================================================== -->
+    <section class="svc-section bg-lavender" id="why-eldercare">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">OUR CORE COMMITMENT</span>
+          <h2>Thoughtful Care, From Morning to Evening.</h2>
+          <p>We blend compassionate human connection with structured, safe routines so seniors flourish every day.</p>
+        </div>
+
+        <div class="svc-features-stack">
+          
+          <!-- FEATURE 01 -->
+          <div class="svc-feature-block reveal-up">
+            <div class="svc-feat-num">01</div>
+            <div class="svc-feat-title">Personalised Attention</div>
+            <div class="svc-feat-desc">
+              Every senior is treated as a unique individual, with their familiar morning rhythms, dining habits, and quiet intervals respectfully honored.
+            </div>
+          </div>
+
+          <!-- FEATURE 02 -->
+          <div class="svc-feature-block reveal-up" style="transition-delay: 0.1s;">
+            <div class="svc-feat-num">02</div>
+            <div class="svc-feat-title">Meaningful Connection</div>
+            <div class="svc-feat-desc">
+              Stimulating group activities, gentle movement, and conversational circles create daily opportunities for genuine friendship, confidence, and joy.
+            </div>
+          </div>
+
+          <!-- FEATURE 03 -->
+          <div class="svc-feature-block reveal-up" style="transition-delay: 0.2s;">
+            <div class="svc-feat-num">03</div>
+            <div class="svc-feat-title">Peace of Mind for Families</div>
+            <div class="svc-feat-desc">
+              Stay reassured throughout your workday with timely check-in confirmations, daily photo journals, and an attentive care team you can trust.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. HOW OUR SERVICES WORK (4-STEP CONNECTED PROCESS)
+         ==================================================================== -->
+    <section class="svc-section bg-white" id="how-it-works">
+      <div class="container">
+        
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">SEAMLESS ENROLLMENT</span>
+          <h2>Simple for Families. Meaningful for Seniors.</h2>
+          <p>Four easy steps to begin a warm, supportive care experience for your loved one.</p>
+        </div>
+
+        <div class="svc-steps-row reveal-up">
+          
+          <div class="svc-step-card">
+            <div class="svc-step-bubble">01</div>
+            <h3 class="svc-step-title">Choose a Service</h3>
+            <p class="svc-step-desc">Explore our daytime programs and select the care package that best fits your loved one's lifestyle.</p>
+          </div>
+
+          <div class="svc-step-card">
+            <div class="svc-step-bubble">02</div>
+            <h3 class="svc-step-title">Tell Us About Them</h3>
+            <p class="svc-step-desc">Share family contact details, daily routines, favorite hobbies, mobility needs and dietary preferences.</p>
+          </div>
+
+          <div class="svc-step-card">
+            <div class="svc-step-bubble">03</div>
+            <h3 class="svc-step-title">Choose a Schedule</h3>
+            <p class="svc-step-desc">Pick preferred attendance days (Mon–Sat) and time slot (Morning, Afternoon, or Full Day).</p>
+          </div>
+
+          <div class="svc-step-card">
+            <div class="svc-step-bubble">04</div>
+            <h3 class="svc-step-title">Begin the Journey</h3>
+            <p class="svc-step-desc">Complete your booking demonstration and prepare for a comforting, joyful ElderCare experience.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. A DAY AT ELDERCARE (VISUAL STORYTELLING & TIMELINE)
+         ==================================================================== -->
+    <section class="svc-section bg-cream" id="day-at-eldercare">
+      <div class="container">
+        
+        <div class="svc-day-grid">
+          
+          <!-- LEFT: LARGE IMAGE -->
+          <div class="svc-day-img-wrap reveal-left">
+            <img src="assets/images/about_senior_activity.jpg" alt="A fulfilling day at ElderCare">
+          </div>
+
+          <!-- RIGHT: TIMELINE -->
+          <div class="svc-day-timeline-content reveal-right">
+            <span class="section-eyebrow">A DAY AT ELDERCARE</span>
+            <h2 class="svc-featured-title" style="margin-bottom: 2rem;">
+              Every Day Has Something<br>to Look Forward To.
+            </h2>
+
+            <div class="svc-timeline-list">
+              
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">09:00 AM</span>
+                <h3 class="svc-timeline-heading">Welcome &amp; Morning Check-in</h3>
+                <p class="svc-timeline-text">Warm greeting, arrival confirmation to family, morning herbal tea, and gentle vitals observation.</p>
+              </div>
+
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">10:00 AM</span>
+                <h3 class="svc-timeline-heading">Movement &amp; Gentle Activity</h3>
+                <p class="svc-timeline-text">Senior-friendly chair yoga, balance training, and sensory garden walking in fresh morning air.</p>
+              </div>
+
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">11:30 AM</span>
+                <h3 class="svc-timeline-heading">Creative &amp; Cognitive Time</h3>
+                <p class="svc-timeline-text">Painting, tactile crafts, memory games, crossword circles, and lively storytelling.</p>
+              </div>
+
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">01:00 PM</span>
+                <h3 class="svc-timeline-heading">Lunch &amp; Social Conversation</h3>
+                <p class="svc-timeline-text">Nutritious, warm traditional lunch followed by a calm 45-minute relaxation or reading interval.</p>
+              </div>
+
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">03:00 PM</span>
+                <h3 class="svc-timeline-heading">Games &amp; Afternoon Refreshments</h3>
+                <p class="svc-timeline-text">Chess, carrom, musical sessions, light tea and wholesome baked evening snacks.</p>
+              </div>
+
+              <div class="svc-timeline-node">
+                <div class="svc-timeline-dot"></div>
+                <span class="svc-timeline-time">05:00 PM</span>
+                <h3 class="svc-timeline-heading">Family Update &amp; Departure</h3>
+                <p class="svc-timeline-text">Daily care log shared with family, fond farewells, and assisted departure.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. INTERACTIVE SERVICE PREVIEW ("EXPLORE WHAT A DAY CAN LOOK LIKE")
+         ==================================================================== -->
+    
+
+  </main>
+
+  <!-- FOOTER CONTAINER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

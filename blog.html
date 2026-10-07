@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal &amp; Insights – ElderCare Senior Day Care</title>
+  <meta name="description" content="Explore thoughtful ideas, practical senior wellness guidance, and heartwarming family stories from ElderCare Senior Day Care & Activity Center." />
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Dynamic Navbar Injected by navbar.js -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- 1. BLOG PAGE HEADER -->
+    <header class="blog-page-header">
+      <div class="blog-header-decor" aria-hidden="true"></div>
+      <div class="blog-header-decor-left" aria-hidden="true"></div>
+      <div class="container blog-header-shell">
+        <div class="blog-header-content">
+          <span class="section-eyebrow">ELDERCARE JOURNAL</span>
+          <h1 class="blog-header-title">Insights for <span class="heading-highlight">Healthier, Happier Days</span></h1>
+          <p class="blog-header-desc">
+            Thoughtful ideas, practical guidance and meaningful stories to help families support the wellbeing, independence and everyday happiness of their loved ones.
+          </p>
+          <div class="blog-header-meta" aria-label="Blog overview statistics">
+            <span>6 Articles</span>
+            <span class="meta-divider" aria-hidden="true">•</span>
+            <span>5 Topics</span>
+            <span class="meta-divider" aria-hidden="true">•</span>
+            <span>Practical Care Guidance</span>
+          </div>
+          <a href="#blogFilterSection" class="btn btn-primary blog-header-btn" aria-label="Explore articles">
+            <span>Explore Articles</span>
+            <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="10" x2="16" y2="10"></line>
+              <polyline points="10 4 16 10 10 16"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="blog-header-visual" aria-label="ElderCare care and wellness editorial image">
+          <div class="blog-visual-shape" aria-hidden="true"></div>
+          <img
+            class="blog-hero-image"
+            src="assets/images/service_daycare.jpg"
+            alt="Senior enjoying a warm and caring activity with a caregiver"
+          />
+          <div class="blog-floating-card" aria-label="Featured article category">
+            <span>6 Articles</span>
+            <strong>Care &amp; Wellness</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. SEARCH & CATEGORY FILTER CONTROL BAR -->
+    <section class="blog-filter-section" id="blogFilterSection" aria-label="Search and filter articles">
+      <div class="container">
+        <div class="blog-controls-wrapper">
+          <!-- Search Bar -->
+          <div class="blog-search-box">
+            <svg class="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="blogSearchInput" 
+              class="blog-search-input" 
+              placeholder="Search articles..." 
+              aria-label="Search articles by title, topic, or author"
+            />
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <nav class="blog-categories-nav" id="blogCategoriesNav" aria-label="Filter articles by category">
+            <!-- Rendered dynamically by blog.js -->
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BLOG LISTING GRID SECTION -->
+    <section class="blog-main-section">
+      <div class="container">
+        <div class="blog-cards-grid" id="blogCardsGrid">
+          <!-- Rendered dynamically by blog.js from blog-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ELDERCARE CTA SECTION -->
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <div class="cta-banner reveal-up">
+          <div class="cta-bg-art" aria-hidden="true"></div>
+          <div class="cta-content-row">
+            <div class="cta-left">
+              <div class="section-heading-wrap align-left">
+                <span class="section-eyebrow">SUPPORTING FAMILIES EVERY DAY</span>
+                <h2 class="section-heading">
+                  Let's Make Every Day<br>
+                  <span class="heading-highlight">A Little More Meaningful.</span>
+                </h2>
+              </div>
+            </div>
+            <div class="cta-right">
+              <p class="cta-desc">
+                Whether you're exploring senior day care for the first time or seeking an active, loving community for your loved one, our compassionate team is here to guide you.
+              </p>
+              <div class="cta-btn-group">
+                <a href="services.html" class="btn btn-primary" id="blogCtaExploreBtn">
+                  <span>Explore Services</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+                <a href="contact.html" class="btn btn-outline" id="blogCtaContactBtn">
+                  <span>Contact Us</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic Footer Injected by footer.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/blog-data.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

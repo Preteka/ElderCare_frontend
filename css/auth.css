@@ -1,0 +1,107 @@
+/* ==========================================================================
+   ELDERCARE - AUTH PAGES CSS (login.html, signup.html)
+   ========================================================================== */
+
+.auth-section {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #FCFBFE 0%, var(--very-light-lavender) 60%, var(--soft-lavender) 100%);
+  display: flex; align-items: center; justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative; overflow: hidden;
+}
+
+.auth-bg-decor {
+  position: absolute; top: 5%; right: 3%;
+  width: 240px; height: 380px;
+  background: url('../assets/icons/botanical-1.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.3; pointer-events: none; z-index: 0;
+}
+.auth-bg-decor-2 {
+  position: absolute; bottom: 5%; left: 2%;
+  width: 160px; height: 260px;
+  background: url('../assets/icons/botanical-2.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.25; pointer-events: none; z-index: 0;
+}
+
+.auth-wrapper {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 520px;
+}
+
+.auth-logo-link {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  text-decoration: none; margin-bottom: 2rem;
+  width: 100%;
+}
+
+.auth-logo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(114, 80, 165, 0.12));
+}
+
+.auth-brand-text {
+  display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1;
+}
+
+.auth-brand-name {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 600; color: var(--dark-purple); letter-spacing: -0.04em;
+}
+
+.auth-brand-tagline {
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; color: var(--muted-text); text-transform: uppercase; margin-top: 0.25rem;
+}
+
+.auth-card {
+  background: var(--ec-white); border: 1px solid var(--ec-border);
+  border-radius: 24px; padding: 2.4rem 2.2rem;
+  box-shadow: var(--shadow-elevated);
+  animation: authCardIn 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes authCardIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.auth-card-heading {
+  font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700;
+  color: var(--ec-heading); line-height: 1.2; margin-bottom: 0.6rem;
+}
+.auth-card-desc { font-size: 0.95rem; color: var(--ec-body); line-height: 1.65; margin-bottom: 1.8rem; }
+
+.auth-tabs {
+  display: flex; gap: 0; margin-bottom: 1.8rem;
+  border: 1.5px solid var(--ec-border); border-radius: 12px; overflow: hidden;
+}
+.auth-tab-btn {
+  flex: 1; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.92rem;
+  font-weight: 600; color: var(--ec-body); background: var(--ec-white);
+  border: none; cursor: pointer; transition: all 0.2s ease;
+}
+.auth-tab-btn.active { background: linear-gradient(135deg, #7250A5, #9B78C8); color: #fff; }
+
+.auth-form-panel { display: none; }
+.auth-form-panel.active { display: block; }
+
+.auth-forgot-link { font-size: 0.82rem; color: var(--ec-primary-purple); text-decoration: none; margin-top: 0.25rem; }
+.auth-forgot-link:hover { text-decoration: underline; }
+
+.auth-submit-btn { width: 100%; margin-top: 1.2rem; min-height: 50px; }
+
+.auth-divider { display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0; }
+.auth-divider::before,.auth-divider::after { content:""; flex:1; height:1px; background:var(--ec-border); }
+.auth-divider-text { font-size: 0.8rem; color: var(--muted-text); white-space: nowrap; }
+
+.auth-switch-text { text-align: center; font-size: 0.88rem; color: var(--ec-body); margin-top: 1.2rem; }
+.auth-switch-text a { color: var(--ec-primary-purple); font-weight: 600; text-decoration: none; }
+.auth-switch-text a:hover { text-decoration: underline; }
+
+[data-theme="dark"] .auth-section { background: linear-gradient(135deg,#2E2640,#292333,#312A3D); }
+[data-theme="dark"] .auth-card { background: var(--ec-card); border-color: var(--dark-border); }
+[data-theme="dark"] .auth-card-heading { color: var(--dark-text); }
+[data-theme="dark"] .auth-card-desc { color: var(--dark-text-secondary); }
+[data-theme="dark"] .auth-tabs { border-color: var(--dark-border); }
+[data-theme="dark"] .auth-tab-btn { background: var(--ec-card); color: var(--dark-text-secondary); }
+[data-theme="dark"] .auth-divider::before,[data-theme="dark"] .auth-divider::after { background: var(--dark-border); }
+[data-theme="dark"] .auth-switch-text { color: var(--dark-text-secondary); }

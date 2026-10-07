@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful – ElderCare | Booking Completed</title>
+  <meta name="description" content="Your payment demonstration has been completed successfully.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+    <section class="success-section">
+      <div class="container">
+        
+        <div class="success-card">
+
+          <!-- SUCCESS ICON & ANIMATION -->
+          <div class="success-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+
+          <h1 class="success-heading">Payment Successful</h1>
+          <p class="success-desc">Your payment demonstration was completed successfully.</p>
+
+          <!-- PAYMENT DETAILS SUMMARY GRID -->
+          <div class="success-details-grid">
+            
+            <div class="success-detail-item">
+              <div class="sd-label">Transaction ID</div>
+              <div class="sd-value" id="successTransactionId">EC202610071245</div>
+            </div>
+
+            <div class="success-detail-item">
+              <div class="sd-label">Amount Paid</div>
+              <div class="sd-value" id="successAmountPaid" style="color: var(--ec-primary-purple);">₹12,500</div>
+            </div>
+
+            <div class="success-detail-item full">
+              <div class="sd-label">Selected Service</div>
+              <div class="sd-value" id="successServiceName">Day Care &amp; Companionship</div>
+            </div>
+
+            <div class="success-detail-item">
+              <div class="sd-label">Senior Name</div>
+              <div class="sd-value" id="successSeniorName">Ramanathan Sundaram</div>
+            </div>
+
+            <div class="success-detail-item">
+              <div class="sd-label">Payment Date</div>
+              <div class="sd-value" id="successDate">Oct 7, 2026</div>
+            </div>
+
+          </div>
+
+          <!-- DEMO NOTE BOX -->
+          <div class="success-info-msg">
+            <p>
+              Thank you for testing the ElderCare booking &amp; checkout journey demonstration. Your service request simulation is complete.
+            </p>
+          </div>
+
+          <!-- ACTIONS (NO DASHBOARD REDIRECTS) -->
+          <div class="success-actions">
+            <a href="index.html" class="btn btn-primary" id="successHomeBtn">
+              <span>Return to Home</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+            </a>
+            <a href="services.html" class="btn btn-outline" id="successServicesBtn">
+              <span>Explore More Services</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const payment = (function() {
+      try { return JSON.parse(localStorage.getItem('eldercare_payment') || '{}'); }
+      catch(e) { return {}; }
+    })();
+
+    const service = (function() {
+      try {
+        const b = JSON.parse(localStorage.getItem('eldercare_booking') || '{}');
+        return b.serviceName || 'Day Care & Companionship';
+      } catch(e) { return 'Day Care & Companionship'; }
+    })();
+
+    const senior = (function() {
+      try {
+        const s = JSON.parse(localStorage.getItem('eldercare_senior') || '{}');
+        return s.fullName || 'Beloved Senior';
+      } catch(e) { return 'Beloved Senior'; }
+    })();
+
+    const txIdEl = document.getElementById('successTransactionId');
+    const amtEl = document.getElementById('successAmountPaid');
+    const svsEl = document.getElementById('successServiceName');
+    const senEl = document.getElementById('successSeniorName');
+    const dateEl = document.getElementById('successDate');
+
+    if (txIdEl) txIdEl.textContent = payment.transactionId || 'EC' + Date.now().toString().slice(-8);
+    if (amtEl) amtEl.textContent = payment.formattedAmount || '₹12,500';
+    if (svsEl) svsEl.textContent = payment.serviceName || service;
+    if (senEl) senEl.textContent = payment.seniorName || senior;
+    if (dateEl) {
+      if (payment.formattedDate) {
+        dateEl.textContent = payment.formattedDate;
+      } else {
+        const now = new Date();
+        dateEl.textContent = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+    }
+  });
+  </script>
+</body>
+</html>

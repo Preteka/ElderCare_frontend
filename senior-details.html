@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Details – ElderCare | Step 3: Tell Us About Your Loved One</title>
+  <meta name="description" content="Share your loved one's daily routine, favorite hobbies, mobility needs and dietary preferences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="booking-page-section">
+      <div class="container">
+        <div class="booking-page-inner">
+
+          <div class="booking-form-header reveal-up">
+            <span class="section-eyebrow">STEP 03 OF 06</span>
+            <h1>Tell Us About Your Loved One</h1>
+            <p>Help us understand your loved one’s routine, interests and preferences so we can provide a comfortable experience.</p>
+          </div>
+
+          <!-- FRIENDLY INFORMATION NOTE -->
+          <div class="info-note-card reveal-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>Please provide only the information needed to help us create a comfortable and personalized care experience.</span>
+          </div>
+
+          <form id="seniorDetailsForm" novalidate>
+
+            <!-- BASIC PROFILE CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Senior Profile</h2>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="seniorName">Senior Full Name <span class="req">*</span></label>
+                  <input type="text" id="seniorName" class="form-input" placeholder="e.g. Ramanathan Sundaram" autocomplete="name">
+                  <span class="form-error" id="seniorNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="seniorPreferredName">Preferred Name / Calling Name</label>
+                  <input type="text" id="seniorPreferredName" class="form-input" placeholder="e.g. Appa, Uncle Ram, Mr. Sundaram">
+                  <span class="form-error" id="seniorPreferredNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="seniorDob">Date of Birth</label>
+                  <input type="date" id="seniorDob" class="form-input">
+                  <span class="form-hint">Auto-calculates age below</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="seniorAge">Age (Years) <span class="req">*</span></label>
+                  <input type="number" id="seniorAge" class="form-input" placeholder="e.g. 74" min="45" max="115">
+                  <span class="form-error" id="seniorAgeError"></span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="seniorGender">Gender <span class="req">*</span></label>
+                  <select id="seniorGender" class="form-select">
+                    <option value="">Select gender</option>
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                  </select>
+                  <span class="form-error" id="seniorGenderError"></span>
+                </div>
+
+                <div class="form-group full">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                    <label class="form-label" for="seniorAddress" style="margin-bottom: 0;">Residential Address</label>
+                    <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--ec-primary-purple); cursor: pointer;">
+                      <input type="checkbox" id="sameAsFamilyAddress" style="accent-color: var(--ec-primary-purple);">
+                      <span>Same as family address</span>
+                    </label>
+                  </div>
+                  <input type="text" id="seniorAddress" class="form-input" placeholder="e.g. 42, Orchid Meadows, Avinashi Road, Coimbatore">
+                  <span class="form-error" id="seniorAddressError"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DAILY ROUTINE & INTERESTS CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Daily Routine &amp; Interests</h2>
+
+              <div class="form-group full" style="margin-bottom: 1.4rem;">
+                <label class="form-label" for="seniorRoutine">Daily Routine &amp; Habits</label>
+                <textarea id="seniorRoutine" class="form-textarea" placeholder="e.g. Enjoys an early morning herbal tea, likes gentle walks around 10 AM, prefers a quiet 45-minute afternoon rest after lunch."></textarea>
+                <span class="form-hint">Tell us about their favorite morning rituals, rest times, or walking habits.</span>
+              </div>
+
+              <div class="form-group full" style="margin-bottom: 1.4rem;">
+                <label class="form-label">Interests &amp; Favorite Activities</label>
+                <div class="checkbox-group" id="interestTagsGroup">
+                  <label class="checkbox-option js-tag-pill selected" data-val="Companionship & Story Sharing">
+                    <input type="checkbox" checked>
+                    <span>Companionship &amp; Story Sharing</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill selected" data-val="Classical & Devotional Music">
+                    <input type="checkbox" checked>
+                    <span>Classical &amp; Devotional Music</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill" data-val="Gardening & Nature Walks">
+                    <input type="checkbox">
+                    <span>Gardening &amp; Nature Walks</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill selected" data-val="Gentle Yoga & Stretching">
+                    <input type="checkbox" checked>
+                    <span>Gentle Yoga &amp; Stretching</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill" data-val="Creative Arts & Painting">
+                    <input type="checkbox">
+                    <span>Creative Arts &amp; Painting</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill" data-val="Chess & Board Games">
+                    <input type="checkbox">
+                    <span>Chess &amp; Board Games</span>
+                  </label>
+                  <label class="checkbox-option js-tag-pill" data-val="Reading & Daily News">
+                    <input type="checkbox">
+                    <span>Reading &amp; Daily News</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- MOBILITY & DIETARY PREFERENCES -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Care &amp; Comfort Preferences</h2>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="seniorMobility">Mobility Support <span class="req">*</span></label>
+                  <select id="seniorMobility" class="form-select">
+                    <option value="">Select mobility status</option>
+                    <option value="Fully Independent" selected>Fully Independent</option>
+                    <option value="Uses Walking Stick">Uses Walking Stick</option>
+                    <option value="Minimal Support Needed">Minimal Support / Assistance Needed</option>
+                    <option value="Wheelchair Assistance">Wheelchair Assistance</option>
+                  </select>
+                  <span class="form-error" id="seniorMobilityError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="seniorDiet">Dietary Preferences <span class="req">*</span></label>
+                  <select id="seniorDiet" class="form-select">
+                    <option value="">Select diet</option>
+                    <option value="Vegetarian" selected>Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Diabetic Friendly">Diabetic Friendly</option>
+                    <option value="Low Sodium">Low Sodium</option>
+                    <option value="Soft Diet / Easy Chew">Soft Diet / Easy Chew</option>
+                    <option value="No Restrictions">No Restrictions</option>
+                  </select>
+                  <span class="form-error" id="seniorDietError"></span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="seniorNotes">Additional Notes / Comfort Wishes (Optional)</label>
+                  <textarea id="seniorNotes" class="form-textarea" placeholder="e.g. Loves talking about classical Indian literature; prefers mild filter coffee at 4:30 PM."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- FORM NAVIGATION -->
+            <div class="form-nav-row reveal-up">
+              <a href="family-details.html" class="btn btn-outline" id="seniorBackBtn">
+                <span>← Back to Family Details</span>
+              </a>
+              <button type="submit" class="btn btn-primary" id="seniorSubmitBtn">
+                <span>Continue to Schedule</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/senior-details.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

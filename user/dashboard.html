@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Dashboard – ElderCare | Family Care Portal</title>
+  <meta name="description" content="View your loved one's daily attendance, scheduled activities, wellness observations, and family care updates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/dashboard-responsive.css">
+  <script src="../js/dashboard-theme.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <!-- MOBILE OVERLAY BACKDROP -->
+  <div class="dash-overlay" id="dashOverlay" aria-hidden="true"></div>
+
+  <!-- ====================================================================
+       DASHBOARD SIDEBAR (DESKTOP: 270px, MOBILE: SLIDE-OUT)
+       ==================================================================== -->
+  <aside class="dash-sidebar" id="dashSidebar" aria-label="Dashboard Navigation">
+    
+    <!-- BRAND LOGO -->
+    <div class="dash-sidebar-brand">
+      <a href="../index.html" class="dash-brand-link" aria-label="ElderCare Homepage">
+        <div class="dash-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div>
+        <div class="dash-brand-text">
+          <span class="dash-brand-title">Elder<span class="accent">Care</span></span>
+          <span class="dash-brand-subtitle">Family Portal</span>
+        </div>
+      </a>
+      <button class="dash-sidebar-close-btn" id="dashSidebarClose" aria-label="Close Sidebar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <nav class="dash-sidebar-nav">
+      
+      <!-- GROUP 1: MAIN -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group-label">Main</span>
+        <ul class="dash-nav-list">
+          <li class="dash-nav-item">
+            <a href="dashboard.html" class="active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- GROUP 2: CARE -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group-label">Care</span>
+        <ul class="dash-nav-list">
+          <li class="dash-nav-item">
+            <a href="services.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>My Services</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="schedule.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Schedule</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="attendance.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>Attendance</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="activities.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Activities</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="wellness.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>Wellness</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- GROUP 3: INSIGHTS -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group-label">Insights</span>
+        <ul class="dash-nav-list">
+          <li class="dash-nav-item">
+            <a href="reports.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- GROUP 4: ACCOUNT -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group-label">Account</span>
+        <ul class="dash-nav-list">
+          <li class="dash-nav-item">
+            <a href="senior-profile.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Senior Profile</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="profile.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="billing.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Billing</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="messages.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Messages</span>
+              <span class="dash-nav-badge">1</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="settings.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- SIDEBAR FOOTER (LOGOUT) -->
+    <div class="dash-sidebar-footer">
+      <a href="../contact.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Help &amp; Support</span>
+      </a>
+      <button type="button" class="dash-logout-btn" onclick="handleDashboardLogout()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Sign Out</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ====================================================================
+       MAIN CONTENT WRAPPER
+       ==================================================================== -->
+  <div class="dash-main">
+    
+    <!-- TOPBAR -->
+    <header class="dash-topbar">
+      
+      <!-- TOPBAR LEFT: TOGGLE & TITLE -->
+      <div class="dash-topbar-left">
+        <button class="dash-sidebar-toggle-btn" id="dashSidebarToggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="dash-topbar-title-wrap">
+          <h1 class="dash-topbar-page-title">Family Dashboard</h1>
+          <span class="dash-topbar-breadcrumb">Overview &amp; Real-time Daily Updates</span>
+        </div>
+      </div>
+
+      <!-- TOPBAR RIGHT: CONTROLS & USER PROFILE -->
+      <div class="dash-topbar-right">
+        
+        <!-- Theme Toggle -->
+        <button class="dash-ctrl-btn" id="dashThemeToggleBtn" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <!-- RTL/LTR Toggle -->
+        <button class="dash-ctrl-btn" id="dashDirToggleBtn" aria-label="Switch to RTL" title="Switch to RTL">
+          <svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h9"/><polyline points="17 15 20 18 17 21"/></svg>
+          <svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 6H3M21 12H9M21 18H12"/><polyline points="7 15 4 18 7 21"/></svg>
+        </button>
+
+        <!-- Notifications Bell -->
+        <div style="position: relative;">
+          <button class="dash-ctrl-btn" id="dashNotifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="dash-notif-dot" aria-hidden="true"></span>
+          </button>
+          
+          <div class="dash-dropdown" id="dashNotifDropdown" role="menu">
+            <div class="dash-dropdown-header">Recent Care Notifications</div>
+            <a href="reports.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+              <span>Weekly report ready for download</span>
+            </a>
+            <a href="activities.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Lakshmi completed morning yoga</span>
+            </a>
+            <a href="messages.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>New message from Care Coordinator</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- User Profile Avatar & Dropdown -->
+        <div style="position: relative;">
+          <div class="dash-user-badge" id="dashProfileBtn" role="button" tabindex="0" aria-label="User Account Menu" aria-haspopup="true" aria-expanded="false">
+            <div class="dash-user-avatar js-user-initial">P</div>
+            <div class="dash-user-info">
+              <span class="dash-user-name js-user-name">Preteka</span>
+              <span class="dash-user-role js-user-role">Family Member</span>
+            </div>
+            <svg class="dash-user-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+
+          <div class="dash-dropdown" id="dashProfileDropdown" role="menu">
+            <div class="dash-dropdown-header">Family Account</div>
+            <a href="profile.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg>
+              <span>My Profile</span>
+            </a>
+            <a href="senior-profile.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Senior Profile</span>
+            </a>
+            <a href="settings.html" class="dash-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Account Settings</span>
+            </a>
+            <button type="button" class="dash-dropdown-item" style="color: #C0392B;" onclick="handleDashboardLogout()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>Sign Out</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         DASHBOARD CONTENT (1400px CENTERED CONTAINER)
+         ==================================================================== -->
+    <div class="dash-content">
+      
+      <!-- 1. WELCOME BANNER -->
+      <section class="dash-welcome-banner" aria-label="Welcome greeting">
+        <div class="dash-welcome-botanical" aria-hidden="true"></div>
+        <div class="dash-welcome-text">
+          <span class="dash-welcome-eyebrow">FAMILY CARE PORTAL</span>
+          <h2 class="dash-welcome-title">
+            <span id="dashGreetingTime">Good Morning</span>, <span class="js-user-name">Preteka</span>
+          </h2>
+          <p class="dash-welcome-desc">
+            Here’s a quick look at your loved one’s day at ElderCare. Everything is running smoothly and on schedule.
+          </p>
+        </div>
+
+        <div class="dash-welcome-date-badge">
+          <div class="dash-welcome-date-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="dash-welcome-date-text">
+            <span class="dash-date-label">Today's Schedule</span>
+            <span class="dash-date-val" id="dashWelcomeDate">Wednesday, 7 October 2026</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. OVERVIEW CARDS (4 COLUMNS) -->
+      <section class="dash-overview-grid" aria-label="Key Daily Metrics">
+        
+        <!-- Card 1: Attendance -->
+        <article class="dash-overview-card" id="cardAttendance">
+          <div class="dash-card-top-row">
+            <div class="dash-card-icon green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span class="dash-status-pill success">Checked In</span>
+          </div>
+          <span class="dash-card-label">Today's Attendance</span>
+          <div class="dash-card-val">Present</div>
+          <span class="dash-card-subtext">Check-in: <strong>09:05 AM</strong></span>
+        </article>
+
+        <!-- Card 2: Activities -->
+        <article class="dash-overview-card" id="cardActivities">
+          <div class="dash-card-top-row">
+            <div class="dash-card-icon purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <span class="dash-status-pill purple">2 Done</span>
+          </div>
+          <span class="dash-card-label">Today's Activities</span>
+          <div class="dash-card-val">4 Planned</div>
+          <span class="dash-card-subtext">2 Completed • 2 Remaining</span>
+        </article>
+
+        <!-- Card 3: Wellness -->
+        <article class="dash-overview-card" id="cardWellness">
+          <div class="dash-card-top-row">
+            <div class="dash-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="dash-status-pill success">Positive</span>
+          </div>
+          <span class="dash-card-label">Recorded Wellness</span>
+          <div class="dash-card-val">Good</div>
+          <span class="dash-card-subtext">Last Observation: <strong>10:15 AM</strong></span>
+        </article>
+
+        <!-- Card 4: Upcoming -->
+        <article class="dash-overview-card" id="cardUpcoming">
+          <div class="dash-card-top-row">
+            <div class="dash-card-icon amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="dash-status-pill neutral">03:00 PM</span>
+          </div>
+          <span class="dash-card-label">Upcoming Event</span>
+          <div class="dash-card-val" style="font-size: 1.35rem;">Creative Pottery</div>
+          <span class="dash-card-subtext">Crafts &amp; Social Time</span>
+        </article>
+
+      </section>
+
+      <!-- 3. SENIOR OVERVIEW SECTION -->
+      <section class="dash-section-card" id="sectionSeniorOverview">
+        <div class="dash-card-header">
+          <h3 class="dash-card-title">Your Loved One</h3>
+          <a href="senior-profile.html" class="dash-card-link">
+            <span>View Full Senior Profile</span>
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+
+        <div class="dash-senior-box">
+          <div class="dash-senior-photo-wrap">
+            <img src="../assets/images/commitment_couple.jpg" alt="Lakshmi Devi senior portrait" onerror="this.src='../assets/images/service_daycare.jpg'">
+          </div>
+          <div class="dash-senior-details">
+            <div class="dash-senior-name-row">
+              <div>
+                <h4 class="dash-senior-name">Lakshmi Devi <span style="font-size: 0.95rem; font-weight: 500; color: var(--muted-text);">(Amma)</span></h4>
+                <div class="dash-senior-meta">
+                  <span class="dash-senior-meta-item">Age: <strong>72 Years</strong></span>
+                  <span class="dash-senior-meta-item">Current Plan: <strong>Day Care &amp; Companionship</strong></span>
+                  <span class="dash-senior-meta-item">Schedule: <strong>Mon – Fri (8:00 AM – 5:00 PM)</strong></span>
+                </div>
+              </div>
+              <span class="dash-status-pill success" style="font-size: 0.8rem; padding: 0.35rem 0.85rem;">Active Enrollment</span>
+            </div>
+
+            <div class="dash-senior-tags">
+              <span class="dash-senior-tag">Gentle Yoga</span>
+              <span class="dash-senior-tag">Classical Music</span>
+              <span class="dash-senior-tag">Gardening Walks</span>
+              <span class="dash-senior-tag">Vegetarian Diet</span>
+              <span class="dash-senior-tag">Independent Mobility</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TODAY AT ELDERCARE & UPCOMING SCHEDULE (2 COLUMNS) -->
+      <div class="dash-grid-2col">
+        
+        <!-- LEFT: TODAY TIMELINE -->
+        <section class="dash-section-card" id="sectionTodayTimeline">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Today at ElderCare</h3>
+            <span style="font-size: 0.82rem; color: var(--muted-text); font-weight: 600;">Daily Care Routine</span>
+          </div>
+
+          <div class="dash-timeline-list">
+            
+            <div class="dash-timeline-item completed">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">09:00 AM</span>
+              <div class="dash-tl-title">Arrival &amp; Morning Check-in</div>
+              <div class="dash-tl-desc">Warm greeting, arrival confirmation sent to family, and morning herbal infusion.</div>
+            </div>
+
+            <div class="dash-timeline-item completed">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">10:00 AM</span>
+              <div class="dash-tl-title">Morning Activity &amp; Chair Yoga</div>
+              <div class="dash-tl-desc">Senior-friendly gentle yoga, balance training and guided breathing exercises.</div>
+            </div>
+
+            <div class="dash-timeline-item completed">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">11:30 AM</span>
+              <div class="dash-tl-title">Wellness Check &amp; Fruit Break</div>
+              <div class="dash-tl-desc">Hydration check, fresh seasonal fruit bowl, and mood observation.</div>
+            </div>
+
+            <div class="dash-timeline-item completed">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">01:00 PM</span>
+              <div class="dash-tl-title">Lunch &amp; Social Conversation</div>
+              <div class="dash-tl-desc">Warm balanced vegetarian lunch followed by 45-minute calm relaxation interval.</div>
+            </div>
+
+            <div class="dash-timeline-item upcoming">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">03:00 PM</span>
+              <div class="dash-tl-title">Creative Activity &amp; Pottery</div>
+              <div class="dash-tl-desc">Tactile clay pottery, watercolor painting, and cheerful memory sharing.</div>
+            </div>
+
+            <div class="dash-timeline-item upcoming">
+              <div class="dash-timeline-bullet" aria-hidden="true"></div>
+              <span class="dash-tl-time">05:00 PM</span>
+              <div class="dash-tl-title">Departure &amp; Family Care Log</div>
+              <div class="dash-tl-desc">Evening herbal tea, fond farewells, and daily care summary sent to family.</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- RIGHT: UPCOMING SCHEDULE -->
+        <section class="dash-section-card" id="sectionUpcomingSchedule">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Upcoming Schedule</h3>
+            <a href="schedule.html" class="dash-card-link">
+              <span>View Full Schedule</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-schedule-list">
+            
+            <div class="dash-schedule-card">
+              <div class="dash-sch-left">
+                <div class="dash-sch-date-pill">
+                  <span class="dash-sch-day">Wed</span>
+                  <span class="dash-sch-num">7</span>
+                </div>
+                <div class="dash-sch-details">
+                  <span class="dash-sch-title">Creative Activity &amp; Crafts</span>
+                  <span class="dash-sch-time">Today · 03:00 PM</span>
+                </div>
+              </div>
+              <span class="dash-status-pill purple">Upcoming</span>
+            </div>
+
+            <div class="dash-schedule-card">
+              <div class="dash-sch-left">
+                <div class="dash-sch-date-pill">
+                  <span class="dash-sch-day">Thu</span>
+                  <span class="dash-sch-num">8</span>
+                </div>
+                <div class="dash-sch-details">
+                  <span class="dash-sch-title">Music &amp; Memory Session</span>
+                  <span class="dash-sch-time">Tomorrow · 10:30 AM</span>
+                </div>
+              </div>
+              <span class="dash-status-pill neutral">Scheduled</span>
+            </div>
+
+            <div class="dash-schedule-card">
+              <div class="dash-sch-left">
+                <div class="dash-sch-date-pill">
+                  <span class="dash-sch-day">Fri</span>
+                  <span class="dash-sch-num">9</span>
+                </div>
+                <div class="dash-sch-details">
+                  <span class="dash-sch-title">Group Wellness &amp; Garden Walk</span>
+                  <span class="dash-sch-time">Friday · 11:00 AM</span>
+                </div>
+              </div>
+              <span class="dash-status-pill neutral">Scheduled</span>
+            </div>
+
+            <div class="dash-schedule-card">
+              <div class="dash-sch-left">
+                <div class="dash-sch-date-pill">
+                  <span class="dash-sch-day">Sat</span>
+                  <span class="dash-sch-num">10</span>
+                </div>
+                <div class="dash-sch-details">
+                  <span class="dash-sch-title">Art &amp; Craft Social Event</span>
+                  <span class="dash-sch-time">Saturday · 10:00 AM</span>
+                </div>
+              </div>
+              <span class="dash-status-pill neutral">Special</span>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 5. ATTENDANCE & ACTIVITIES (2 COLUMNS) -->
+      <div class="dash-grid-2col equal">
+        
+        <!-- ATTENDANCE OVERVIEW -->
+        <section class="dash-section-card" id="sectionAttendanceOverview">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Attendance Overview</h3>
+            <a href="attendance.html" class="dash-card-link">
+              <span>View History</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-attendance-summary">
+            <div class="dash-att-stats-row">
+              <div class="dash-att-stat-box">
+                <div class="dash-att-num">18</div>
+                <span class="dash-att-lbl">Days Present</span>
+              </div>
+              <div class="dash-att-stat-box">
+                <div class="dash-att-num" style="color: #655B70;">2</div>
+                <span class="dash-att-lbl">Days Absent</span>
+              </div>
+              <div class="dash-att-stat-box">
+                <div class="dash-att-num">90%</div>
+                <span class="dash-att-lbl">Attendance Rate</span>
+              </div>
+            </div>
+
+            <!-- Visual Weekly Bar Representation -->
+            <div class="dash-weekly-chart" aria-label="Weekly attendance visualization">
+              <div class="dash-chart-col">
+                <div class="dash-chart-bar-wrap"><div class="dash-chart-bar" style="height: 100%;"></div></div>
+                <span class="dash-chart-day">Mon</span>
+              </div>
+              <div class="dash-chart-col">
+                <div class="dash-chart-bar-wrap"><div class="dash-chart-bar" style="height: 100%;"></div></div>
+                <span class="dash-chart-day">Tue</span>
+              </div>
+              <div class="dash-chart-col">
+                <div class="dash-chart-bar-wrap"><div class="dash-chart-bar" style="height: 100%;"></div></div>
+                <span class="dash-chart-day">Wed</span>
+              </div>
+              <div class="dash-chart-col">
+                <div class="dash-chart-bar-wrap"><div class="dash-chart-bar" style="height: 80%; opacity: 0.4;"></div></div>
+                <span class="dash-chart-day">Thu</span>
+              </div>
+              <div class="dash-chart-col">
+                <div class="dash-chart-bar-wrap"><div class="dash-chart-bar" style="height: 80%; opacity: 0.4;"></div></div>
+                <span class="dash-chart-day">Fri</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- RECENT ACTIVITIES -->
+        <section class="dash-section-card" id="sectionRecentActivities">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Recent Activities</h3>
+            <a href="activities.html" class="dash-card-link">
+              <span>View All</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-activity-list">
+            
+            <div class="dash-activity-item">
+              <div class="dash-act-left">
+                <span class="dash-act-name">Morning Chair Yoga</span>
+                <span class="dash-act-meta">Today · 10:00 AM</span>
+              </div>
+              <span class="dash-status-pill success">Completed</span>
+            </div>
+
+            <div class="dash-activity-item">
+              <div class="dash-act-left">
+                <span class="dash-act-name">Memory Games &amp; Word Puzzles</span>
+                <span class="dash-act-meta">Today · 11:30 AM</span>
+              </div>
+              <span class="dash-status-pill success">Completed</span>
+            </div>
+
+            <div class="dash-activity-item">
+              <div class="dash-act-left">
+                <span class="dash-act-name">Creative Painting &amp; Clay Art</span>
+                <span class="dash-act-meta">Today · 03:00 PM</span>
+              </div>
+              <span class="dash-status-pill purple">Upcoming</span>
+            </div>
+
+            <div class="dash-activity-item">
+              <div class="dash-act-left">
+                <span class="dash-act-name">Social Story Circle</span>
+                <span class="dash-act-meta">Friday · 11:00 AM</span>
+              </div>
+              <span class="dash-status-pill neutral">Upcoming</span>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 6. WELLNESS & FAMILY UPDATES (2 COLUMNS) -->
+      <div class="dash-grid-2col equal">
+        
+        <!-- WELLNESS OBSERVATIONS -->
+        <section class="dash-section-card" id="sectionWellnessOverview">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Recorded Wellness Observations</h3>
+            <a href="wellness.html" class="dash-card-link">
+              <span>View Logs</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-wellness-grid">
+            <div class="dash-wellness-box">
+              <div class="dash-w-label">Observed Mood</div>
+              <div class="dash-w-val" style="color: #2E7D4F;">Positive</div>
+            </div>
+            <div class="dash-wellness-box">
+              <div class="dash-w-label">Energy Level</div>
+              <div class="dash-w-val" style="color: var(--ec-primary-purple);">Good</div>
+            </div>
+            <div class="dash-wellness-box">
+              <div class="dash-w-label">Participation</div>
+              <div class="dash-w-val" style="color: #2563EB;">Active</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.88rem; color: var(--ec-body); line-height: 1.6; margin-bottom: 0.8rem;">
+            <strong>Latest Note (10:15 AM):</strong> "Lakshmi was smiling throughout morning yoga, drank herbal tea attentively, and engaged happily in conversation with her peers."
+          </div>
+
+          <p class="dash-disclaimer-note">
+            Note: Recorded by the ElderCare care team. These entries reflect daily routine observations for family awareness and are not medical diagnoses.
+          </p>
+        </section>
+
+        <!-- UPDATES FROM ELDERCARE -->
+        <section class="dash-section-card" id="sectionFamilyUpdates">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Updates From ElderCare</h3>
+            <a href="messages.html" class="dash-card-link">
+              <span>View All Updates</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-updates-list">
+            
+            <div class="dash-update-card">
+              <img class="dash-update-avatar" src="../assets/images/about_team_kavitha.jpg" alt="Care Lead Kavitha" onerror="this.src='../assets/images/testimonial_avatar.jpg'">
+              <div class="dash-update-content">
+                <span class="dash-update-title">Morning Joy &amp; Music Session</span>
+                <p class="dash-update-text">"Lakshmi had a wonderful morning participating in the devotional music and chair yoga session with her peers."</p>
+                <span class="dash-update-time">Today · 11:45 AM • Care Lead Kavitha</span>
+              </div>
+            </div>
+
+            <div class="dash-update-card">
+              <img class="dash-update-avatar" src="../assets/images/about_team_anitha.jpg" alt="Care Assistant Anitha" onerror="this.src='../assets/images/testimonial_avatar.jpg'">
+              <div class="dash-update-content">
+                <span class="dash-update-title">Lunch &amp; Social Circle</span>
+                <p class="dash-update-text">"She enjoyed lunch with her activity group and participated actively in the storytelling circle."</p>
+                <span class="dash-update-time">Today · 01:30 PM • Care Assistant Anitha</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 7. REPORTS & BILLING (2 COLUMNS) -->
+      <div class="dash-grid-2col equal">
+        
+        <!-- RECENT REPORTS -->
+        <section class="dash-section-card" id="sectionReports">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Recent Reports</h3>
+            <a href="reports.html" class="dash-card-link">
+              <span>View All Reports</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-reports-list">
+            
+            <div class="dash-report-row">
+              <div class="dash-rep-left">
+                <div class="dash-rep-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div class="dash-rep-title">Weekly Activity Report</div>
+                  <span class="dash-rep-date">30 September 2026 · 1.2 MB</span>
+                </div>
+              </div>
+              <div class="dash-rep-actions">
+                <a href="reports.html" class="dash-rep-btn">View</a>
+                <button type="button" class="dash-rep-btn" onclick="simulateReportDownload('Weekly Activity Report')">Download</button>
+              </div>
+            </div>
+
+            <div class="dash-report-row">
+              <div class="dash-rep-left">
+                <div class="dash-rep-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div class="dash-rep-title">Monthly Wellness Summary</div>
+                  <span class="dash-rep-date">30 September 2026 · 2.4 MB</span>
+                </div>
+              </div>
+              <div class="dash-rep-actions">
+                <a href="reports.html" class="dash-rep-btn">View</a>
+                <button type="button" class="dash-rep-btn" onclick="simulateReportDownload('Monthly Wellness Summary')">Download</button>
+              </div>
+            </div>
+
+            <div class="dash-report-row">
+              <div class="dash-rep-left">
+                <div class="dash-rep-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div class="dash-rep-title">September Attendance Report</div>
+                  <span class="dash-rep-date">30 September 2026 · 840 KB</span>
+                </div>
+              </div>
+              <div class="dash-rep-actions">
+                <a href="reports.html" class="dash-rep-btn">View</a>
+                <button type="button" class="dash-rep-btn" onclick="simulateReportDownload('September Attendance Report')">Download</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- BILLING SUMMARY -->
+        <section class="dash-section-card" id="sectionBilling">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Billing Summary</h3>
+            <a href="billing.html" class="dash-card-link">
+              <span>View Billing</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-billing-box">
+            <div class="dash-bill-row">
+              <span class="b-label">Current Plan</span>
+              <span class="b-val">Day Care &amp; Companionship</span>
+            </div>
+            <div class="dash-bill-row">
+              <span class="b-label">Monthly Service Fee</span>
+              <span class="b-val price">₹12,000</span>
+            </div>
+            <div class="dash-bill-row">
+              <span class="b-label">Next Payment Date</span>
+              <span class="b-val">10 October 2026</span>
+            </div>
+            <div class="dash-bill-row">
+              <span class="b-label">Payment Status</span>
+              <span class="dash-status-pill success">Paid (Auto-renew)</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.2rem;">
+            <a href="billing.html" class="btn btn-outline" style="width: 100%; min-height: 44px; justify-content: center;">
+              <span>Manage Invoices &amp; Payments</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 8. RECENT MESSAGES & QUICK ACTIONS -->
+      <div class="dash-grid-2col">
+        
+        <!-- MESSAGES -->
+        <section class="dash-section-card" id="sectionMessages">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Recent Messages</h3>
+            <a href="messages.html" class="dash-card-link">
+              <span>View All Messages</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+          <div class="dash-messages-list">
+            
+            <a href="messages.html" class="dash-msg-item">
+              <img class="dash-msg-avatar" src="../assets/images/founder_avatar.jpg" alt="ElderCare Team" onerror="this.src='../assets/images/testimonial_avatar.jpg'">
+              <div class="dash-msg-content">
+                <div class="dash-msg-top">
+                  <span class="dash-msg-sender">ElderCare Care Team</span>
+                  <span class="dash-msg-time">11:30 AM</span>
+                </div>
+                <p class="dash-msg-preview">"Your loved one's weekly activity report and photo journal are now available in your portal."</p>
+              </div>
+            </a>
+
+            <a href="messages.html" class="dash-msg-item">
+              <img class="dash-msg-avatar" src="../assets/images/about_team_kavitha.jpg" alt="Family Support" onerror="this.src='../assets/images/testimonial_avatar.jpg'">
+              <div class="dash-msg-content">
+                <div class="dash-msg-top">
+                  <span class="dash-msg-sender">Family Support Desk</span>
+                  <span class="dash-msg-time">Yesterday</span>
+                </div>
+                <p class="dash-msg-preview">"Please let us know if there are any schedule changes for next week's festival sessions."</p>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="dash-section-card" id="sectionQuickActions">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Quick Actions</h3>
+          </div>
+
+          <div class="dash-quick-actions-grid">
+            <a href="senior-profile.html" class="dash-quick-action-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Senior Profile</span>
+            </a>
+            <a href="schedule.html" class="dash-quick-action-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+              <span>View Schedule</span>
+            </a>
+            <a href="attendance.html" class="dash-quick-action-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>Attendance</span>
+            </a>
+            <a href="reports.html" class="dash-quick-action-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+              <span>View Reports</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- COMPACT FOOTER -->
+    <footer class="dash-footer">
+      <div>
+        © 2026 <strong>ElderCare</strong> Senior Day Care &amp; Activity Center. All rights reserved.
+      </div>
+      <div class="dash-footer-links">
+        <a href="../index.html">Public Website</a>
+        <a href="../services.html">All Services</a>
+        <a href="../contact.html">Help &amp; Support</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="../js/dashboard-data.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

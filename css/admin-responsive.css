@@ -1,0 +1,295 @@
+/* ==========================================================================
+   ELDERCARE - ADMIN DASHBOARD RESPONSIVE STYLESHEET (admin-responsive.css)
+   Mobile-First & Fluid Breakpoint Optimizations: 1920px down to 360px
+   Guarantees zero horizontal overflow, stacked mobile cards, and touch ergonomics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET & MEDIUM SCREENS (1200px and below)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .admin-content {
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .admin-grid-sidebar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET BREAKPOINT (992px and below)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-dropdown);
+  }
+
+  [dir="rtl"] .admin-sidebar {
+    transform: translateX(100%);
+  }
+
+  .admin-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-close-btn {
+    display: flex;
+  }
+
+  .admin-sidebar-collapse-btn {
+    display: none;
+  }
+
+  .admin-mobile-toggle-btn {
+    display: flex;
+  }
+
+  .admin-topbar {
+    padding: 0 1.25rem;
+  }
+
+  .admin-search-wrap {
+    width: 200px;
+  }
+
+  .admin-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE BREAKPOINT (768px and below)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .admin-topbar {
+    padding: 0 1rem;
+    height: 64px;
+  }
+
+  .admin-topbar-breadcrumb {
+    display: none;
+  }
+
+  .admin-search-wrap {
+    display: none; /* Can be accessed via search modal/button or expanded input */
+  }
+
+  .admin-content {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .admin-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 18px;
+    gap: 16px;
+  }
+
+  .admin-welcome-title {
+    font-size: 1.45rem;
+  }
+
+  .admin-welcome-date-badge {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .admin-stat-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .admin-grid-2col,
+  .admin-grid-3col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .admin-section-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .admin-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-card-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .admin-filters-left {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .admin-filter-input,
+  .admin-filter-select,
+  .btn-admin {
+    width: 100%;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bar Chart Responsive */
+  .admin-bar-chart {
+    height: 160px;
+    gap: 8px;
+    padding: 10px 4px 0;
+  }
+
+  .admin-chart-bar-track {
+    max-width: 28px;
+  }
+
+  .admin-chart-stats-row {
+    gap: 16px;
+  }
+
+  /* Table Mobile-Card Transformation */
+  .admin-table-cards-mobile thead {
+    display: none;
+  }
+
+  .admin-table-cards-mobile tbody,
+  .admin-table-cards-mobile tr,
+  .admin-table-cards-mobile td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table-cards-mobile tr {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .admin-table-cards-mobile td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--admin-border);
+    text-align: end;
+  }
+
+  .admin-table-cards-mobile td:last-child {
+    border-bottom: none;
+    padding-top: 12px;
+    justify-content: flex-end;
+  }
+
+  .admin-table-cards-mobile td::before {
+    content: attr(data-label);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--admin-text-subtle);
+    text-transform: uppercase;
+    text-align: start;
+    padding-inline-end: 12px;
+  }
+
+  /* Messages Split View on Mobile */
+  .admin-messages-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-messages-list-pane {
+    max-height: 320px;
+  }
+
+  /* Footer Mobile */
+  .admin-footer {
+    padding: 16px 20px;
+  }
+
+  .admin-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .admin-toast-container {
+    inset-inline-start: 16px;
+    inset-inline-end: 16px;
+    bottom: 16px;
+  }
+
+  .admin-toast {
+    min-width: auto;
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA-COMPACT MOBILE SCREENS (360px – 430px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 430px) {
+  .admin-topbar-page-title {
+    font-size: 1.1rem;
+  }
+
+  .admin-welcome-title {
+    font-size: 1.3rem;
+  }
+
+  .admin-stat-num {
+    font-size: 1.8rem;
+  }
+
+  .admin-modal-dialog {
+    border-radius: 16px;
+  }
+
+  .admin-modal-header {
+    padding: 16px;
+  }
+
+  .admin-modal-body {
+    padding: 16px;
+  }
+
+  .admin-modal-footer {
+    padding: 12px 16px;
+    flex-direction: column-reverse;
+  }
+
+  .admin-modal-footer .btn-admin {
+    width: 100%;
+  }
+}

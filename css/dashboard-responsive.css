@@ -1,0 +1,261 @@
+/* ==========================================================================
+   ELDERCARE - DASHBOARD RESPONSIVE STYLES (dashboard-responsive.css)
+   Breakpoints:
+   - Laptop / Large Tablet: <= 1200px
+   - Tablet Portrait: <= 991px (Slide-out sidebar drawer)
+   - Mobile Landscape: <= 768px
+   - Mobile Portrait: <= 576px
+   - Small Mobile: <= 390px / 360px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & MEDIUM DESKTOP (<= 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .dash-content {
+    padding: 28px 28px 40px;
+  }
+  
+  .dash-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dash-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dash-quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET SCREENS (<= 991px - MOBILE SLIDE-OUT DRAWER)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  body.dashboard-body {
+    flex-direction: column;
+  }
+
+  .dash-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .dash-sidebar {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    height: 100vh;
+    z-index: 500;
+    transform: translateX(-100%);
+    box-shadow: 0 10px 40px rgba(48, 35, 71, 0.25);
+  }
+
+  [dir="rtl"] .dash-sidebar {
+    transform: translateX(100%);
+  }
+
+  .dash-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .dash-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+
+  .dash-sidebar-close-btn {
+    display: flex;
+  }
+
+  .dash-sidebar-toggle-btn {
+    display: flex;
+  }
+
+  .dash-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(48, 35, 71, 0.45);
+    backdrop-filter: blur(3px);
+    z-index: 490;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .dash-overlay.is-open {
+    display: block;
+  }
+
+  .dash-topbar {
+    padding: 0 1.5rem;
+  }
+
+  .dash-content {
+    padding: 24px 20px 36px;
+    gap: 1.5rem;
+  }
+
+  .dash-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .dash-welcome-date-badge {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE LANDSCAPE & TABLET (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .dash-topbar {
+    height: 64px;
+    padding: 0 1.2rem;
+  }
+
+  .dash-topbar-breadcrumb {
+    display: none;
+  }
+
+  .dash-topbar-page-title {
+    font-size: 1.15rem;
+  }
+
+  .dash-user-info {
+    display: none;
+  }
+
+  .dash-user-badge {
+    padding: 0.25rem;
+  }
+
+  .dash-senior-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .dash-senior-photo-wrap {
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+  }
+
+  .dash-senior-name-row {
+    justify-content: center;
+  }
+
+  .dash-senior-meta {
+    justify-content: center;
+  }
+
+  .dash-senior-tags {
+    justify-content: center;
+  }
+
+  .dash-att-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dash-wellness-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .dash-footer-links {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE PORTRAIT (<= 576px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .dash-content {
+    padding: 16px 14px 30px;
+    gap: 1.2rem;
+  }
+
+  .dash-welcome-title {
+    font-size: 1.65rem;
+  }
+
+  .dash-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .dash-overview-card {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .dash-section-card {
+    padding: 1.4rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  .dash-card-title {
+    font-size: 1.05rem;
+  }
+
+  .dash-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-att-stats-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .dash-schedule-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dash-report-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .dash-rep-actions {
+    width: 100%;
+  }
+
+  .dash-rep-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. SMALL MOBILE (<= 390px / 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 390px) {
+  .dash-ctrl-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dash-topbar {
+    padding: 0 0.85rem;
+  }
+
+  .dash-welcome-banner {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .dash-welcome-title {
+    font-size: 1.45rem;
+  }
+}

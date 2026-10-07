@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details – ElderCare | Specialized Senior Care</title>
+  <meta name="description" content="Discover detailed schedules, daily care routines, dietary planning and personalized support at ElderCare.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header-section" id="svcHeaderSection">
+      <div class="page-header-bg-decor" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-header-inner reveal-up">
+          <div class="section-heading-wrap">
+            <span class="section-eyebrow" id="svcHeaderEyebrow">OUR SERVICES</span>
+            <h1 class="page-header-title" id="svcHeaderTitle">Day Care &amp; Companionship</h1>
+          </div>
+          <p class="page-header-desc" id="svcHeaderDesc">
+            Comfortable daytime care with meaningful activities, companionship and attentive support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section class="svc-detail-hero" id="svcHeroSection">
+      <div class="container">
+        <div class="svc-detail-hero-grid">
+          
+          <!-- LEFT CONTENT -->
+          <div class="svc-detail-content reveal-left">
+            <span class="section-eyebrow" id="svcHeroCategory">FULL-DAY SUPPORT</span>
+            <h2 class="svc-detail-main-title" id="svcHeroTitle">Day Care &amp; Companionship</h2>
+            <p class="svc-detail-lead" id="svcHeroDesc">
+              Our Day Care &amp; Companionship service offers a warm, structured daytime environment where seniors feel truly at home.
+            </p>
+            
+            <div class="svc-hero-highlights" id="svcHeroHighlights">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="svc-detail-cta-row">
+              <button class="btn btn-primary js-book-service-btn" id="heroBookServiceBtn">
+                <span>Book This Service</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+              <a href="services.html" class="btn btn-outline" id="heroBackToServicesBtn">
+                <span>Back to Services</span>
+              </a>
+            </div>
+            <span class="svc-detail-price-tag" id="svcHeroPrice">Starting from ₹12,000 / month</span>
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div class="svc-detail-image-wrap reveal-right">
+            <div class="svc-detail-image-box">
+              <img id="svcHeroImg" src="assets/images/service_daycare.jpg" alt="Service Photo">
+            </div>
+            <div class="svc-detail-decor" aria-hidden="true"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT THIS SERVICE -->
+    <section class="svc-section-compact bg-white" id="svcAboutSection">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">ABOUT THIS SERVICE</span>
+          <h2>Thoughtful Care Rooted in Dignity &amp; Joy</h2>
+          <p>Every detail is designed to bring comfort, security, and a sense of belonging to your loved one.</p>
+        </div>
+        <div class="svc-about-box reveal-up">
+          <p id="svcAboutDescription">
+            Our Day Care &amp; Companionship service offers a warm, structured daytime environment where seniors feel at home. From morning arrival to afternoon departure, every hour is thoughtfully planned around comfort, engagement and personalised attention. Families can go about their day knowing their loved ones are safe, social and smiling.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="svc-section-compact bg-lavender" id="svcIncludedSection">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">WHAT'S INCLUDED</span>
+          <h2>Everything Needed for a Fulfilling Day</h2>
+          <p>Comprehensive daytime support ensuring holistic wellbeing, engagement and peace of mind.</p>
+        </div>
+        <div class="svc-included-grid" id="svcIncludedGrid">
+          <!-- 4-6 Cards populated dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY FAMILIES CHOOSE THIS SERVICE -->
+    <section class="svc-section-compact bg-white" id="svcBenefitsSection">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">KEY BENEFITS</span>
+          <h2>Why Families Choose This Service</h2>
+          <p>We combine compassionate companionship with structured care to make every day special.</p>
+        </div>
+        <div class="svc-benefits-grid" id="svcBenefitsGrid">
+          <!-- 3-4 Benefits populated dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE INFORMATION & PRICING -->
+    <section class="svc-section-compact bg-cream" id="svcInfoSection">
+      <div class="container">
+        <div class="svc-section-header reveal-up">
+          <span class="section-eyebrow">SERVICE INFORMATION</span>
+          <h2>Schedule, Pricing &amp; Availability</h2>
+          <p>Transparent enrollment details tailored to suit your family's routine.</p>
+        </div>
+        <div class="svc-plan-card reveal-up">
+          <div class="svc-plan-table">
+            <div class="svc-plan-row">
+              <span class="svc-plan-label">Enrollment Term</span>
+              <span class="svc-plan-val" id="svcInfoDuration">Monthly Enrollment</span>
+            </div>
+            <div class="svc-plan-row">
+              <span class="svc-plan-label">Operating Schedule</span>
+              <span class="svc-plan-val" id="svcInfoSchedule">Monday – Saturday</span>
+            </div>
+            <div class="svc-plan-row">
+              <span class="svc-plan-label">Daily Availability</span>
+              <span class="svc-plan-val" id="svcInfoAvailability">8:00 AM – 6:00 PM</span>
+            </div>
+            <div class="svc-plan-row">
+              <span class="svc-plan-label">One-Time Registration Fee</span>
+              <span class="svc-plan-val" id="svcInfoRegFee">₹500</span>
+            </div>
+            <div class="svc-plan-row">
+              <span class="svc-plan-label">Monthly Service Fee</span>
+              <span class="svc-plan-val price" id="svcInfoPrice">₹12,000 / month</span>
+            </div>
+          </div>
+          <div class="svc-plan-actions">
+            <button class="btn btn-primary js-book-service-btn" id="infoBookServiceBtn">
+              <span>Book This Service</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+            </button>
+            <a href="services.html" class="btn btn-outline" id="infoBackToServicesBtn">
+              <span>Back to Services</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/service-details.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

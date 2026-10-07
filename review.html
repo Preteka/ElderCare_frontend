@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Details – ElderCare | Step 5: Verification &amp; Confirmation</title>
+  <meta name="description" content="Review your family contacts, senior preferences, selected care schedule and pricing before proceeding to payment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="booking-page-section">
+      <div class="container">
+        <div class="booking-page-inner">
+
+          <div class="booking-form-header reveal-up">
+            <span class="section-eyebrow">STEP 05 OF 06</span>
+            <h1>Review Your Details</h1>
+            <p>Please review your information carefully before continuing to payment.</p>
+          </div>
+
+          <form id="reviewForm" novalidate>
+
+            <!-- 1. FAMILY INFORMATION -->
+            <div class="review-section-card reveal-up" id="reviewFamilyCard">
+              <div class="review-section-header">
+                <h2 class="review-section-title">1. Family Information</h2>
+                <a href="family-details.html" class="review-edit-btn" aria-label="Edit family information">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                  <span>Edit</span>
+                </a>
+              </div>
+              <div class="review-rows">
+                <div class="review-row">
+                  <span class="review-row-label">Primary Contact:</span>
+                  <span class="review-row-value" id="revFamilyName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Relationship:</span>
+                  <span class="review-row-value" id="revFamilyRel">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Email Address:</span>
+                  <span class="review-row-value" id="revFamilyEmail">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Phone Number:</span>
+                  <span class="review-row-value" id="revFamilyPhone">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Address:</span>
+                  <span class="review-row-value" id="revFamilyAddress">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Preferred Updates:</span>
+                  <span class="review-row-value" id="revFamilyContactMethod">Phone</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Emergency Contact:</span>
+                  <span class="review-row-value" id="revFamilyEmergency">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. SENIOR INFORMATION -->
+            <div class="review-section-card reveal-up" id="reviewSeniorCard">
+              <div class="review-section-header">
+                <h2 class="review-section-title">2. Senior Information</h2>
+                <a href="senior-details.html" class="review-edit-btn" aria-label="Edit senior information">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                  <span>Edit</span>
+                </a>
+              </div>
+              <div class="review-rows">
+                <div class="review-row">
+                  <span class="review-row-label">Senior Full Name:</span>
+                  <span class="review-row-value" id="revSeniorName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Age &amp; Gender:</span>
+                  <span class="review-row-value" id="revSeniorAgeGender">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Preferred Name:</span>
+                  <span class="review-row-value" id="revSeniorPrefName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Mobility Support:</span>
+                  <span class="review-row-value" id="revSeniorMobility">Independent</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Dietary Preference:</span>
+                  <span class="review-row-value" id="revSeniorDiet">Vegetarian</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Key Interests:</span>
+                  <span class="review-row-value" id="revSeniorInterests">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Additional Notes:</span>
+                  <span class="review-row-value" id="revSeniorNotes">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. SERVICE INFORMATION -->
+            <div class="review-section-card reveal-up" id="reviewServiceCard">
+              <div class="review-section-header">
+                <h2 class="review-section-title">3. Service Information</h2>
+                <a href="service-details.html" class="review-edit-btn" aria-label="Edit service selection">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                  <span>Edit</span>
+                </a>
+              </div>
+              <div class="review-rows">
+                <div class="review-row">
+                  <span class="review-row-label">Selected Service:</span>
+                  <span class="review-row-value" id="revServiceName">Day Care &amp; Companionship</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Program Type:</span>
+                  <span class="review-row-value" id="revServiceCategory">Care &amp; Comfort</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Enrollment Term:</span>
+                  <span class="review-row-value" id="revServiceDuration">Monthly Enrollment</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Operating Hours:</span>
+                  <span class="review-row-value" id="revServiceAvailability">8:00 AM – 6:00 PM</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Standard Base Price:</span>
+                  <span class="review-row-value" id="revServicePrice">₹12,000 / month</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. SCHEDULE -->
+            <div class="review-section-card reveal-up" id="reviewScheduleCard">
+              <div class="review-section-header">
+                <h2 class="review-section-title">4. Schedule &amp; Timings</h2>
+                <a href="schedule.html" class="review-edit-btn" aria-label="Edit schedule">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                  <span>Edit</span>
+                </a>
+              </div>
+              <div class="review-rows">
+                <div class="review-row">
+                  <span class="review-row-label">Preferred Start Date:</span>
+                  <span class="review-row-value" id="revScheduleStartDate">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Weekly Attendance:</span>
+                  <span class="review-row-value" id="revScheduleDays">Monday – Friday</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-row-label">Daily Shift &amp; Arrival:</span>
+                  <span class="review-row-value" id="revScheduleTime">Full Day (Arrival: 8:30 AM)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. DYNAMIC PRICE SUMMARY -->
+            <div class="form-card reveal-up" id="reviewPriceSummaryCard">
+              <h2 class="form-card-title">Fee Summary</h2>
+              
+              <div class="review-price-section" style="border-top: none; margin-top: 0; padding-top: 0;">
+                <div class="review-total-row">
+                  <span class="review-total-label">Monthly Service Fee</span>
+                  <span class="review-total-value" id="revPriceServiceFee">₹12,000</span>
+                </div>
+                <div class="review-total-row">
+                  <span class="review-total-label">One-Time Registration Fee</span>
+                  <span class="review-total-value" id="revPriceRegFee">₹500</span>
+                </div>
+                <div class="review-total-row review-grand-total">
+                  <span class="review-total-label">Total Payable</span>
+                  <span class="review-total-value" id="revPriceTotal">₹12,500</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. CONFIRMATION CHECKBOX -->
+            <div class="review-terms-row reveal-up" id="reviewTermsRow">
+              <input type="checkbox" id="reviewTermsCheckbox">
+              <label for="reviewTermsCheckbox" class="review-terms-label">
+                I confirm that the information provided is accurate and I agree to the ElderCare <a href="#" onclick="return false;">Terms &amp; Conditions</a> and <a href="#" onclick="return false;">Privacy Policy</a>.
+              </label>
+            </div>
+            <span class="form-error" id="reviewTermsCheckboxError" style="margin-top: -1rem; margin-bottom: 1.5rem;"></span>
+
+            <!-- FORM NAVIGATION -->
+            <div class="form-nav-row reveal-up">
+              <a href="schedule.html" class="btn btn-outline" id="reviewBackBtn">
+                <span>← Back to Schedule</span>
+              </a>
+              <button type="submit" class="btn btn-primary" id="reviewContinueToPaymentBtn" disabled>
+                <span>Continue to Payment</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/review.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

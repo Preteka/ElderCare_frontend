@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – ElderCare | Senior Care Management Portal</title>
+  <meta name="description" content="ElderCare Senior Care Management Portal - Operations, attendance, enrollments, activities, wellness records, and family communication.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/admin-responsive.css">
+  <script src="../js/admin-theme.js"></script>
+</head>
+<body class="admin-body">
+
+  <!-- Mobile Overlay -->
+  <div class="admin-overlay" id="adminOverlay" aria-hidden="true"></div>
+
+  <!-- ====================================================================
+       ADMIN SIDEBAR
+       ==================================================================== -->
+  <aside class="admin-sidebar" id="adminSidebar" aria-label="Admin Navigation">
+    
+    <!-- Brand Logo -->
+    <div class="admin-sidebar-brand">
+      <a href="dashboard.html" class="admin-brand-link" aria-label="ElderCare Admin Homepage">
+        <div class="admin-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div>
+        <div class="admin-brand-text">
+          <span class="admin-brand-title">Elder<span class="accent">Care</span></span>
+          <span class="admin-brand-badge">Admin Portal</span>
+        </div>
+      </a>
+      <button class="admin-sidebar-collapse-btn" id="adminSidebarCollapseBtn" aria-label="Toggle Sidebar width" title="Toggle Sidebar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="admin-sidebar-close-btn" id="adminSidebarClose" aria-label="Close Sidebar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Navigation Groups -->
+    <nav class="admin-sidebar-nav">
+      
+      <!-- MAIN -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">Main</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="dashboard.html" class="active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PEOPLE -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">People</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="users.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Users</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="seniors.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="12" cy="12" r="9"/></svg>
+              <span>Seniors</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- OPERATIONS -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">Operations</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="enrollments.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Enrollments</span>
+              <span class="admin-nav-badge">12</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="services.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Services</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="schedules.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Schedules</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="attendance.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>Attendance</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="activities.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Activities</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="wellness.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>Wellness</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- INSIGHTS -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">Insights</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="reports.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">Finance</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="billing.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Billing</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- COMMUNICATION -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">Communication</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="messages.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Messages</span>
+              <span class="admin-nav-badge">1</span>
+            </a>
+          </li>
+          <li class="admin-nav-item">
+            <a href="notifications.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span>Notifications</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SYSTEM -->
+      <div class="admin-nav-group">
+        <span class="admin-nav-group-label">System</span>
+        <ul class="admin-nav-list">
+          <li class="admin-nav-item">
+            <a href="settings.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="admin-sidebar-footer">
+      <a href="../contact.html" title="Help & Support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Help &amp; Support</span>
+      </a>
+      <button type="button" class="admin-logout-btn" onclick="handleAdminLogout()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Logout</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ====================================================================
+       MAIN CONTENT SHELL
+       ==================================================================== -->
+  <div class="admin-main">
+    
+    <!-- 1. TOPBAR -->
+    <header class="admin-topbar">
+      
+      <!-- Topbar Left: Mobile Toggle & Breadcrumb -->
+      <div class="admin-topbar-left">
+        <button class="admin-mobile-toggle-btn" id="adminMobileMenuBtn" aria-label="Open Navigation">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="admin-topbar-title-wrap">
+          <h1 class="admin-topbar-page-title">Operations Dashboard</h1>
+          <span class="admin-topbar-breadcrumb">Admin Management Portal • Real-time Center Overview</span>
+        </div>
+      </div>
+
+      <!-- Topbar Right: Controls -->
+      <div class="admin-topbar-right">
+        
+        <!-- Global Search -->
+        <div class="admin-search-wrap" id="adminSearchWrapper">
+          <div class="admin-search-input-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="admin-search-input" id="adminGlobalSearchInput" placeholder="Search seniors, users, ID..." autocomplete="off">
+          </div>
+          <div class="admin-search-dropdown" id="adminGlobalSearchResults"></div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="admin-ctrl-btn" id="adminThemeToggleBtn" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <!-- RTL/LTR Toggle -->
+        <button class="admin-ctrl-btn" id="adminDirToggleBtn" aria-label="Switch to RTL" title="Switch to RTL">
+          <svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h12M3 18h9"/><polyline points="17 15 20 18 17 21"/></svg>
+          <svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 6H3M21 12H9M21 18H12"/><polyline points="7 15 4 18 7 21"/></svg>
+        </button>
+
+        <!-- Notifications -->
+        <div style="position: relative;">
+          <button class="admin-ctrl-btn" id="adminNotifBtn" aria-label="Notifications" aria-haspopup="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="admin-notif-badge" id="adminNotifBadge">3</span>
+          </button>
+          
+          <div class="admin-dropdown-menu admin-dropdown-notif-menu" id="adminNotifDropdown" role="menu">
+            <div class="admin-dropdown-header">Recent Alerts &amp; Activities</div>
+            <div id="topbarNotifList"></div>
+            <div class="admin-dropdown-footer">
+              <a href="notifications.html">View All Notifications</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Profile -->
+        <div style="position: relative;">
+          <div class="admin-user-btn" id="adminProfileBtn" role="button" tabindex="0" aria-label="Admin Profile Menu" aria-haspopup="true">
+            <img src="../assets/images/founder_avatar.jpg" alt="ElderCare Admin" class="admin-user-avatar">
+            <div class="admin-user-info">
+              <span class="admin-user-name">ElderCare Admin</span>
+              <span class="admin-user-role">Administrator</span>
+            </div>
+            <svg class="admin-user-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+
+          <div class="admin-dropdown-menu" id="adminProfileDropdown" role="menu">
+            <div class="admin-dropdown-header">Admin Account</div>
+            <a href="settings.html" class="admin-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+              <span>Profile</span>
+            </a>
+            <a href="settings.html" class="admin-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Settings</span>
+            </a>
+            <a href="../contact.html" class="admin-dropdown-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Help &amp; Support</span>
+            </a>
+            <button type="button" class="admin-dropdown-item danger" onclick="handleAdminLogout()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>Sign Out</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         MAIN CONTENT CONTAINER (1400px CENTERED)
+         ==================================================================== -->
+    <div class="admin-content">
+      
+      <!-- 2. WELCOME BANNER -->
+      <section class="admin-welcome-banner" aria-label="Welcome section">
+        <div class="admin-welcome-botanical" aria-hidden="true"></div>
+        <div class="admin-welcome-text">
+          <span class="admin-welcome-eyebrow">ADMINISTRATION CONTROL DESK</span>
+          <h2 class="admin-welcome-title">
+            <span id="adminGreetingTime">Good Morning</span>, ElderCare Admin
+          </h2>
+          <p class="admin-welcome-desc">
+            Here's an overview of what's happening across ElderCare today. 94 seniors are checked in and all daily care routines are progressing smoothly.
+          </p>
+        </div>
+
+        <div class="admin-welcome-date-badge">
+          <div class="admin-welcome-date-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="admin-welcome-date-text">
+            <span class="admin-welcome-date-label">Today's Date</span>
+            <span class="admin-welcome-date-val" id="adminTodayDate">Wednesday, 7 October 2026</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. OVERVIEW STATISTICS (6 PRIMARY METRICS) -->
+      <section class="admin-stats-grid" aria-label="Primary Center Statistics">
+        
+        <!-- 1. Total Seniors -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Total Seniors</span>
+            <div class="admin-stat-icon purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">128</div>
+          <span class="admin-stat-trend positive">+8 this month</span>
+        </article>
+
+        <!-- 2. Today's Attendance -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Today's Attendance</span>
+            <div class="admin-stat-icon green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">94</div>
+          <span class="admin-stat-trend positive">92% attendance rate</span>
+        </article>
+
+        <!-- 3. Active Services -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Active Services</span>
+            <div class="admin-stat-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">6</div>
+          <span class="admin-stat-trend">All 6 operational</span>
+        </article>
+
+        <!-- 4. Pending Enrollments -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Pending Enrollments</span>
+            <div class="admin-stat-icon amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">12</div>
+          <span class="admin-stat-trend warning">4 submitted today</span>
+        </article>
+
+        <!-- 5. Wellness Reports -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Wellness Reports</span>
+            <div class="admin-stat-icon purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">18</div>
+          <span class="admin-stat-trend positive">100% completed</span>
+        </article>
+
+        <!-- 6. Pending Payments -->
+        <article class="admin-stat-card">
+          <div class="admin-stat-top">
+            <span class="admin-stat-label">Pending Payments</span>
+            <div class="admin-stat-icon red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+          </div>
+          <div class="admin-stat-num">5</div>
+          <span class="admin-stat-trend warning">₹45,000 pending</span>
+        </article>
+
+      </section>
+
+      <!-- 4. ATTENDANCE OVERVIEW (CHART) & NEEDS YOUR ATTENTION (GRID 2COL) -->
+      <section class="admin-grid-sidebar-layout">
+        
+        <!-- Attendance Overview -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Attendance Overview</h3>
+              <span class="admin-card-subtitle">Weekly senior check-in trends &amp; active daily count</span>
+            </div>
+            <a href="attendance.html" class="admin-card-link">
+              <span>View Full Sheet</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div class="admin-chart-container">
+            <div class="admin-chart-stats-row">
+              <div class="admin-chart-stat-item">
+                <span class="admin-chart-stat-label">Present Today</span>
+                <span class="admin-chart-stat-val present">94</span>
+              </div>
+              <div class="admin-chart-stat-item">
+                <span class="admin-chart-stat-label">Absent</span>
+                <span class="admin-chart-stat-val absent">8</span>
+              </div>
+              <div class="admin-chart-stat-item">
+                <span class="admin-chart-stat-label">Total Scheduled</span>
+                <span class="admin-chart-stat-val scheduled">102</span>
+              </div>
+            </div>
+
+            <!-- Pure HTML/CSS Bar Chart -->
+            <div class="admin-bar-chart" id="adminAttendanceBarChart"></div>
+          </div>
+        </div>
+
+        <!-- 6. Needs Your Attention -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Needs Your Attention</h3>
+              <span class="admin-card-subtitle">Priority queues requiring admin action</span>
+            </div>
+          </div>
+
+          <div class="admin-attention-list">
+            
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon amber">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">New Enrollment: Lakshmi Devi</span>
+                  <span class="admin-attention-desc">Day Care • Submitted today by Preteka</span>
+                </div>
+              </div>
+              <a href="enrollment-details.html?id=EC-00124" class="btn-admin btn-admin-primary sm">Review</a>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Info Request: Kalyani S.</span>
+                  <span class="admin-attention-desc">Dietary records awaiting verification</span>
+                </div>
+              </div>
+              <a href="enrollment-details.html?id=EC-00120" class="btn-admin btn-admin-secondary sm">Follow Up</a>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon red">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Pending Invoice: ₹5,500</span>
+                  <span class="admin-attention-desc">Karthik V. • Meals &amp; Nutrition</span>
+                </div>
+              </div>
+              <a href="billing.html" class="btn-admin btn-admin-outline sm">Send</a>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Leave Request: Balasubramanian</span>
+                  <span class="admin-attention-desc">Medical leave 1 week logged</span>
+                </div>
+              </div>
+              <a href="schedules.html" class="btn-admin btn-admin-secondary sm">View</a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 5. RECENT ENROLLMENTS (TABLE / MOBILE CARDS) -->
+      <section class="admin-section-card">
+        <div class="admin-card-header">
+          <div class="admin-card-title-group">
+            <h3 class="admin-card-title">Recent Enrollments</h3>
+            <span class="admin-card-subtitle">Latest senior care registration submissions</span>
+          </div>
+          <a href="enrollments.html" class="admin-card-link">
+            <span>View All Enrollments (12)</span>
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+          </a>
+        </div>
+
+        <div class="admin-table-responsive">
+          <table class="admin-table admin-table-cards-mobile">
+            <thead>
+              <tr>
+                <th>Enrollment ID</th>
+                <th>Family Contact</th>
+                <th>Senior</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th style="text-align: end;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="recentEnrollmentsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 7. SENIOR CARE OVERVIEW & 8. TODAY'S SCHEDULE (GRID 2COL) -->
+      <section class="admin-grid-2col">
+        
+        <!-- 7. Senior Care Overview -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Senior Care Overview</h3>
+              <span class="admin-card-subtitle">Active member directory snapshot</span>
+            </div>
+            <a href="seniors.html" class="admin-card-link">
+              <span>All Seniors</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <!-- Quick breakdown counters -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 14px; background: var(--admin-surface-alt); border-radius: 14px; text-align: center;">
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">TOTAL</span>
+              <strong style="font-size: 1.25rem; color: var(--admin-text-main);">128</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">ACTIVE</span>
+              <strong style="font-size: 1.25rem; color: var(--ec-success);">112</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">NEW (OCT)</span>
+              <strong style="font-size: 1.25rem; color: var(--ec-primary-purple);">9</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">INACTIVE</span>
+              <strong style="font-size: 1.25rem; color: var(--admin-text-subtle);">7</strong>
+            </div>
+          </div>
+
+          <!-- Recently Added Seniors List -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; background: var(--admin-surface-alt); border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <img src="../assets/images/commitment_couple.jpg" alt="Lakshmi Devi" class="admin-table-avatar">
+                <div>
+                  <span class="admin-cell-name">Lakshmi Devi (72 yrs)</span>
+                  <span class="admin-cell-sub">Day Care &amp; Companionship</span>
+                </div>
+              </div>
+              <span class="admin-badge success">Active</span>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; background: var(--admin-surface-alt); border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <img src="../assets/images/about_values_excellence.jpg" alt="Ramanathan K." class="admin-table-avatar">
+                <div>
+                  <span class="admin-cell-name">Ramanathan K. (76 yrs)</span>
+                  <span class="admin-cell-sub">Senior Activity Programs</span>
+                </div>
+              </div>
+              <span class="admin-badge success">Active</span>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; background: var(--admin-surface-alt); border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <img src="../assets/images/service_activity.jpg" alt="Meenakshi Ammal" class="admin-table-avatar">
+                <div>
+                  <span class="admin-cell-name">Meenakshi Ammal (69 yrs)</span>
+                  <span class="admin-cell-sub">Wellness &amp; Daily Check-ins</span>
+                </div>
+              </div>
+              <span class="admin-badge success">Active</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 8. Today's Schedule -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Today's Schedule</h3>
+              <span class="admin-card-subtitle">Daily operational routine &amp; flow</span>
+            </div>
+            <a href="schedules.html" class="admin-card-link">
+              <span>Full Calendar</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div class="admin-timeline">
+            <div class="admin-timeline-item completed">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">09:00 AM</span>
+                  <span class="admin-badge success">Completed</span>
+                </div>
+                <h4 class="admin-timeline-title">Senior Arrivals &amp; Welcome Circle</h4>
+                <p class="admin-timeline-desc">Vitality check-in and herbal tea refreshment in courtyard.</p>
+              </div>
+            </div>
+
+            <div class="admin-timeline-item completed">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">10:00 AM</span>
+                  <span class="admin-badge success">Completed</span>
+                </div>
+                <h4 class="admin-timeline-title">Morning Movement &amp; Chair Yoga</h4>
+                <p class="admin-timeline-desc">Joint flexibility, breathing exercises, and gentle stretching.</p>
+              </div>
+            </div>
+
+            <div class="admin-timeline-item completed">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">11:30 AM</span>
+                  <span class="admin-badge success">Completed</span>
+                </div>
+                <h4 class="admin-timeline-title">Wellness Observations &amp; Fruit Break</h4>
+                <p class="admin-timeline-desc">Hydration logs and fresh seasonal fruit bowls.</p>
+              </div>
+            </div>
+
+            <div class="admin-timeline-item completed">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">01:00 PM</span>
+                  <span class="admin-badge success">Completed</span>
+                </div>
+                <h4 class="admin-timeline-title">Lunch &amp; Quiet Relaxation</h4>
+                <p class="admin-timeline-desc">Warm South Indian balanced lunch &amp; 45-min quiet lounge rest.</p>
+              </div>
+            </div>
+
+            <div class="admin-timeline-item">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">03:00 PM</span>
+                  <span class="admin-badge purple">Upcoming</span>
+                </div>
+                <h4 class="admin-timeline-title">Creative Activities &amp; Pottery</h4>
+                <p class="admin-timeline-desc">Clay molding and watercolor floral painting.</p>
+              </div>
+            </div>
+
+            <div class="admin-timeline-item">
+              <div class="admin-timeline-dot"></div>
+              <div class="admin-timeline-content">
+                <div class="admin-timeline-header">
+                  <span class="admin-timeline-time">05:00 PM</span>
+                  <span class="admin-badge purple">Upcoming</span>
+                </div>
+                <h4 class="admin-timeline-title">Departures &amp; Family Care Log</h4>
+                <p class="admin-timeline-desc">Daily logs transmitted to families and evening departures.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- 9. TODAY'S ACTIVITIES & 10. WELLNESS OVERVIEW (GRID 2COL) -->
+      <section class="admin-grid-2col">
+        
+        <!-- 9. Today's Activities -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Today's Activities</h3>
+              <span class="admin-card-subtitle">Active enrichment &amp; engagement sessions</span>
+            </div>
+            <a href="activities.html" class="admin-card-link">
+              <span>All Activities</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Morning Movement &amp; Chair Yoga</span>
+                  <span class="admin-attention-desc">10:00 AM • 28 Participants</span>
+                </div>
+              </div>
+              <span class="admin-badge success">Completed</span>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Memory Games &amp; Crosswords</span>
+                  <span class="admin-attention-desc">11:30 AM • 18 Participants</span>
+                </div>
+              </div>
+              <span class="admin-badge success">Completed</span>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon amber">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Creative Painting &amp; Clay Art</span>
+                  <span class="admin-attention-desc">03:00 PM • 22 Participants</span>
+                </div>
+              </div>
+              <span class="admin-badge purple">Upcoming</span>
+            </div>
+
+            <div class="admin-attention-item">
+              <div class="admin-attention-main">
+                <div class="admin-attention-icon purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </div>
+                <div class="admin-attention-details">
+                  <span class="admin-attention-title">Music &amp; Memory Sing-Along</span>
+                  <span class="admin-attention-desc">04:00 PM • 15 Participants</span>
+                </div>
+              </div>
+              <span class="admin-badge purple">Upcoming</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 10. Wellness Overview -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Wellness Observations</h3>
+              <span class="admin-card-subtitle">Recorded Wellness Observations • Non-diagnostic care notes</span>
+            </div>
+            <a href="wellness.html" class="admin-card-link">
+              <span>View Logs</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px;">
+            <div style="padding: 16px; background: var(--admin-surface-alt); border-radius: 14px; border: 1px solid var(--admin-border);">
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">POSITIVE MOOD</span>
+              <strong style="font-size: 1.5rem; color: var(--ec-success);">42</strong>
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">seniors recorded</span>
+            </div>
+
+            <div style="padding: 16px; background: var(--admin-surface-alt); border-radius: 14px; border: 1px solid var(--admin-border);">
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">GOOD ENERGY</span>
+              <strong style="font-size: 1.5rem; color: var(--ec-primary-purple);">38</strong>
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">seniors recorded</span>
+            </div>
+
+            <div style="padding: 16px; background: var(--admin-surface-alt); border-radius: 14px; border: 1px solid var(--admin-border);">
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">ACTIVE PARTICIPATION</span>
+              <strong style="font-size: 1.5rem; color: var(--ec-info);">45</strong>
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">seniors recorded</span>
+            </div>
+
+            <div style="padding: 16px; background: var(--admin-surface-alt); border-radius: 14px; border: 1px solid var(--admin-border);">
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">NEEDS ATTENTION</span>
+              <strong style="font-size: 1.5rem; color: var(--ec-warning);">4</strong>
+              <span style="font-size: 0.75rem; color: var(--admin-text-subtle); display: block;">gentle rest advised</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.8rem; color: var(--admin-text-subtle); font-style: italic; border-top: 1px solid var(--admin-border); padding-top: 10px;">
+            Based on observations recorded by the ElderCare care team. Non-medical observations intended for family comfort and care coordination.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- 11. FAMILY UPDATES & 14. RECENT MESSAGES (GRID 2COL) -->
+      <section class="admin-grid-2col">
+        
+        <!-- 11. Family Updates -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Recent Family Updates</h3>
+              <span class="admin-card-subtitle">Broadcasts &amp; daily logs sent to family portals</span>
+            </div>
+            <button class="btn-admin btn-admin-secondary sm" data-quick-action="send-update">
+              Send Update
+            </button>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            
+            <div style="padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <strong style="font-size: 0.88rem; color: var(--admin-text-main);">Lakshmi Devi (Preteka)</strong>
+                <span style="font-size: 0.72rem; color: var(--admin-text-subtle);">11:45 AM</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--admin-text-muted);">
+                "Lakshmi participated actively in today's music session and chair yoga with wonderful cheerfulness."
+              </p>
+              <span class="admin-badge success" style="margin-top: 6px;">Delivered &amp; Read</span>
+            </div>
+
+            <div style="padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <strong style="font-size: 0.88rem; color: var(--admin-text-main);">Ramanathan K. (Anitha)</strong>
+                <span style="font-size: 0.72rem; color: var(--admin-text-subtle);">11:15 AM</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--admin-text-muted);">
+                "Ravi enjoyed the morning chess session, completed all memory puzzles, and had a healthy lunch."
+              </p>
+              <span class="admin-badge success" style="margin-top: 6px;">Delivered &amp; Read</span>
+            </div>
+
+            <div style="padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <strong style="font-size: 0.88rem; color: var(--admin-text-main);">Meenakshi Ammal (Ramesh)</strong>
+                <span style="font-size: 0.72rem; color: var(--admin-text-subtle);">10:30 AM</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--admin-text-muted);">
+                "Meena joined the creative activity, enjoyed her morning herbal tea, and is resting well."
+              </p>
+              <span class="admin-badge purple" style="margin-top: 6px;">Delivered</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 14. Recent Messages -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Recent Messages</h3>
+              <span class="admin-card-subtitle">Inquiries from family members</span>
+            </div>
+            <a href="messages.html" class="admin-card-link">
+              <span>View All Messages</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            
+            <a href="messages.html?id=MSG-001" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <div class="admin-user-avatar" style="width: 36px; height: 36px;">P</div>
+                <div>
+                  <span class="admin-cell-name">Preteka</span>
+                  <span class="admin-cell-sub">"Could you share this week's activity report?"</span>
+                </div>
+              </div>
+              <div style="text-align: end;">
+                <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">11:42 AM</span>
+                <span class="admin-badge purple" style="margin-top: 2px;">New</span>
+              </div>
+            </a>
+
+            <a href="messages.html?id=MSG-002" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <div class="admin-user-avatar" style="width: 36px; height: 36px;">A</div>
+                <div>
+                  <span class="admin-cell-name">Anitha Sharma</span>
+                  <span class="admin-cell-sub">"Please confirm tomorrow's morning pick-up schedule."</span>
+                </div>
+              </div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle);">10:15 AM</span>
+            </a>
+
+            <a href="messages.html?id=MSG-003" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border);">
+              <div class="admin-user-cell">
+                <div class="admin-user-avatar" style="width: 36px; height: 36px;">R</div>
+                <div>
+                  <span class="admin-cell-name">Ramesh Kumar</span>
+                  <span class="admin-cell-sub">"Thank you for the warm update regarding her progress."</span>
+                </div>
+              </div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle);">Yesterday</span>
+            </a>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 12. REPORTS & 13. BILLING (GRID 2COL) -->
+      <section class="admin-grid-2col">
+        
+        <!-- 12. Reports Overview -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Reports Overview</h3>
+              <span class="admin-card-subtitle">Operational summaries &amp; logs</span>
+            </div>
+            <a href="reports.html" class="admin-card-link">
+              <span>All Reports</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div style="padding: 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="admin-badge purple" style="font-size: 0.7rem; margin-bottom: 6px;">Attendance</span>
+                <h4 style="font-size: 0.92rem; color: var(--admin-text-main); margin-bottom: 4px;">Daily Attendance Sheet</h4>
+                <span style="font-size: 0.75rem; color: var(--admin-text-subtle);">94 Records • 07 Oct</span>
+              </div>
+              <div style="margin-top: 12px; display: flex; gap: 6px;">
+                <button class="btn-admin btn-admin-secondary sm" onclick="simulatedViewReport('REP-001')">View</button>
+                <button class="btn-admin btn-admin-primary sm" onclick="simulatedDownloadReport('REP-001')">PDF</button>
+              </div>
+            </div>
+
+            <div style="padding: 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="admin-badge purple" style="font-size: 0.7rem; margin-bottom: 6px;">Activity</span>
+                <h4 style="font-size: 0.92rem; color: var(--admin-text-main); margin-bottom: 4px;">Weekly Participation</h4>
+                <span style="font-size: 0.75rem; color: var(--admin-text-subtle);">128 Records • Oct 05</span>
+              </div>
+              <div style="margin-top: 12px; display: flex; gap: 6px;">
+                <button class="btn-admin btn-admin-secondary sm" onclick="simulatedViewReport('REP-002')">View</button>
+                <button class="btn-admin btn-admin-primary sm" onclick="simulatedDownloadReport('REP-002')">PDF</button>
+              </div>
+            </div>
+
+            <div style="padding: 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="admin-badge purple" style="font-size: 0.7rem; margin-bottom: 6px;">Wellness</span>
+                <h4 style="font-size: 0.92rem; color: var(--admin-text-main); margin-bottom: 4px;">Monthly Wellness Log</h4>
+                <span style="font-size: 0.75rem; color: var(--admin-text-subtle);">340 Logs • Sep 30</span>
+              </div>
+              <div style="margin-top: 12px; display: flex; gap: 6px;">
+                <button class="btn-admin btn-admin-secondary sm" onclick="simulatedViewReport('REP-003')">View</button>
+                <button class="btn-admin btn-admin-primary sm" onclick="simulatedDownloadReport('REP-003')">PDF</button>
+              </div>
+            </div>
+
+            <div style="padding: 14px; background: var(--admin-surface-alt); border-radius: 12px; border: 1px solid var(--admin-border); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="admin-badge purple" style="font-size: 0.7rem; margin-bottom: 6px;">Monthly Digest</span>
+                <h4 style="font-size: 0.92rem; color: var(--admin-text-main); margin-bottom: 4px;">Center Operations</h4>
+                <span style="font-size: 0.75rem; color: var(--admin-text-subtle);">Comprehensive • Sep 30</span>
+              </div>
+              <div style="margin-top: 12px; display: flex; gap: 6px;">
+                <button class="btn-admin btn-admin-secondary sm" onclick="simulatedViewReport('REP-006')">View</button>
+                <button class="btn-admin btn-admin-primary sm" onclick="simulatedDownloadReport('REP-006')">PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Billing Overview -->
+        <div class="admin-section-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title-group">
+              <h3 class="admin-card-title">Billing Overview</h3>
+              <span class="admin-card-subtitle">Monthly financial collections &amp; invoices</span>
+            </div>
+            <a href="billing.html" class="admin-card-link">
+              <span>All Transactions</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12l4-4-4-4"/></svg>
+            </a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 14px; background: var(--admin-surface-alt); border-radius: 14px; margin-bottom: 12px;">
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">TOTAL REVENUE</span>
+              <strong style="font-size: 1.2rem; color: var(--admin-text-main);">₹8,40,000</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">COLLECTED</span>
+              <strong style="font-size: 1.2rem; color: var(--ec-success);">₹7,95,000</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">PENDING</span>
+              <strong style="font-size: 1.2rem; color: var(--ec-warning);">₹45,000</strong>
+            </div>
+          </div>
+
+          <div class="admin-table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Family</th>
+                  <th>Service</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Preteka</td>
+                  <td>Day Care</td>
+                  <td><strong>₹12,500</strong></td>
+                  <td><span class="admin-badge success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Anitha Sharma</td>
+                  <td>Senior Activity</td>
+                  <td><strong>₹8,500</strong></td>
+                  <td><span class="admin-badge success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Karthik V.</td>
+                  <td>Meals &amp; Nutrition</td>
+                  <td><strong>₹5,500</strong></td>
+                  <td><span class="admin-badge warning">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 15. QUICK ACTIONS SECTION -->
+      <section class="admin-section-card">
+        <div class="admin-card-header">
+          <div class="admin-card-title-group">
+            <h3 class="admin-card-title">Quick Actions</h3>
+            <span class="admin-card-subtitle">Common administrative workflows</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+          <button class="btn-admin btn-admin-outline" data-quick-action="add-senior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+            <span>Add Senior</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="add-user">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            <span>Add User</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="create-enrollment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+            <span>Create Enrollment</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="add-service">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Add Service</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="record-attendance">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span>Record Attendance</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="add-activity">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <span>Add Activity</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="create-report">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span>Create Report</span>
+          </button>
+
+          <button class="btn-admin btn-admin-outline" data-quick-action="send-update">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Family Update</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 72. ADMIN DASHBOARD FOOTER -->
+    <footer class="admin-footer">
+      <div class="admin-footer-inner">
+        <span>&copy; 2026 ElderCare • Senior Day Care &amp; Activity Center Management Portal</span>
+        <div class="admin-footer-links">
+          <a href="../index.html">Public Website</a>
+          <a href="../contact.html">Support</a>
+          <a href="settings.html">System Settings</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ====================================================================
+       MODALS FOR QUICK ACTIONS
+       ==================================================================== -->
+  
+  <!-- Add Senior Modal -->
+  <div class="admin-modal" id="modalAddSenior" role="dialog" aria-hidden="true">
+    <div class="admin-modal-backdrop"></div>
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Add New Senior</h3>
+        <button class="admin-modal-close-btn" data-modal-close>&times;</button>
+      </div>
+      <form id="formAddSenior">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Senior Full Name <span class="req">*</span></label>
+            <input type="text" id="addSeniorName" class="admin-form-input" placeholder="e.g. Radhakrishnan S." required>
+          </div>
+          <div class="admin-form-grid">
+            <div class="admin-form-group">
+              <label class="admin-form-label">Age <span class="req">*</span></label>
+              <input type="number" id="addSeniorAge" class="admin-form-input" placeholder="72" required>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-form-label">Gender <span class="req">*</span></label>
+              <select id="addSeniorGender" class="admin-form-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="admin-form-grid">
+            <div class="admin-form-group">
+              <label class="admin-form-label">Family Contact Name <span class="req">*</span></label>
+              <input type="text" id="addSeniorFamily" class="admin-form-input" placeholder="e.g. Preteka" required>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-form-label">Family Phone <span class="req">*</span></label>
+              <input type="text" id="addSeniorPhone" class="admin-form-input" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Enrolled Service <span class="req">*</span></label>
+            <select id="addSeniorService" class="admin-form-select">
+              <option value="day-care">Day Care &amp; Companionship</option>
+              <option value="activity-programs">Senior Activity Programs</option>
+              <option value="wellness-checkins">Wellness &amp; Daily Check-ins</option>
+              <option value="meals-nutrition">Meals &amp; Nutrition Support</option>
+              <option value="family-support">Family Support &amp; Updates</option>
+              <option value="personalised-care">Personalised Senior Care</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Dietary &amp; Care Preferences</label>
+            <input type="text" id="addSeniorDiet" class="admin-form-input" placeholder="e.g. Vegetarian, low sodium, chamomile tea">
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" data-modal-close>Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Add Senior</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add User Modal -->
+  <div class="admin-modal" id="modalAddUser" role="dialog" aria-hidden="true">
+    <div class="admin-modal-backdrop"></div>
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Add Family Account</h3>
+        <button class="admin-modal-close-btn" data-modal-close>&times;</button>
+      </div>
+      <form id="formAddUser">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Full Name <span class="req">*</span></label>
+            <input type="text" id="addUserName" class="admin-form-input" placeholder="e.g. Anitha Sharma" required>
+          </div>
+          <div class="admin-form-grid">
+            <div class="admin-form-group">
+              <label class="admin-form-label">Email Address <span class="req">*</span></label>
+              <input type="email" id="addUserEmail" class="admin-form-input" placeholder="family@example.com" required>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-form-label">Phone Number <span class="req">*</span></label>
+              <input type="text" id="addUserPhone" class="admin-form-input" placeholder="+91 98123 45678" required>
+            </div>
+          </div>
+          <div class="admin-form-grid">
+            <div class="admin-form-group">
+              <label class="admin-form-label">Relationship</label>
+              <select id="addUserRelationship" class="admin-form-select">
+                <option value="Daughter">Daughter</option>
+                <option value="Son">Son</option>
+                <option value="Spouse">Spouse</option>
+                <option value="Guardian">Guardian</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-form-label">Associated Senior</label>
+              <input type="text" id="addUserSenior" class="admin-form-input" placeholder="Senior Name">
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Selected Service</label>
+            <select id="addUserService" class="admin-form-select">
+              <option value="Day Care & Companionship">Day Care &amp; Companionship</option>
+              <option value="Senior Activity Programs">Senior Activity Programs</option>
+              <option value="Wellness & Daily Check-ins">Wellness &amp; Daily Check-ins</option>
+              <option value="Meals & Nutrition Support">Meals &amp; Nutrition Support</option>
+              <option value="Family Support & Updates">Family Support &amp; Updates</option>
+              <option value="Personalised Senior Care">Personalised Senior Care</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" data-modal-close>Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Send Family Update Modal -->
+  <div class="admin-modal" id="modalSendFamilyUpdate" role="dialog" aria-hidden="true">
+    <div class="admin-modal-backdrop"></div>
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Send Family Care Update</h3>
+        <button class="admin-modal-close-btn" data-modal-close>&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault(); showAdminToast('Care update sent to family'); closeAdminModal('modalSendFamilyUpdate'); this.reset();">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Select Senior <span class="req">*</span></label>
+            <select class="admin-form-select" required>
+              <option value="Lakshmi Devi">Lakshmi Devi (Family: Preteka)</option>
+              <option value="Ramanathan K.">Ramanathan K. (Family: Anitha Sharma)</option>
+              <option value="Meenakshi Ammal">Meenakshi Ammal (Family: Ramesh Kumar)</option>
+              <option value="Sundaram V.">Sundaram V. (Family: Geetha Sundar)</option>
+              <option value="Kalyani S.">Kalyani S. (Family: Karthik V.)</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Update Message <span class="req">*</span></label>
+            <textarea class="admin-form-textarea" placeholder="e.g. Lakshmi had an uplifting morning in our yoga circle and enjoyed a warm herbal tea..." required></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" data-modal-close>Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Send Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/admin-data.js"></script>
+  <script src="../js/admin-navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

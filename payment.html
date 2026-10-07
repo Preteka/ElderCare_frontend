@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Booking – ElderCare | Step 6: Payment</title>
+  <meta name="description" content="Complete your ElderCare booking with secure simulated payment options including UPI, Card, Net Banking and Demo mode.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="payment-section">
+      <div class="container">
+        
+        <div class="booking-form-header reveal-up">
+          <span class="section-eyebrow">STEP 06 OF 06 — CHECKOUT</span>
+          <h1>Complete Your Booking</h1>
+          <p>Review your booking amount and complete the payment to submit your ElderCare service request.</p>
+        </div>
+
+        <div class="payment-grid">
+
+          <!-- LEFT: PAYMENT METHOD SELECTION & FORMS -->
+          <div class="payment-left-col reveal-left">
+
+            <!-- DEMO NOTICE BANNER -->
+            <div class="payment-demo-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span><strong>Demo Payment:</strong> This is a frontend demonstration. No real payment will be processed.</span>
+            </div>
+
+            <!-- PAYMENT TABS -->
+            <div class="payment-method-tabs" role="tablist" aria-label="Payment Methods">
+              <button type="button" class="payment-tab-btn js-payment-tab active" data-target="panelUpi" role="tab" aria-selected="true" id="tabUpi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="M7 15h10M12 9v6"/>
+                </svg>
+                <span>UPI</span>
+              </button>
+
+              <button type="button" class="payment-tab-btn js-payment-tab" data-target="panelCard" role="tab" aria-selected="false" id="tabCard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                  <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+                <span>Credit / Debit Card</span>
+              </button>
+
+              <button type="button" class="payment-tab-btn js-payment-tab" data-target="panelNetBanking" role="tab" aria-selected="false" id="tabNetBanking">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 3l9 7H3l9-7z"/>
+                </svg>
+                <span>Net Banking</span>
+              </button>
+
+              <button type="button" class="payment-tab-btn js-payment-tab" data-target="panelDemo" role="tab" aria-selected="false" id="tabDemo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <span>Instant Demo</span>
+              </button>
+            </div>
+
+            <!-- TAB 1: UPI PAYMENT FORM -->
+            <div class="payment-method-panel active" id="panelUpi" role="tabpanel" aria-labelledby="tabUpi">
+              <div class="form-card">
+                <h2 class="form-card-title">Pay via UPI</h2>
+                <form id="upiPaymentForm" novalidate>
+                  <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label class="form-label" for="upiId">UPI ID / Virtual Payment Address <span class="req">*</span></label>
+                    <input type="text" id="upiId" class="form-input" placeholder="name@upi or mobile@okhdfcbank" value="family@okaxis">
+                    <span class="form-error" id="upiIdError"></span>
+                    <span class="form-hint">Accepted apps: Google Pay, PhonePe, Paytm, BHIM</span>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 50px;" id="upiSubmitBtn">
+                    <span id="payUpiBtnText">Pay ₹12,500</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- TAB 2: CARD PAYMENT FORM -->
+            <div class="payment-method-panel" id="panelCard" role="tabpanel" aria-labelledby="tabCard">
+              <div class="form-card">
+                <h2 class="form-card-title">Credit or Debit Card</h2>
+                <form id="cardPaymentForm" novalidate>
+                  <div class="form-group" style="margin-bottom: 1.2rem;">
+                    <label class="form-label" for="cardNumber">Card Number <span class="req">*</span></label>
+                    <input type="text" id="cardNumber" class="form-input" placeholder="4532 •••• •••• 8912" maxlength="19" value="4532 8901 2345 6789">
+                    <span class="form-error" id="cardNumberError"></span>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom: 1.2rem;">
+                    <label class="form-label" for="cardName">Name on Card <span class="req">*</span></label>
+                    <input type="text" id="cardName" class="form-input" placeholder="e.g. Rajesh Ramanathan" value="Rajesh Ramanathan">
+                    <span class="form-error" id="cardNameError"></span>
+                  </div>
+
+                  <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+                    <div class="form-group">
+                      <label class="form-label" for="cardExpiry">Expiry Date <span class="req">*</span></label>
+                      <input type="text" id="cardExpiry" class="form-input" placeholder="MM / YY" maxlength="7" value="12/28">
+                      <span class="form-error" id="cardExpiryError"></span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="cardCvv">CVV / CVC <span class="req">*</span></label>
+                      <input type="password" id="cardCvv" class="form-input" placeholder="•••" maxlength="4" value="888">
+                      <span class="form-error" id="cardCvvError"></span>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 50px;" id="cardSubmitBtn">
+                    <span id="payCardBtnText">Pay ₹12,500</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- TAB 3: NET BANKING FORM -->
+            <div class="payment-method-panel" id="panelNetBanking" role="tabpanel" aria-labelledby="tabNetBanking">
+              <div class="form-card">
+                <h2 class="form-card-title">Net Banking</h2>
+                <form id="netBankingPaymentForm" novalidate>
+                  <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label class="form-label" for="bankSelect">Select Bank <span class="req">*</span></label>
+                    <select id="bankSelect" class="form-select">
+                      <option value="">Choose your bank</option>
+                      <option value="SBI" selected>State Bank of India (SBI)</option>
+                      <option value="HDFC Bank">HDFC Bank</option>
+                      <option value="ICICI Bank">ICICI Bank</option>
+                      <option value="Axis Bank">Axis Bank</option>
+                      <option value="Kotak Mahindra Bank">Kotak Mahindra Bank</option>
+                      <option value="Punjab National Bank">Punjab National Bank</option>
+                      <option value="Other">Other Bank</option>
+                    </select>
+                    <span class="form-error" id="bankSelectError"></span>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 50px;" id="netBankingSubmitBtn">
+                    <span id="payNetBankingBtnText">Pay ₹12,500</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- TAB 4: DEMO ONE-CLICK PAYMENT -->
+            <div class="payment-method-panel" id="panelDemo" role="tabpanel" aria-labelledby="tabDemo">
+              <div class="form-card">
+                <h2 class="form-card-title">Demo Simulation</h2>
+                <p style="font-size: 0.92rem; color: var(--ec-body); line-height: 1.65; margin-bottom: 1.5rem;">
+                  Click the button below to simulate an immediate successful payment and generate your demo booking receipt.
+                </p>
+                <form id="demoPaymentForm">
+                  <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 52px;" id="demoSubmitBtn">
+                    <span>Simulate Successful Payment</span>
+                    <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- TRUST & SECURITY UI -->
+            <div class="payment-secure-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <span><strong>Secure Demo Payment</strong> — Your booking information is handled securely within this frontend demonstration.</span>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+              <a href="review.html" class="btn btn-outline" style="min-height: 44px; display: inline-flex;">
+                <span>← Back to Review Details</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: BOOKING ORDER SUMMARY -->
+          <div class="payment-right-col reveal-right">
+            <div class="payment-order-summary">
+              
+              <h2 class="payment-summary-title">Booking Summary</h2>
+
+              <div class="payment-service-tag">
+                <div class="pt-label">Care Service</div>
+                <div class="pt-value" id="paySumServiceName">Day Care &amp; Companionship</div>
+              </div>
+
+              <div class="payment-summary-rows">
+                <div class="payment-summary-row">
+                  <span class="ps-label">Senior:</span>
+                  <span class="ps-value" id="paySumSeniorName">Ramanathan Sundaram</span>
+                </div>
+
+                <div class="payment-summary-row">
+                  <span class="ps-label">Schedule:</span>
+                  <span class="ps-value" id="paySumScheduleDays">Monday – Friday</span>
+                </div>
+
+                <div class="payment-summary-row">
+                  <span class="ps-label">Time Slot:</span>
+                  <span class="ps-value" id="paySumScheduleTime">Full Day (8:30 AM)</span>
+                </div>
+              </div>
+
+              <div class="payment-summary-divider"></div>
+
+              <div class="payment-summary-rows">
+                <div class="payment-summary-row">
+                  <span class="ps-label">Monthly Service Fee</span>
+                  <span class="ps-value" id="paySumServiceFee">₹12,000</span>
+                </div>
+
+                <div class="payment-summary-row">
+                  <span class="ps-label">One-Time Registration Fee</span>
+                  <span class="ps-value" id="paySumRegFee">₹500</span>
+                </div>
+              </div>
+
+              <div class="payment-summary-divider"></div>
+
+              <div class="payment-summary-total">
+                <span class="ps-label">Total Amount:</span>
+                <span class="ps-value" id="paySumTotal">₹12,500</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/payment.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

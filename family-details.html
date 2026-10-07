@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Details – ElderCare | Step 2: Primary Contact</title>
+  <meta name="description" content="Provide primary family contact details and emergency contact information for senior care enrollment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="booking-page-section">
+      <div class="container">
+        <div class="booking-page-inner">
+
+          <div class="booking-form-header reveal-up">
+            <span class="section-eyebrow">STEP 02 OF 06</span>
+            <h1>Tell Us About Your Family</h1>
+            <p>These details help us understand who to contact and how we can best support your loved one.</p>
+          </div>
+
+          <form id="familyDetailsForm" novalidate>
+
+            <!-- PRIMARY CONTACT CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Primary Family Contact</h2>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="familyName">Full Name <span class="req">*</span></label>
+                  <input type="text" id="familyName" class="form-input" placeholder="e.g. Rajesh Ramanathan" autocomplete="name">
+                  <span class="form-error" id="familyNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="familyRelationship">Relationship to Senior <span class="req">*</span></label>
+                  <select id="familyRelationship" class="form-select">
+                    <option value="">Select relationship</option>
+                    <option value="Son">Son</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Spouse">Spouse / Partner</option>
+                    <option value="Daughter-in-law">Daughter-in-law</option>
+                    <option value="Son-in-law">Son-in-law</option>
+                    <option value="Grandchild">Grandchild</option>
+                    <option value="Legal Guardian">Legal Guardian</option>
+                    <option value="Other Family Member">Other Family Member</option>
+                  </select>
+                  <span class="form-error" id="familyRelationshipError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="familyEmail">Email Address <span class="req">*</span></label>
+                  <input type="email" id="familyEmail" class="form-input" placeholder="rajesh@example.com" autocomplete="email">
+                  <span class="form-error" id="familyEmailError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="familyPhone">Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="familyPhone" class="form-input" placeholder="+91 98765 43210" autocomplete="tel">
+                  <span class="form-error" id="familyPhoneError"></span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="familyAltPhone">Alternate Phone Number (Optional)</label>
+                  <input type="tel" id="familyAltPhone" class="form-input" placeholder="+91 91234 56780">
+                  <span class="form-error" id="familyAltPhoneError"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESIDENTIAL ADDRESS CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Residential Address</h2>
+
+              <div class="form-group full" style="margin-bottom: 1.2rem;">
+                <label class="form-label" for="familyAddress">Street Address <span class="req">*</span></label>
+                <input type="text" id="familyAddress" class="form-input" placeholder="e.g. 42, Orchid Meadows, Avinashi Road" autocomplete="street-address">
+                <span class="form-error" id="familyAddressError"></span>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="familyCity">City <span class="req">*</span></label>
+                  <input type="text" id="familyCity" class="form-input" placeholder="Coimbatore" value="Coimbatore">
+                  <span class="form-error" id="familyCityError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="familyState">State <span class="req">*</span></label>
+                  <input type="text" id="familyState" class="form-input" placeholder="Tamil Nadu" value="Tamil Nadu">
+                  <span class="form-error" id="familyStateError"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- EMERGENCY CONTACT & PREFERRED METHOD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Emergency Contact &amp; Communication Preferences</h2>
+
+              <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="emergencyName">Emergency Contact Name <span class="req">*</span></label>
+                  <input type="text" id="emergencyName" class="form-input" placeholder="e.g. Priya Ramanathan">
+                  <span class="form-error" id="emergencyNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="emergencyPhone">Emergency Contact Phone <span class="req">*</span></label>
+                  <input type="tel" id="emergencyPhone" class="form-input" placeholder="+91 98450 12345">
+                  <span class="form-error" id="emergencyPhoneError"></span>
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label">Preferred Contact Method for Daily Updates</label>
+                <div class="radio-group" id="preferredContactGroup">
+                  <label class="radio-option js-contact-method-opt selected">
+                    <input type="radio" name="preferredContact" value="Phone" checked>
+                    <span>Phone Call</span>
+                  </label>
+                  <label class="radio-option js-contact-method-opt">
+                    <input type="radio" name="preferredContact" value="WhatsApp">
+                    <span>WhatsApp</span>
+                  </label>
+                  <label class="radio-option js-contact-method-opt">
+                    <input type="radio" name="preferredContact" value="Email">
+                    <span>Email</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- FORM NAVIGATION -->
+            <div class="form-nav-row reveal-up">
+              <a href="service-details.html" class="btn btn-outline" id="familyBackBtn">
+                <span>← Back to Service Details</span>
+              </a>
+              <button type="submit" class="btn btn-primary" id="familySubmitBtn">
+                <span>Continue to Senior Details</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/family-details.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

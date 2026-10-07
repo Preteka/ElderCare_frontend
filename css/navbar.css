@@ -1,0 +1,753 @@
+/* ==========================================================================
+   ELDERCARE - NAVBAR COMPONENT STYLES
+   Design System: Calm, Editorial Senior-Care Aesthetic
+   Includes: Profile Dropdown, Theme Toggle, RTL Switcher, Mobile Drawer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SITE HEADER CONTAINER
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(48, 35, 71, 0.08);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. BRAND LOGO
+   -------------------------------------------------------------------------- */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  max-width: 440px;
+}
+
+.brand-logo img {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--dark-purple);
+  letter-spacing: -0.04em;
+}
+
+.brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted-text);
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+
+.logo-icon-wrap {
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.logo-icon-wrap img,
+.logo-emblem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-icon-wrap svg,
+.logo-text-group {
+  display: none;
+}
+
+[data-theme="dark"] .brand-name {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .brand-tagline {
+  color: #DDD4E5;
+}
+
+/* --------------------------------------------------------------------------
+   3. DESKTOP NAVIGATION LINKS
+   -------------------------------------------------------------------------- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--body-text);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7250A5, #A984D6);
+  border-radius: 2px;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+  color: var(--primary-purple);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER CONTROLS (THEME, RTL, PROFILE, HAMBURGER)
+   -------------------------------------------------------------------------- */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* Base control button style */
+.ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--body-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0;
+}
+
+.ctrl-btn:hover {
+  background-color: var(--very-light-lavender);
+  color: var(--primary-purple);
+  transform: translateY(-1px);
+}
+
+.ctrl-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   5. THEME TOGGLE (LIGHT / DARK)
+   -------------------------------------------------------------------------- */
+.icon-moon { display: block; }
+.icon-sun  { display: none; }
+
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun  { display: block; }
+
+/* --------------------------------------------------------------------------
+   6. RTL / LTR TOGGLE
+   -------------------------------------------------------------------------- */
+.icon-ltr { display: block; }
+.icon-rtl { display: none; }
+
+html[dir="rtl"] .icon-ltr { display: none; }
+html[dir="rtl"] .icon-rtl { display: block; }
+
+/* --------------------------------------------------------------------------
+   7. PROFILE DROPDOWN
+   -------------------------------------------------------------------------- */
+.profile-wrap {
+  position: relative;
+}
+
+.profile-btn {
+  border: 1px solid var(--border-color);
+  background-color: var(--very-light-lavender);
+  color: var(--primary-purple);
+}
+
+.profile-btn:hover,
+.profile-btn[aria-expanded="true"] {
+  background-color: var(--soft-lavender);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 230px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow-elevated);
+  padding: 0.6rem 0;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.97);
+  transform-origin: top right;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+}
+
+.profile-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* RTL profile dropdown alignment */
+html[dir="rtl"] .profile-dropdown {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.dropdown-header {
+  padding: 0.75rem 1.1rem 0.65rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.35rem;
+}
+
+.dropdown-header-title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-purple);
+  line-height: 1.2;
+}
+
+.dropdown-header-role {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  margin-top: 2px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0.35rem 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--body-text);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, padding-inline-start 0.15s ease;
+}
+
+.dropdown-item svg {
+  width: 17px;
+  height: 17px;
+  color: var(--muted-text);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--very-light-lavender);
+  color: var(--primary-purple);
+  padding-inline-start: 1.3rem;
+}
+
+.dropdown-item:hover svg {
+  color: var(--primary-purple);
+}
+
+/* --------------------------------------------------------------------------
+   8. MOBILE HAMBURGER BUTTON
+   -------------------------------------------------------------------------- */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-toggle .bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--dark-purple);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hamburger active state */
+.mobile-toggle.is-active .bar-1 { transform: translateY(7px) rotate(45deg); }
+.mobile-toggle.is-active .bar-2 { opacity: 0; transform: scale(0); }
+.mobile-toggle.is-active .bar-3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* --------------------------------------------------------------------------
+   9. MOBILE DRAWER
+   -------------------------------------------------------------------------- */
+body.menu-open { overflow: hidden; }
+
+.mobile-nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: 999;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-drawer.is-open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .mobile-nav-drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+html[dir="rtl"] .mobile-nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+.mobile-nav-inner {
+  padding: 0 1.5rem 2.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Mobile header row */
+.mobile-nav-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.mobile-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--body-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-close-btn:hover {
+  background-color: var(--very-light-lavender);
+  color: var(--primary-purple);
+}
+
+.mobile-close-btn svg { width: 20px; height: 20px; }
+
+/* Mobile nav list */
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--body-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(232, 225, 238, 0.55);
+  transition: color 0.2s ease, padding-inline-start 0.2s ease;
+}
+
+.mobile-nav-link:last-child { border-bottom: none; }
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--primary-purple);
+  padding-inline-start: 6px;
+}
+
+/* Mobile section divider */
+.mobile-section-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem 0;
+}
+
+.mobile-section-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+  padding: 0 0 0.75rem;
+}
+
+/* Mobile utility control buttons */
+.mobile-controls-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.mobile-ctrl-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  background: var(--very-light-lavender);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--body-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-align: start;
+}
+
+.mobile-ctrl-btn:hover {
+  background-color: var(--soft-lavender);
+  color: var(--primary-purple);
+  border-color: var(--primary-purple);
+}
+
+.mobile-ctrl-btn .ctrl-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. DARK MODE - NAVBAR (SOFT PLUM + DUSTY LAVENDER THEME)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .site-header {
+  background-color: #292333;
+  border-bottom: 1px solid #574B62;
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .logo-title {
+  color: #F7F2FA;
+}
+
+[data-theme="dark"] .logo-title .accent-text {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .logo-tagline {
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .nav-link::after {
+  background: linear-gradient(90deg, #A984D6, #BEA0E2);
+}
+
+[data-theme="dark"] .ctrl-btn {
+  color: #DDD4E5;
+  border: 1px solid transparent;
+}
+
+[data-theme="dark"] .ctrl-btn:hover {
+  background-color: rgba(169, 132, 214, 0.12);
+  border-color: rgba(169, 132, 214, 0.25);
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .mobile-toggle .bar {
+  background-color: #F7F2FA;
+}
+
+[data-theme="dark"] .mobile-toggle:hover {
+  background-color: rgba(169, 132, 214, 0.12);
+}
+
+[data-theme="dark"] .profile-btn {
+  background-color: #40364D;
+  border: 1px solid #665873;
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .profile-btn:hover,
+[data-theme="dark"] .profile-btn[aria-expanded="true"] {
+  background-color: rgba(169, 132, 214, 0.18);
+  border-color: #A984D6;
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .profile-dropdown {
+  background-color: #40364D;
+  border: 1px solid #665873;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.30);
+}
+
+[data-theme="dark"] .dropdown-header {
+  border-bottom-color: #574B62;
+}
+
+[data-theme="dark"] .dropdown-header-title {
+  color: #F7F2FA;
+}
+
+[data-theme="dark"] .dropdown-header-role {
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .dropdown-divider {
+  background-color: #574B62;
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .dropdown-item svg {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background-color: #4A3E58;
+  color: #F7F2FA;
+}
+
+[data-theme="dark"] .dropdown-item:hover svg {
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .mobile-nav-drawer {
+  background-color: #292333;
+  border-right: 1px solid #574B62;
+}
+
+[data-theme="dark"] html[dir="rtl"] .mobile-nav-drawer {
+  border-left: 1px solid #574B62;
+  border-right: none;
+}
+
+[data-theme="dark"] .mobile-nav-topbar {
+  border-bottom-color: #574B62;
+}
+
+[data-theme="dark"] .mobile-close-btn {
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .mobile-close-btn:hover {
+  background-color: rgba(169, 132, 214, 0.12);
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .mobile-nav-link {
+  color: #DDD4E5;
+  border-bottom-color: #574B62;
+}
+
+[data-theme="dark"] .mobile-nav-link:hover {
+  background-color: #4A3E58;
+  color: #BEA0E2;
+}
+
+[data-theme="dark"] .mobile-nav-link.active {
+  color: #BEA0E2;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .mobile-section-divider {
+  background-color: #574B62;
+}
+
+[data-theme="dark"] .mobile-section-label {
+  color: #B7ACBF;
+}
+
+[data-theme="dark"] .mobile-ctrl-btn {
+  background-color: #40364D;
+  border-color: #665873;
+  color: #DDD4E5;
+}
+
+[data-theme="dark"] .mobile-ctrl-btn:hover {
+  background-color: #4A3E58;
+  color: #BEA0E2;
+  border-color: #A984D6;
+}
+
+[data-theme="dark"] .mobile-ctrl-btn .ctrl-icon {
+  color: #BEA0E2;
+}
+
+/* --------------------------------------------------------------------------
+   11. RTL LAYOUT ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .header-container { flex-direction: row-reverse; }
+html[dir="rtl"] .header-controls  { flex-direction: row-reverse; }
+html[dir="rtl"] .nav-list         { flex-direction: row-reverse; }
+html[dir="rtl"] .brand-logo       { flex-direction: row-reverse; }
+html[dir="rtl"] .logo-text-group  { align-items: flex-end; }
+html[dir="rtl"] .nav-link::after  { left: auto; right: 0; }
+html[dir="rtl"] .mobile-nav-topbar { flex-direction: row-reverse; }
+html[dir="rtl"] .mobile-ctrl-btn  { flex-direction: row-reverse; text-align: end; }
+html[dir="rtl"] .dropdown-item    { flex-direction: row-reverse; }
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE - TABLET (max 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .nav-list { gap: 1.4rem; }
+  .nav-link { font-size: 0.88rem; }
+  .header-container { padding: 0 1.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVE - MOBILE (max 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .nav-menu { display: none; }
+  .mobile-toggle { display: flex; }
+  .mobile-nav-drawer { display: block; }
+
+  .header-container {
+    padding: 0 1.25rem;
+    height: 64px;
+  }
+
+  .logo-title { font-size: 1.35rem; }
+  .logo-tagline { display: none; }
+  .logo-icon-wrap { width: 36px; height: 36px; }
+
+  /* Hide desktop-only controls on small mobile - show in hamburger */
+  .ctrl-btn.ctrl-btn--dir { display: none; }
+  #themeToggleBtn { display: inline-flex; }
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE - SMALL MOBILE (max 479px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 479px) {
+  .header-container { padding: 0 1rem; gap: 0.5rem; }
+  .ctrl-btn { width: 34px; height: 34px; }
+  .ctrl-icon { width: 17px; height: 17px; }
+}

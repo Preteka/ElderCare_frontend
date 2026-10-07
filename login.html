@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Login – ElderCare | Care Designed Around Every Senior</title>
+  <meta name="description" content="Sign in to your ElderCare family portal to manage service bookings and care updates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+    <section class="auth-section">
+      <div class="auth-bg-decor" aria-hidden="true"></div>
+      <div class="auth-bg-decor-2" aria-hidden="true"></div>
+
+      <div class="auth-wrapper">
+        <a href="index.html" class="auth-logo-link" aria-label="ElderCare Homepage">
+          <img class="auth-logo" src="assets/logo/logo.png" alt="ElderCare logo" data-light-src="assets/logo/logo.png" data-dark-src="assets/logo/logo.png" />
+          <div class="auth-brand-text">
+            <span class="auth-brand-name">ElderCare</span>
+            <span class="auth-brand-tagline">SENIOR DAY CARE &amp; ACTIVITY CENTER</span>
+          </div>
+        </a>
+
+        <div class="auth-card">
+
+          <div class="booking-form-header" style="text-align: center; margin-bottom: 1.8rem;">
+            <span class="section-eyebrow">FAMILY ACCESS</span>
+            <h1 class="auth-card-heading">Let's Get Started</h1>
+            <p class="auth-card-desc">Sign in to continue with your ElderCare service booking.</p>
+          </div>
+
+          <!-- Demo Quick Notice -->
+          <div class="payment-demo-notice" style="margin-bottom: 1.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>Demo credentials pre-filled for quick access. Click <strong>Login</strong> to proceed.</span>
+          </div>
+
+          <form id="loginForm" novalidate>
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <label class="form-label" for="loginEmail">Email Address <span class="req">*</span></label>
+              <input type="email" id="loginEmail" class="form-input" placeholder="name@example.com" autocomplete="email">
+              <span class="form-error" id="loginEmailError"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label class="form-label" for="loginPassword">Password <span class="req">*</span></label>
+                <a href="#" class="auth-forgot-link" tabindex="-1">Forgot Password?</a>
+              </div>
+              <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" autocomplete="current-password">
+              <span class="form-error" id="loginPasswordError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="loginSubmitBtn">
+              <span>Login</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+            </button>
+          </form>
+
+          <div class="auth-divider">
+            <span class="auth-divider-text">NEW TO ELDERCARE?</span>
+          </div>
+
+          <p class="auth-switch-text">
+            Don't have an account? <a href="signup.html">Create Account</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

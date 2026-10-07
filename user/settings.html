@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings – ElderCare | Family Care Portal</title>
+  <meta name="description" content="Manage account preferences, appearance, notifications, and security for your ElderCare portal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/dashboard-responsive.css">
+  <script src="../js/dashboard-theme.js"></script>
+</head>
+<body class="dashboard-body">
+  <div class="dash-overlay" id="dashOverlay" aria-hidden="true"></div>
+
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-sidebar-brand">
+      <a href="../index.html" class="dash-brand-link"><div class="dash-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div><div class="dash-brand-text"><span class="dash-brand-title">Elder<span class="accent">Care</span></span><span class="dash-brand-subtitle">Family Portal</span></div></a>
+      <button class="dash-sidebar-close-btn" id="dashSidebarClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="dash-sidebar-nav">
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Main</span><ul class="dash-nav-list"><li class="dash-nav-item"><a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Dashboard</span></a></li></ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Care</span><ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>My Services</span></a></li>
+        <li class="dash-nav-item"><a href="schedule.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Schedule</span></a></li>
+        <li class="dash-nav-item"><a href="attendance.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Attendance</span></a></li>
+        <li class="dash-nav-item"><a href="activities.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span>Activities</span></a></li>
+        <li class="dash-nav-item"><a href="wellness.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Wellness</span></a></li>
+      </ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Insights</span><ul class="dash-nav-list"><li class="dash-nav-item"><a href="reports.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Reports</span></a></li></ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Account</span><ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="senior-profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Senior Profile</span></a></li>
+        <li class="dash-nav-item"><a href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg><span>My Profile</span></a></li>
+        <li class="dash-nav-item"><a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>Billing</span></a></li>
+        <li class="dash-nav-item"><a href="messages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span><span class="dash-nav-badge">1</span></a></li>
+        <li class="dash-nav-item"><a href="settings.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></a></li>
+      </ul></div>
+    </nav>
+    <div class="dash-sidebar-footer">
+      <a href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Help &amp; Support</span></a>
+      <button class="dash-logout-btn" id="dashLogoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar-left">
+        <button class="dash-sidebar-toggle-btn" id="dashSidebarToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <div class="dash-topbar-title-wrap">
+          <h1 class="dash-topbar-page-title">Settings</h1>
+          <span class="dash-topbar-breadcrumb">Account &gt; Settings</span>
+        </div>
+      </div>
+      <div class="dash-topbar-right">
+        <button class="dash-ctrl-btn" id="dashThemeBtn" title="Toggle Dark/Light Mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button class="dash-ctrl-btn" id="dashDirBtn" title="Toggle RTL/LTR Direction"><svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h12M3 18h9"/><polyline points="17 15 20 18 17 21"/></svg><svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 6H3M21 12H9M21 18H12"/><polyline points="7 15 4 18 7 21"/></svg></button>
+        <div style="position:relative;"><button class="dash-user-badge" id="dashUserBadge"><div class="dash-user-avatar">P</div><div class="dash-user-info"><span class="dash-user-name">Preteka</span><span class="dash-user-role">Family Member</span></div><svg class="dash-user-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dash-dropdown" id="dashUserDropdown" role="menu"><div class="dash-dropdown-header">My Account</div><a href="profile.html" class="dash-dropdown-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>My Profile</span></a><button type="button" class="dash-dropdown-item" id="dashDropLogout" style="color:#C0392B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></button></div></div>
+      </div>
+    </header>
+
+    <main class="dash-content">
+
+      <section class="dash-welcome-banner">
+        <div class="dash-welcome-botanical" aria-hidden="true"></div>
+        <div class="dash-welcome-text">
+          <span class="dash-welcome-eyebrow">Preferences &amp; Security</span>
+          <h2 class="dash-welcome-title">Portal Settings</h2>
+          <p class="dash-welcome-desc">Customize your portal display themes, alerts and notifications, update password, and manage your account credentials.</p>
+        </div>
+        <div class="dash-welcome-date-badge">
+          <div class="dash-welcome-date-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <div class="dash-welcome-date-text"><span class="dash-date-label">Portal Version</span><span class="dash-date-val">v2.4 Live</span></div>
+        </div>
+      </section>
+
+      <div class="dash-grid-2col">
+
+        <!-- DISPLAY & ACCESSIBILITY -->
+        <section class="dash-section-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Appearance &amp; Language</h3>
+            <span class="dash-status-pill success">Live Sync</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="dash-switch-row">
+              <div class="dash-switch-label">
+                <div class="dash-switch-title">Dark Theme</div>
+                <div class="dash-switch-desc">Sleek, eye-friendly contrast for evening or low-light environments.</div>
+              </div>
+              <label class="dash-toggle-switch">
+                <input type="checkbox" id="settingsThemeToggle">
+                <span class="dash-slider"></span>
+              </label>
+            </div>
+
+            <div class="dash-switch-row">
+              <div class="dash-switch-label">
+                <div class="dash-switch-title">Right-to-Left (RTL) Layout</div>
+                <div class="dash-switch-desc">Switch interface orientation for RTL languages like Arabic or Hebrew.</div>
+              </div>
+              <label class="dash-toggle-switch">
+                <input type="checkbox" id="settingsRtlToggle">
+                <span class="dash-slider"></span>
+              </label>
+            </div>
+
+            <div class="dash-switch-row">
+              <div class="dash-switch-label">
+                <div class="dash-switch-title">Senior-Friendly High Contrast</div>
+                <div class="dash-switch-desc">Enhances text borders and contrast for easier reading.</div>
+              </div>
+              <label class="dash-toggle-switch">
+                <input type="checkbox" id="settingsContrastToggle">
+                <span class="dash-slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOTIFICATION PREFERENCES -->
+        <section class="dash-section-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Notification Channels</h3>
+          </div>
+
+          <form id="notificationsForm" onsubmit="event.preventDefault(); showToast('Notification preferences saved successfully!');">
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <div class="dash-switch-row">
+                <div class="dash-switch-label">
+                  <div class="dash-switch-title">Daily Check-In &amp; Check-Out SMS</div>
+                  <div class="dash-switch-desc">Instant text alert when Lakshmi arrives at or departs the center.</div>
+                </div>
+                <label class="dash-toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="dash-slider"></span>
+                </label>
+              </div>
+
+              <div class="dash-switch-row">
+                <div class="dash-switch-label">
+                  <div class="dash-switch-title">Weekly Wellness Report Emails</div>
+                  <div class="dash-switch-desc">Receive every Friday evening with dietitian and physician observations.</div>
+                </div>
+                <label class="dash-toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="dash-slider"></span>
+                </label>
+              </div>
+
+              <div class="dash-switch-row">
+                <div class="dash-switch-label">
+                  <div class="dash-switch-title">Billing &amp; Invoice Reminders</div>
+                  <div class="dash-switch-desc">Get reminders 3 days before monthly renewal dates.</div>
+                </div>
+                <label class="dash-toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="dash-slider"></span>
+                </label>
+              </div>
+
+              <div class="dash-switch-row">
+                <div class="dash-switch-label">
+                  <div class="dash-switch-title">WhatsApp Care Coordinator Messages</div>
+                  <div class="dash-switch-desc">Real-time chat notifications from Nurse Meera on WhatsApp.</div>
+                </div>
+                <label class="dash-toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="dash-slider"></span>
+                </label>
+              </div>
+
+              <div style="margin-top:0.5rem;display:flex;justify-content:flex-end;">
+                <button type="submit" class="dash-btn-primary">Save Notifications</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- SECURITY & PASSWORD -->
+        <section class="dash-section-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Security &amp; Password</h3>
+          </div>
+
+          <form id="passwordChangeForm" onsubmit="handlePasswordChange(event)">
+            <div class="dash-form-grid" style="grid-template-columns:1fr;">
+              <div class="dash-form-group">
+                <label class="dash-label" for="currPass">Current Password</label>
+                <input type="password" id="currPass" class="dash-input" placeholder="••••••••" required>
+              </div>
+              <div class="dash-form-group">
+                <label class="dash-label" for="newPass">New Password</label>
+                <input type="password" id="newPass" class="dash-input" placeholder="At least 8 characters" minlength="8" required>
+              </div>
+              <div class="dash-form-group">
+                <label class="dash-label" for="confirmPass">Confirm New Password</label>
+                <input type="password" id="confirmPass" class="dash-input" placeholder="Repeat new password" required>
+              </div>
+            </div>
+
+            <div style="margin-top:1.2rem;display:flex;justify-content:flex-end;">
+              <button type="submit" class="dash-btn-primary">Update Password</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- DANGER ZONE & SESSION -->
+        <section class="dash-section-card" style="border-left: 4px solid #C0392B;">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title" style="color:#C0392B;">Account &amp; Sessions</h3>
+            <span class="dash-status-pill danger" style="background:#FDECEA;color:#C0392B;">Security</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:1.2rem;">
+            <div>
+              <h4 style="font-size:0.95rem;font-weight:700;color:var(--ec-heading);margin-bottom:0.3rem;">Active Logins</h4>
+              <p style="font-size:0.85rem;color:var(--ec-body);line-height:1.4;">Currently active on <strong>Chrome on Windows</strong> (This device). No unrecognized sessions detected.</p>
+            </div>
+
+            <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+              <button type="button" class="dash-btn-outline" onclick="showToast('Logged out of all other devices successfully.')">Log Out Other Devices</button>
+              <button type="button" class="dash-btn-outline" style="color:#C0392B;border-color:#E8C5C0;" onclick="handleFullLogout()">Log Out Now</button>
+            </div>
+
+            <div style="padding:1rem;background:var(--ec-lavender);border-radius:12px;border:1px solid var(--ec-border);margin-top:0.4rem;">
+              <div style="font-size:0.82rem;font-weight:700;color:var(--ec-heading);margin-bottom:0.2rem;">Need to pause or cancel membership?</div>
+              <p style="font-size:0.8rem;color:var(--ec-body);margin-bottom:0.6rem;">To request changes to Lakshmi Devi's enrollment plan, please connect with our care coordinator.</p>
+              <a href="messages.html" class="dash-btn-primary" style="font-size:0.8rem;padding:0.4rem 0.9rem;display:inline-block;text-decoration:none;">Message Coordinator</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+    <footer class="dash-footer">
+      <div>&copy; 2026 ElderCare Senior Day Care &amp; Activity Center. All rights reserved.</div>
+      <div class="dash-footer-links"><a href="../about.html">About Us</a><a href="../contact.html">Support</a></div>
+    </footer>
+  </div>
+
+  <script src="../js/dashboard-data.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sync theme switch with current theme state
+      const themeToggle = document.getElementById('settingsThemeToggle');
+      const rtlToggle = document.getElementById('settingsRtlToggle');
+      const contrastToggle = document.getElementById('settingsContrastToggle');
+
+      const currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('eldercare-theme') || 'light';
+      if (themeToggle) {
+        themeToggle.checked = (currentTheme === 'dark');
+        themeToggle.addEventListener('change', function() {
+          const newTheme = this.checked ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('eldercare-theme', newTheme);
+          showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} theme`);
+        });
+      }
+
+      const currentDir = document.documentElement.getAttribute('dir') || localStorage.getItem('eldercare-direction') || 'ltr';
+      if (rtlToggle) {
+        rtlToggle.checked = (currentDir === 'rtl');
+        rtlToggle.addEventListener('change', function() {
+          const newDir = this.checked ? 'rtl' : 'ltr';
+          document.documentElement.setAttribute('dir', newDir);
+          localStorage.setItem('eldercare-direction', newDir);
+          showToast(`Switched layout to ${newDir.toUpperCase()}`);
+        });
+      }
+
+      if (contrastToggle) {
+        contrastToggle.addEventListener('change', function() {
+          if (this.checked) {
+            document.body.style.filter = 'contrast(115%)';
+            showToast('High Contrast Mode Enabled');
+          } else {
+            document.body.style.filter = '';
+            showToast('High Contrast Mode Disabled');
+          }
+        });
+      }
+    });
+
+    function handlePasswordChange(e) {
+      e.preventDefault();
+      const curr = document.getElementById('currPass').value;
+      const newP = document.getElementById('newPass').value;
+      const conf = document.getElementById('confirmPass').value;
+
+      if (newP !== conf) {
+        showToast('New passwords do not match! Please retry.');
+        return;
+      }
+      showToast('Password updated successfully!');
+      document.getElementById('passwordChangeForm').reset();
+    }
+
+    function handleFullLogout() {
+      showToast('Logging out Preteka...');
+      setTimeout(() => {
+        window.location.href = '../index.html';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service – ElderCare | Step 1: Select Service</title>
+  <meta name="description" content="Begin your ElderCare booking journey. Choose your personalized care service, schedule, and support package.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="booking-page-section">
+      <div class="container">
+        <div class="booking-page-inner">
+
+          <div class="booking-form-header reveal-up">
+            <span class="section-eyebrow">STEP 01 OF 06</span>
+            <h1>Confirm Your Selected Service</h1>
+            <p>You have selected the following care program. You can change your choice below or continue to family details.</p>
+          </div>
+
+          <div class="form-card reveal-up">
+            <h2 class="form-card-title">Selected Care Program</h2>
+
+            <div class="form-group full" style="margin-bottom: 1.5rem;">
+              <label class="form-label" for="serviceSelect">Choose or Switch Program</label>
+              <select id="serviceSelect" class="form-select">
+                <!-- Populated dynamically by JS -->
+              </select>
+            </div>
+
+            <div class="schedule-summary-card" id="bookingSelectedServiceCard" style="margin-top: 0;">
+              <h3 class="schedule-summary-title" id="bkSvcTitle">Day Care &amp; Companionship</h3>
+              <p style="font-size: 0.92rem; color: var(--ec-body); line-height: 1.6; margin-bottom: 1rem;" id="bkSvcDesc">
+                Comfortable daytime care with meaningful activities, companionship and attentive support.
+              </p>
+              <div class="schedule-summary-rows">
+                <div class="schedule-summary-row">
+                  <span class="s-label">Category</span>
+                  <span class="s-value" id="bkSvcCategory">Care &amp; Comfort</span>
+                </div>
+                <div class="schedule-summary-row">
+                  <span class="s-label">Availability</span>
+                  <span class="s-value" id="bkSvcAvailability">8:00 AM – 6:00 PM (Mon – Sat)</span>
+                </div>
+                <div class="schedule-summary-row schedule-total-price">
+                  <span class="s-label">Starting Fee</span>
+                  <span class="s-value" id="bkSvcPrice">₹12,000 / month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-note-card" style="margin-top: 1.5rem; margin-bottom: 0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span>Next, you will be prompted to provide family contact details and your loved one's preferences.</span>
+            </div>
+
+            <div class="form-nav-row">
+              <a href="services.html" class="btn btn-outline" id="bkBackBtn">
+                <span>← Back to Services</span>
+              </a>
+              <button type="button" class="btn btn-primary" id="bkContinueBtn">
+                <span>Continue to Family Details</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Render Step 1 active
+    if (typeof renderProgressBar === 'function') {
+      renderProgressBar(1);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialId = urlParams.get('id') || urlParams.get('service') || (getBookingData().serviceId) || 'day-care';
+
+    const selectEl = document.getElementById('serviceSelect');
+    if (selectEl && typeof EC_SERVICES !== 'undefined') {
+      selectEl.innerHTML = EC_SERVICES.map(s => `
+        <option value="${s.id}" ${s.id === initialId ? 'selected' : ''}>
+          ${s.title} (${formatCurrency(s.price)}/mo)
+        </option>
+      `).join('');
+
+      selectEl.addEventListener('change', () => {
+        updateBookingCard(selectEl.value);
+      });
+    }
+
+    updateBookingCard(initialId);
+
+    const continueBtn = document.getElementById('bkContinueBtn');
+    if (continueBtn) {
+      continueBtn.addEventListener('click', () => {
+        const selVal = selectEl ? selectEl.value : initialId;
+        setSelectedService(selVal);
+
+        // Check if logged in
+        if (isUserLoggedIn()) {
+          window.location.href = 'family-details.html';
+        } else {
+          window.location.href = 'login.html?redirect=family-details.html';
+        }
+      });
+    }
+  });
+
+  function updateBookingCard(serviceId) {
+    const svc = typeof getServiceById === 'function' ? getServiceById(serviceId) : null;
+    if (!svc) return;
+
+    setSelectedService(svc.id);
+
+    const titleEl = document.getElementById('bkSvcTitle');
+    const descEl = document.getElementById('bkSvcDesc');
+    const catEl = document.getElementById('bkSvcCategory');
+    const availEl = document.getElementById('bkSvcAvailability');
+    const priceEl = document.getElementById('bkSvcPrice');
+
+    if (titleEl) titleEl.textContent = svc.title;
+    if (descEl) descEl.textContent = svc.shortDescription;
+    if (catEl) catEl.textContent = svc.category || 'Care & Comfort';
+    if (availEl) availEl.textContent = `${svc.availability || '8:00 AM - 6:00 PM'} (${svc.schedule || 'Mon - Sat'})`;
+    if (priceEl) priceEl.textContent = `${formatCurrency(svc.price)} / month`;
+  }
+  </script>
+</body>
+</html>

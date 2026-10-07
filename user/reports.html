@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports – ElderCare | Family Care Portal</title>
+  <meta name="description" content="View and download weekly and monthly care reports for Lakshmi Devi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/dashboard-responsive.css">
+  <script src="../js/dashboard-theme.js"></script>
+</head>
+<body class="dashboard-body">
+  <div class="dash-overlay" id="dashOverlay" aria-hidden="true"></div>
+
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-sidebar-brand">
+      <a href="../index.html" class="dash-brand-link"><div class="dash-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div><div class="dash-brand-text"><span class="dash-brand-title">Elder<span class="accent">Care</span></span><span class="dash-brand-subtitle">Family Portal</span></div></a>
+      <button class="dash-sidebar-close-btn" id="dashSidebarClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="dash-sidebar-nav">
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Main</span><ul class="dash-nav-list"><li class="dash-nav-item"><a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Dashboard</span></a></li></ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Care</span><ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>My Services</span></a></li>
+        <li class="dash-nav-item"><a href="schedule.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Schedule</span></a></li>
+        <li class="dash-nav-item"><a href="attendance.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Attendance</span></a></li>
+        <li class="dash-nav-item"><a href="activities.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span>Activities</span></a></li>
+        <li class="dash-nav-item"><a href="wellness.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Wellness</span></a></li>
+      </ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Insights</span><ul class="dash-nav-list"><li class="dash-nav-item"><a href="reports.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Reports</span></a></li></ul></div>
+      <div class="dash-nav-group"><span class="dash-nav-group-label">Account</span><ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="senior-profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Senior Profile</span></a></li>
+        <li class="dash-nav-item"><a href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg><span>My Profile</span></a></li>
+        <li class="dash-nav-item"><a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>Billing</span></a></li>
+        <li class="dash-nav-item"><a href="messages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span><span class="dash-nav-badge">1</span></a></li>
+        <li class="dash-nav-item"><a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></a></li>
+      </ul></div>
+    </nav>
+    <div class="dash-sidebar-footer">
+      <a href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Help &amp; Support</span></a>
+      <button class="dash-logout-btn" id="dashLogoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar-left">
+        <button class="dash-sidebar-toggle-btn" id="dashSidebarToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <div class="dash-topbar-title-wrap">
+          <h1 class="dash-topbar-page-title">Care Reports</h1>
+          <span class="dash-topbar-breadcrumb">Insights &gt; Reports</span>
+        </div>
+      </div>
+      <div class="dash-topbar-right">
+        <button class="dash-ctrl-btn" id="dashThemeBtn"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button class="dash-ctrl-btn" id="dashDirBtn"><svg class="icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h12M3 18h9"/><polyline points="17 15 20 18 17 21"/></svg><svg class="icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 6H3M21 12H9M21 18H12"/><polyline points="7 15 4 18 7 21"/></svg></button>
+        <div style="position:relative;"><button class="dash-user-badge" id="dashUserBadge"><div class="dash-user-avatar">P</div><div class="dash-user-info"><span class="dash-user-name">Preteka</span><span class="dash-user-role">Family Member</span></div><svg class="dash-user-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dash-dropdown" id="dashUserDropdown" role="menu"><div class="dash-dropdown-header">My Account</div><a href="profile.html" class="dash-dropdown-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>My Profile</span></a><button type="button" class="dash-dropdown-item" id="dashDropLogout" style="color:#C0392B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></button></div></div>
+      </div>
+    </header>
+
+    <main class="dash-content">
+
+      <section class="dash-welcome-banner">
+        <div class="dash-welcome-botanical" aria-hidden="true"></div>
+        <div class="dash-welcome-text">
+          <span class="dash-welcome-eyebrow">Family Reports</span>
+          <h2 class="dash-welcome-title">Weekly &amp; Monthly Care Reports</h2>
+          <p class="dash-welcome-desc">Detailed care summaries prepared by the ElderCare team — covering attendance, activities, wellness, and general observations for Lakshmi Devi.</p>
+        </div>
+        <div class="dash-welcome-date-badge">
+          <div class="dash-welcome-date-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="dash-welcome-date-text"><span class="dash-date-label">Available Reports</span><span class="dash-date-val">9 Reports</span></div>
+        </div>
+      </section>
+
+      <!-- FILTER TABS -->
+      <div class="dash-section-card">
+        <div class="dash-filter-tabs" id="repFilterTabs">
+          <button class="dash-tab-btn active" data-filter="all">All Reports</button>
+          <button class="dash-tab-btn" data-filter="weekly">Weekly</button>
+          <button class="dash-tab-btn" data-filter="monthly">Monthly</button>
+        </div>
+
+        <!-- REPORTS LIST -->
+        <div class="dash-reports-list" id="reportsList">
+
+          <div class="dash-report-row" data-type="weekly">
+            <div class="dash-rep-left">
+              <div class="dash-rep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div><div class="dash-rep-title">Weekly Report — Week of Oct 1</div><div class="dash-rep-date">Generated: Oct 7, 2026</div></div>
+            </div>
+            <div class="dash-rep-actions">
+              <button class="dash-rep-btn" onclick="showReportPreview('oct-wk1')">View</button>
+              <button class="dash-rep-btn" onclick="showToast('Downloading report...')">Download</button>
+            </div>
+          </div>
+
+          <div class="dash-report-row" data-type="weekly">
+            <div class="dash-rep-left">
+              <div class="dash-rep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div><div class="dash-rep-title">Weekly Report — Week of Sep 24</div><div class="dash-rep-date">Generated: Sep 30, 2026</div></div>
+            </div>
+            <div class="dash-rep-actions">
+              <button class="dash-rep-btn" onclick="showReportPreview('sep-wk4')">View</button>
+              <button class="dash-rep-btn" onclick="showToast('Downloading report...')">Download</button>
+            </div>
+          </div>
+
+          <div class="dash-report-row" data-type="monthly">
+            <div class="dash-rep-left">
+              <div class="dash-rep-icon" style="background:var(--ec-lavender);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div><div class="dash-rep-title">Monthly Summary — September 2026</div><div class="dash-rep-date">Generated: Oct 2, 2026</div></div>
+            </div>
+            <div class="dash-rep-actions">
+              <button class="dash-rep-btn" onclick="showReportPreview('sep-monthly')">View</button>
+              <button class="dash-rep-btn" onclick="showToast('Downloading report...')">Download</button>
+            </div>
+          </div>
+
+          <div class="dash-report-row" data-type="weekly">
+            <div class="dash-rep-left">
+              <div class="dash-rep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div><div class="dash-rep-title">Weekly Report — Week of Sep 17</div><div class="dash-rep-date">Generated: Sep 23, 2026</div></div>
+            </div>
+            <div class="dash-rep-actions">
+              <button class="dash-rep-btn" onclick="showReportPreview('sep-wk3')">View</button>
+              <button class="dash-rep-btn" onclick="showToast('Downloading report...')">Download</button>
+            </div>
+          </div>
+
+          <div class="dash-report-row" data-type="monthly">
+            <div class="dash-rep-left">
+              <div class="dash-rep-icon" style="background:var(--ec-lavender);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+              <div><div class="dash-rep-title">Monthly Summary — August 2026</div><div class="dash-rep-date">Generated: Sep 2, 2026</div></div>
+            </div>
+            <div class="dash-rep-actions">
+              <button class="dash-rep-btn" onclick="showReportPreview('aug-monthly')">View</button>
+              <button class="dash-rep-btn" onclick="showToast('Downloading report...')">Download</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="dash-footer">
+      <div>&copy; 2026 ElderCare Senior Day Care &amp; Activity Center. All rights reserved.</div>
+      <div class="dash-footer-links"><a href="../about.html">About Us</a><a href="../contact.html">Support</a></div>
+    </footer>
+  </div>
+
+  <!-- REPORT PREVIEW MODAL -->
+  <div class="dash-modal-overlay" id="reportModal">
+    <div class="dash-modal-box">
+      <div class="dash-modal-header">
+        <h2 class="dash-modal-title" id="modalTitle">Report Preview</h2>
+        <button class="dash-modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="dash-modal-body" id="modalBody">
+        <!-- Dynamically filled -->
+      </div>
+      <div class="dash-modal-footer">
+        <button class="dash-btn-secondary" id="modalClose2Btn">Close</button>
+        <button class="dash-btn-primary" onclick="showToast('Downloading report...')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard-data.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script>
+    // Filter tabs
+    document.querySelectorAll('#repFilterTabs .dash-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#repFilterTabs .dash-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('#reportsList .dash-report-row').forEach(row => {
+          row.style.display = (filter === 'all' || row.dataset.type === filter) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('reportModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function showReportPreview(id) {
+      const reports = {
+        'oct-wk1': { title: 'Weekly Report — Oct 1–7, 2026', content: `<strong>Senior:</strong> Lakshmi Devi &bull; <strong>Period:</strong> Oct 1–7, 2026<br><br><strong>Attendance:</strong> 5/5 days present (100%)<br><strong>Activities Completed:</strong> 8 activities including Music Session, Yoga, Gardening, Art &amp; Craft<br><strong>Wellness:</strong> Mood – Happy, Energy – High, Engagement – Excellent<br><strong>Meals:</strong> Full meals daily, good appetite<br><strong>Hydration:</strong> Consistently 6–8 glasses/day<br><br><strong>Care Team Note:</strong> "Lakshmi Devi had an exceptional week. She was highly engaged, social, and enthusiastic in all group activities. No concerns to report."` },
+        'sep-monthly': { title: 'Monthly Summary — September 2026', content: `<strong>Senior:</strong> Lakshmi Devi &bull; <strong>Period:</strong> September 2026<br><br><strong>Total Days:</strong> 20 &bull; <strong>Present:</strong> 18 &bull; <strong>Absent:</strong> 2<br><strong>Attendance Rate:</strong> 90%<br><strong>Activities:</strong> 42 sessions participated<br><strong>Wellness Trend:</strong> Consistently Happy / Cheerful<br><strong>Notable:</strong> Lakshmi Devi was recognised as "Most Engaged Participant" for the month of September by the care team.` },
+      };
+      const r = reports[id] || { title: 'Report Preview', content: 'Report content loading...' };
+      modalTitle.textContent = r.title;
+      modalBody.innerHTML = `<p style="line-height:1.7;color:var(--ec-heading);">${r.content}</p>`;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+    document.getElementById('modalClose2Btn').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

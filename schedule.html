@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Schedule – ElderCare | Step 4: Schedule &amp; Days</title>
+  <meta name="description" content="Select preferred care days, daily time slot, and arrival preferences with dynamic fee estimation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function(){
+      var t = localStorage.getItem('eldercare-theme') || 'light';
+      var d = localStorage.getItem('eldercare-direction') || 'ltr';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.dir = d;
+    })();
+  </script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- BOOKING PROGRESS BAR -->
+  <div id="bookingProgressContainer"></div>
+
+  <main id="main-content">
+    <section class="booking-page-section">
+      <div class="container">
+        <div class="booking-page-inner">
+
+          <div class="booking-form-header reveal-up">
+            <span class="section-eyebrow">STEP 04 OF 06</span>
+            <h1>Choose Your Preferred Schedule</h1>
+            <p>Select your starting date, weekly attendance days, and daily timings. Your fee updates dynamically below.</p>
+          </div>
+
+          <!-- SELECTED SERVICE BADGE -->
+          <div class="schedule-selected-service-badge reveal-up" id="scheduleServiceBadge">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span>Selected Service: <strong>Day Care &amp; Companionship</strong> (₹12,000/mo)</span>
+          </div>
+
+          <form id="scheduleForm" novalidate>
+
+            <!-- DATE & DAYS CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Start Date &amp; Weekly Days</h2>
+
+              <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="startDate">Preferred Start Date <span class="req">*</span></label>
+                  <input type="date" id="startDate" class="form-input">
+                  <span class="form-error" id="startDateError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="arrivalTime">Preferred Daily Arrival Time</label>
+                  <select id="arrivalTime" class="form-select">
+                    <option value="8:00 AM">8:00 AM (Early Arrival)</option>
+                    <option value="8:30 AM" selected>8:30 AM (Standard)</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="9:30 AM">9:30 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="1:00 PM">1:00 PM (Afternoon Shift)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group full" id="preferredDaysContainer">
+                <label class="form-label">Preferred Days of the Week <span class="req">*</span></label>
+                <div class="day-pills-wrap" id="dayPillsWrap">
+                  <label class="checkbox-option js-day-pill selected" data-day="Monday">
+                    <input type="checkbox" checked>
+                    <span>Monday</span>
+                  </label>
+                  <label class="checkbox-option js-day-pill selected" data-day="Tuesday">
+                    <input type="checkbox" checked>
+                    <span>Tuesday</span>
+                  </label>
+                  <label class="checkbox-option js-day-pill selected" data-day="Wednesday">
+                    <input type="checkbox" checked>
+                    <span>Wednesday</span>
+                  </label>
+                  <label class="checkbox-option js-day-pill selected" data-day="Thursday">
+                    <input type="checkbox" checked>
+                    <span>Thursday</span>
+                  </label>
+                  <label class="checkbox-option js-day-pill selected" data-day="Friday">
+                    <input type="checkbox" checked>
+                    <span>Friday</span>
+                  </label>
+                  <label class="checkbox-option js-day-pill" data-day="Saturday">
+                    <input type="checkbox">
+                    <span>Saturday</span>
+                  </label>
+                </div>
+                <span class="form-error" id="preferredDaysError"></span>
+              </div>
+            </div>
+
+            <!-- TIME SLOT CARD -->
+            <div class="form-card reveal-up">
+              <h2 class="form-card-title">Daily Time Slot</h2>
+
+              <div class="form-group full" id="timeSlotsContainer">
+                <label class="form-label">Choose Time Preference <span class="req">*</span></label>
+                <div class="time-slots-grid">
+                  
+                  <div class="time-slot-card js-time-slot-card" data-slot="Morning">
+                    <input type="radio" name="timeSlotRadio" value="Morning">
+                    <div class="slot-header">
+                      <span class="slot-name">Morning</span>
+                      <span class="slot-badge">Half Day</span>
+                    </div>
+                    <span class="slot-time">8:00 AM – 1:00 PM<br>Includes Morning Activities &amp; Lunch</span>
+                  </div>
+
+                  <div class="time-slot-card js-time-slot-card" data-slot="Afternoon">
+                    <input type="radio" name="timeSlotRadio" value="Afternoon">
+                    <div class="slot-header">
+                      <span class="slot-name">Afternoon</span>
+                      <span class="slot-badge">Half Day</span>
+                    </div>
+                    <span class="slot-time">1:00 PM – 6:00 PM<br>Includes Afternoon Tea &amp; Recreation</span>
+                  </div>
+
+                  <div class="time-slot-card js-time-slot-card selected" data-slot="Full Day">
+                    <input type="radio" name="timeSlotRadio" value="Full Day" checked>
+                    <div class="slot-header">
+                      <span class="slot-name">Full Day</span>
+                      <span class="slot-badge">Popular</span>
+                    </div>
+                    <span class="slot-time">8:00 AM – 6:00 PM<br>Complete Daytime Care, Meals &amp; Events</span>
+                  </div>
+
+                </div>
+                <span class="form-error" id="timeSlotsError"></span>
+              </div>
+            </div>
+
+            <!-- LIVE SUMMARY CARD -->
+            <div class="schedule-summary-card reveal-up" id="liveScheduleSummaryCard">
+              <h3 class="schedule-summary-title">Live Schedule &amp; Fee Estimation</h3>
+              <div class="schedule-summary-rows">
+                <div class="schedule-summary-row">
+                  <span class="s-label">Selected Service</span>
+                  <span class="s-value" id="summaryServiceName">Day Care &amp; Companionship</span>
+                </div>
+                <div class="schedule-summary-row">
+                  <span class="s-label">Selected Days</span>
+                  <span class="s-value" id="summarySelectedDays">Monday – Friday (5 days / week)</span>
+                </div>
+                <div class="schedule-summary-row">
+                  <span class="s-label">Selected Time</span>
+                  <span class="s-value" id="summarySelectedTime">Full Day (Arrival: 8:30 AM)</span>
+                </div>
+                <div class="schedule-summary-row">
+                  <span class="s-label">Monthly Care Fee</span>
+                  <span class="s-value" id="summaryServiceFee">₹12,000</span>
+                </div>
+                <div class="schedule-summary-row">
+                  <span class="s-label">One-Time Registration Fee</span>
+                  <span class="s-value" id="summaryRegFee">₹500</span>
+                </div>
+                <div class="schedule-summary-row schedule-total-price">
+                  <span class="s-label">Estimated Total</span>
+                  <span class="s-value" id="summaryTotalFee">₹12,500</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- FORM NAVIGATION -->
+            <div class="form-nav-row reveal-up">
+              <a href="senior-details.html" class="btn btn-outline" id="scheduleBackBtn">
+                <span>← Back to Senior Details</span>
+              </a>
+              <button type="submit" class="btn btn-primary" id="scheduleSubmitBtn">
+                <span>Continue to Review</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="10 4 16 10 10 16"/></svg>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/service-data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

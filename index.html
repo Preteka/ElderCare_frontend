@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElderCare – Senior Day Care &amp; Activity Center</title>
+  <meta name="description"
+    content="ElderCare provides a safe, supportive, and joyful day care community where seniors stay active, connected, comfortable, and cared for.">
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+<script>
+  (function(){
+    var t = localStorage.getItem('eldercare-theme') || 'light';
+    var d = localStorage.getItem('eldercare-direction') || 'ltr';
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.dir = d;
+  })();
+</script>
+</head>
+
+<body>
+
+  <!-- 1. COMMON NAVBAR PLACEHOLDER -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content">
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-decoration" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-content reveal-left">
+            <span class="section-eyebrow">A SAFE, SUPPORTIVE AND JOYFUL COMMUNITY</span>
+            <h1 class="hero-title">
+              Caring for<br>
+              Every Day.<br>
+              <span class="highlight-line heading-highlight">Supporting Every Family.</span>
+            </h1>
+            <p class="hero-description">
+              A warm and welcoming senior day care community where older adults stay active, connected, comfortable and
+              cared for while families stay informed and reassured.
+            </p>
+            <div class="hero-btn-group">
+              <a href="services.html" class="btn btn-primary" id="heroExploreBtn">
+                <span>Explore Our Services</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </a>
+              <a href="contact.html" class="btn btn-outline" id="heroContactBtn">
+                <span>Contact Us</span>
+                <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Images Composition with Organic Shapes -->
+          <div class="hero-image-wrapper reveal-right">
+            <!-- Subtle Decorative Ambient Accent -->
+            <div class="hero-decorative-accent" aria-hidden="true">
+              <svg class="hero-decor-shape" viewBox="0 0 500 500" fill="none">
+                <circle cx="260" cy="240" r="210" stroke="rgba(114, 80, 165, 0.09)" stroke-width="1.5" stroke-dasharray="6 6" />
+                <circle cx="430" cy="70" r="12" fill="rgba(114, 80, 165, 0.12)" />
+                <circle cx="50" cy="420" r="10" fill="rgba(114, 80, 165, 0.1)" />
+                <path d="M30 180 C70 140, 110 160, 150 120" stroke="rgba(114, 80, 165, 0.14)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <div class="hero-image-composition">
+              <!-- Image 1: Tall Arched Organic Shape -->
+              <div class="hero-image-one">
+                <img src="assets/images/hero-senior-care-1.png" alt="Senior man receiving supportive care from a healthcare professional" width="300" height="440">
+              </div>
+
+              <!-- Image 2: Asymmetric Curved Organic Shape -->
+              <div class="hero-image-two">
+                <img src="assets/images/hero-senior-care-2.png" alt="Senior woman enjoying compassionate care with a caregiver" width="300" height="440">
+              </div>
+
+              <!-- Floating "Today's Care" Card -->
+              <div class="hero-floating-card" aria-label="Today's Care Status Widget">
+                <div class="floating-card-header">
+                  <svg class="floating-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                  <span class="floating-title">Today's Care</span>
+                </div>
+                <ul class="care-checklist">
+                  <li class="care-item">
+                    <span class="check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Activity Completed</span>
+                  </li>
+                  <li class="care-item">
+                    <span class="check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Wellness Check</span>
+                  </li>
+                  <li class="care-item">
+                    <span class="check-badge">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="2 6 4.5 9 10 3"></polyline>
+                      </svg>
+                    </span>
+                    <span>Family Update</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT / INTRO SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Text Content -->
+          <div class="about-content reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">ABOUT ELDERCARE</span>
+              <h2 class="section-heading">
+                More Than Care.<br>
+                <span class="heading-highlight">A Place to Belong</span>
+              </h2>
+            </div>
+            <p class="section-description">
+              At ElderCare, we create a safe, engaging and supportive environment where seniors can enjoy meaningful
+              days, build friendships and maintain their independence.
+            </p>
+            <a href="about.html" class="btn-text-link" id="aboutLearnMoreLink">
+              <span>Learn More About Us</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right Image & Integrated Features Card -->
+          <div class="about-media-group reveal-right">
+            <div class="about-img-box">
+              <img src="assets/images/about_senior_activity.jpg"
+                alt="Seniors engaging in creative arts, crafts and social activities together" width="400" height="360"
+                loading="lazy">
+            </div>
+            <div class="about-features-card">
+              <ul class="about-feature-list">
+                <li class="about-feature-item">
+                  <div class="feature-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <span>Safe daytime care</span>
+                </li>
+                <li class="about-feature-item">
+                  <div class="feature-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                      <line x1="9" y1="9" x2="9.01" y2="9" />
+                      <line x1="15" y1="9" x2="15.01" y2="9" />
+                    </svg>
+                  </div>
+                  <span>Meaningful activities</span>
+                </li>
+                <li class="about-feature-item">
+                  <div class="feature-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                  </div>
+                  <span>Wellness-focused programs</span>
+                </li>
+                <li class="about-feature-item">
+                  <div class="feature-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="8.5" cy="7" r="4" />
+                      <polyline points="17 11 19 13 23 9" />
+                    </svg>
+                  </div>
+                  <span>Trained and compassionate caregivers</span>
+                </li>
+                <li class="about-feature-item">
+                  <div class="feature-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                  </div>
+                  <span>Regular family communication</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COMMITMENT / MISSION SECTION -->
+    <section class="section commitment-section" id="commitment">
+      <!-- Botanical Decoration behind the couple -->
+      <div class="commitment-decoration" aria-hidden="true">
+        <svg class="botanical-art" viewBox="0 0 400 450" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path
+            d="M200 450 C180 350 120 280 100 180 C80 80 150 20 200 10 C250 20 320 80 300 180 C280 280 220 350 200 450 Z" />
+          <path d="M200 450 C200 300 200 150 200 10" stroke-dasharray="4 4" />
+          <path d="M160 300 C110 270 90 220 120 180 C150 200 180 250 160 300 Z" />
+          <path d="M240 280 C290 250 310 200 280 160 C250 180 220 230 240 280 Z" />
+          <path d="M170 190 C130 160 120 120 150 90 C170 110 190 150 170 190 Z" />
+          <path d="M230 170 C270 140 280 100 250 70 C230 90 210 130 230 170 Z" />
+        </svg>
+      </div>
+
+      <div class="container commitment-container">
+        <!-- Left Content -->
+        <div class="commitment-content reveal-left">
+          <div class="section-heading-wrap align-left">
+            <span class="section-eyebrow">OUR COMMITMENT</span>
+            <h2 class="section-heading">
+              We Create Happier Days<br>
+              for <span class="heading-highlight">Seniors, Everywhere</span>
+            </h2>
+          </div>
+          <p class="section-description">
+            Our mission is to provide high-quality day care, engaging programs and compassionate support so every
+            senior can enjoy a healthier, happier and more connected life.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="commitment-actions">
+            <a href="about.html#values" class="btn btn-primary" id="btnOurValues">
+              <span>Our Values</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+            <a href="about.html#mission" class="btn btn-outline" id="btnOurMission">
+              <span>Our Mission</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right-Side Large Cutout Figure -->
+        <div class="commitment-visual reveal-right">
+          <img src="assets/images/senior-couple.png" alt="Happy senior couple">
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SERVICES SECTION -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="services-header-row">
+          <div class="services-header-left reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">OUR SERVICES</span>
+              <h2 class="section-heading">Services Designed Around <span class="heading-highlight">Their Wellbeing</span></h2>
+            </div>
+          </div>
+          <div class="services-header-right reveal-right">
+            <p>From day care to wellness programs, we offer a range of services to support physical, mental and
+              emotional wellbeing.</p>
+          </div>
+        </div>
+
+        <!-- 4 Service Cards Row -->
+        <div class="services-cards-grid reveal-up">
+
+          <!-- Card 1: Senior Day Care -->
+          <div class="service-card" tabindex="0" role="region" aria-label="Senior Day Care Service Card">
+            <img src="assets/images/service_daycare.jpg" alt="Senior man relaxing in a day care lounge with a book"
+              class="service-card-bg" loading="lazy">
+            <div class="service-card-default">
+              <span class="service-title-default">Senior Day Care</span>
+              <div class="service-arrow-circle">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="service-card-overlay">
+              <div class="service-overlay-top">
+                <h3 class="service-overlay-title">Senior Day Care</h3>
+                <div class="service-overlay-arrow">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="service-overlay-desc">A secure, cheerful day care environment offering nutritious meals,
+                companionship, and attentive assistance throughout the day.</p>
+              <div class="service-overlay-bottom">
+                <a href="service-details.html?service=daycare" class="service-learn-more">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                    <polyline points="8 2 14 8 8 14"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Wellness Programs -->
+          <div class="service-card" tabindex="0" role="region" aria-label="Wellness Programs Service Card">
+            <img src="assets/images/service_wellness.jpg" alt="Elderly adults practicing gentle wellness yoga"
+              class="service-card-bg" loading="lazy">
+            <div class="service-card-default">
+              <span class="service-title-default">Wellness Programs</span>
+              <div class="service-arrow-circle">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="service-card-overlay">
+              <div class="service-overlay-top">
+                <h3 class="service-overlay-title">Wellness Programs</h3>
+                <div class="service-overlay-arrow">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="service-overlay-desc">Gentle movement, yoga and wellness activities designed to support healthy
+                aging, mobility, and peaceful mindfulness.</p>
+              <div class="service-overlay-bottom">
+                <a href="service-details.html?service=wellness" class="service-learn-more">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                    <polyline points="8 2 14 8 8 14"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Activity & Recreation -->
+          <div class="service-card" tabindex="0" role="region" aria-label="Activity & Recreation Service Card">
+            <img src="assets/images/service_activity.jpg" alt="Seniors playing games and social activities"
+              class="service-card-bg" loading="lazy">
+            <div class="service-card-default">
+              <span class="service-title-default">Activity &amp; Recreation</span>
+              <div class="service-arrow-circle">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="service-card-overlay">
+              <div class="service-overlay-top">
+                <h3 class="service-overlay-title">Activity &amp; Recreation</h3>
+                <div class="service-overlay-arrow">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="service-overlay-desc">Stimulating games, arts &amp; crafts, music therapy, and social clubs
+                crafted to spark joy, friendship, and cognitive vitality.</p>
+              <div class="service-overlay-bottom">
+                <a href="service-details.html?service=activities" class="service-learn-more">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                    <polyline points="8 2 14 8 8 14"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Health Monitoring -->
+          <div class="service-card" tabindex="0" role="region" aria-label="Health Monitoring Service Card">
+            <img src="assets/images/service_health.jpg" alt="Caregiver respectfully checking senior vitals and health"
+              class="service-card-bg" loading="lazy">
+            <div class="service-card-default">
+              <span class="service-title-default">Health Monitoring</span>
+              <div class="service-arrow-circle">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="service-card-overlay">
+              <div class="service-overlay-top">
+                <h3 class="service-overlay-title">Health Monitoring</h3>
+                <div class="service-overlay-arrow">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="service-overlay-desc">Daily vitals checks, medication assistance, and structured health logging
+                overseen by compassionate nursing professionals.</p>
+              <div class="service-overlay-bottom">
+                <a href="service-details.html?service=health" class="service-learn-more">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                    <polyline points="8 2 14 8 8 14"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 6. EXPLORE SERVICES BUTTON -->
+        <div class="services-footer-action reveal-up">
+          <a href="services.html" class="btn btn-primary" id="exploreAllServicesBtn">
+            <span>Explore All Services</span>
+            <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="10" x2="16" y2="10"></line>
+              <polyline points="10 4 16 10 10 16"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. STATISTICS STRIP -->
+    <section class="stats-strip-section" id="statistics" aria-label="Key Milestones and Statistics">
+      <div class="stats-bg-left" aria-hidden="true"></div>
+      <div class="stats-bg-right" aria-hidden="true"></div>
+      <div class="container">
+        <div class="stats-grid reveal-up">
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years of Care and Trust</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Families Supported</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Care Programs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Family Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY CHOOSE ELDERCARE -->
+    <section class="section why-choose-section" id="why-choose">
+      <div class="container">
+        <div class="why-choose-grid">
+          <!-- Left Content -->
+          <div class="why-choose-content reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">WHY CHOOSE US</span>
+              <h2 class="section-heading">
+                Why Families<br>
+                <span class="heading-highlight">Choose ElderCare</span>
+              </h2>
+            </div>
+            <p class="section-description">
+              We are committed to providing a safe, supportive and enriching environment for every senior.
+            </p>
+            <a href="about.html" class="btn btn-primary" id="whyChooseLearnMoreBtn">
+              <span>Learn More</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right Image & Integrated Points Card -->
+          <div class="why-choose-media-group reveal-right">
+            <div class="why-choose-img-card">
+              <img src="assets/images/why_choose.jpg"
+                alt="Compassionate caregiver sharing a warm joyful moment with a senior lady" width="400" height="380"
+                loading="lazy">
+            </div>
+            <div class="why-choose-points-card">
+              <ul class="why-points-list">
+                <li class="why-point-item">
+                  <div class="why-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                  </div>
+                  <span>Safe &amp; Comfortable Environment</span>
+                </li>
+                <li class="why-point-item">
+                  <div class="why-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <span>Personalized Attention</span>
+                </li>
+                <li class="why-point-item">
+                  <div class="why-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </div>
+                  <span>Active &amp; Meaningful Days</span>
+                </li>
+                <li class="why-point-item">
+                  <div class="why-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0" />
+                    </svg>
+                  </div>
+                  <span>Regular Family Updates</span>
+                </li>
+                <li class="why-point-item">
+                  <div class="why-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+                  <span>Experienced Care Team</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TESTIMONIAL SECTION -->
+    <section class="section testimonial-section" id="testimonials">
+      <div class="container">
+        <div class="testimonial-grid">
+          <!-- Left Testimonial Content -->
+          <div class="testimonial-content reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">TESTIMONIALS</span>
+              <h2 class="section-heading">Trusted by <span class="heading-highlight">Families</span></h2>
+            </div>
+
+            <svg class="testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+
+            <blockquote class="testimonial-quote-text" id="testimonialQuote">
+              "The team has created such a warm environment. Knowing my mother is comfortable and engaged every day
+              gives our family great peace of mind."
+            </blockquote>
+
+            <div class="testimonial-author-row">
+              <div class="testimonial-author">
+                <img src="assets/images/testimonial_avatar.jpg" alt="Priya S. headshot" class="author-avatar"
+                  id="testimonialAuthorAvatar" width="52" height="52">
+                <div class="author-info">
+                  <span class="author-name" id="testimonialAuthorName">Priya S.</span>
+                  <span class="author-role" id="testimonialAuthorRole">Family Member</span>
+                </div>
+              </div>
+
+              <!-- Navigation Controls -->
+              <div class="testimonial-nav-arrows">
+                <button class="slider-btn" id="prevTestimonialBtn" aria-label="Previous Testimonial">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="16" y1="10" x2="4" y2="10"></line>
+                    <polyline points="10 16 4 10 10 4"></polyline>
+                  </svg>
+                </button>
+                <button class="slider-btn" id="nextTestimonialBtn" aria-label="Next Testimonial">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Image with Cursive Badge -->
+          <div class="testimonial-media reveal-right">
+            <div class="testimonial-img-card">
+              <img src="assets/images/testimonial_senior.jpg" alt="Senior smiling with radiant warmth and happiness"
+                id="testimonialSeniorImg" width="480" height="400" loading="lazy">
+              <div class="testimonial-cursive-badge" id="testimonialCursiveBadge">
+                Happier Seniors,<br>Brighter Families
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BLOG PREVIEW SECTION -->
+    <section class="section blog-section" id="blog">
+      <div class="container">
+        <div class="blog-header-row">
+          <div class="blog-header-left reveal-left">
+            <div class="section-heading-wrap align-left">
+              <span class="section-eyebrow">LATEST BLOGS</span>
+              <h2 class="section-heading">Insights for<br><span class="heading-highlight">Healthier, Happier Days</span></h2>
+            </div>
+          </div>
+          <div class="blog-header-right reveal-right">
+            <a href="blog.html" class="btn-text-link" id="viewAllArticlesBtn">
+              <span>View All Articles</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Blog Cards Grid -->
+        <div class="blog-grid reveal-up">
+
+          <!-- Blog 1 -->
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <img src="assets/images/blog_1.jpg" alt="Active seniors walking outdoors in nature" loading="lazy">
+            </div>
+            <div class="blog-body">
+              <span class="blog-date">10 OCT 2026</span>
+              <h3 class="blog-title">5 Ways to Keep Seniors Active and Happy</h3>
+              <div class="blog-footer">
+                <a href="blog-detail.html?id=meaningful-days" class="btn-text-link">
+                  <span>Read More</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog 2 -->
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <img src="assets/images/blog_2.jpg" alt="Senior friends sharing a cheerful conversation" loading="lazy">
+            </div>
+            <div class="blog-body">
+              <span class="blog-date">05 OCT 2026</span>
+              <h3 class="blog-title">Why Social Activities Matter for Senior Health</h3>
+              <div class="blog-footer">
+                <a href="blog-detail.html?id=senior-activities" class="btn-text-link">
+                  <span>Read More</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog 3 -->
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <img src="assets/images/blog_3.jpg" alt="Family member holding elderly relative's hand warmly"
+                loading="lazy">
+            </div>
+            <div class="blog-body">
+              <span class="blog-date">28 SEP 2026</span>
+              <h3 class="blog-title">A Family Guide to Choosing Senior Day Care</h3>
+              <div class="blog-footer">
+                <a href="blog-detail.html?id=family-connection" class="btn-text-link">
+                  <span>Read More</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FINAL CTA SECTION -->
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <div class="cta-banner reveal-up">
+          <div class="cta-bg-art" aria-hidden="true"></div>
+          <div class="cta-content-row">
+            <div class="cta-left">
+              <div class="section-heading-wrap align-left">
+                <span class="section-eyebrow">JOIN OUR COMMUNITY</span>
+                <h2 class="section-heading">
+                  Give Your Loved One a Day Filled<br>
+                  <span class="heading-highlight">With Care, Connection &amp; Joy.</span>
+                </h2>
+              </div>
+            </div>
+            <div class="cta-right">
+              <p class="cta-desc">Discover a safe and welcoming senior care environment designed to support both older
+                adults and their families.</p>
+              <div class="cta-btn-group">
+                <a href="services.html" class="btn btn-primary" id="ctaExploreBtn">
+                  <span>Explore Services</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+                <a href="contact.html" class="btn btn-outline" id="ctaContactBtn">
+                  <span>Contact Us</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. COMMON FOOTER PLACEHOLDER -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
