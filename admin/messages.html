@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,13 +12,16 @@
   <link rel="stylesheet" href="../css/admin-responsive.css">
   <script src="../js/admin-theme.js"></script>
   <style>
-    /* Messages page – two-pane layout */
+    .admin-messages-page .admin-content {
+      min-width: 0;
+    }
+
     .msg-pane-layout {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 0;
-      height: calc(100vh - var(--topbar-height) - 100px);
-      min-height: 560px;
+      grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.8fr);
+      height: clamp(420px, calc(100vh - 280px), 760px);
+      min-width: 0;
+      min-height: 0;
       background: var(--admin-surface);
       border: 1px solid var(--admin-border);
       border-radius: 20px;
@@ -32,12 +35,15 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      min-width: 0;
+      min-height: 0;
     }
 
     .msg-conv-header {
       padding: 20px 20px 14px;
       border-bottom: 1px solid var(--admin-border);
-      flex-shrink: 0;
+      flex: 0 0 auto;
+      min-width: 0;
     }
 
     .msg-conv-header h2 {
@@ -68,46 +74,220 @@
     }
 
     .msg-conv-list {
-      flex: 1;
+      flex: 1 1 auto;
       overflow-y: auto;
       padding: 10px;
       display: flex;
       flex-direction: column;
       gap: 4px;
+      min-width: 0;
+      min-height: 0;
     }
 
-    /* Override attention-item to look like a conversation row */
-    .msg-conv-list .admin-attention-item {
+    .msg-conversation-item {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 12px;
+      width: 100%;
       border-radius: 12px;
-      padding: 14px 16px;
+      padding: 12px;
       cursor: pointer;
+      text-align: start;
+      color: var(--admin-text-main);
+      font: inherit;
+      background: transparent;
+      border: 1px solid transparent;
+      transition: var(--transition-smooth);
     }
 
-    /* Right – chat column */
+    .msg-conversation-item:hover {
+      background: var(--admin-surface-alt);
+      border-color: var(--admin-border);
+    }
+
+    .msg-conversation-item.active {
+      background: var(--admin-surface-alt);
+      border-color: var(--ec-primary-purple);
+    }
+
+    .msg-conversation-avatar {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      font-size: 0.95rem;
+    }
+
+    .msg-conversation-details {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .msg-conversation-names {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 2px 8px;
+      min-width: 0;
+      line-height: 1.35;
+    }
+
+    .msg-conversation-family {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--admin-text-main);
+    }
+
+    .msg-conversation-senior {
+      font-size: 0.76rem;
+      color: var(--admin-text-subtle);
+    }
+
+    .msg-conversation-preview {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--admin-text-subtle);
+      font-size: 0.78rem;
+      line-height: 1.4;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .msg-conversation-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      min-width: max-content;
+      padding-top: 2px;
+    }
+
+    .msg-conversation-time {
+      white-space: nowrap;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      color: var(--admin-text-subtle);
+    }
+
+    .msg-no-results {
+      padding: 20px 12px;
+      color: var(--admin-text-subtle);
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
     .msg-chat-col {
       display: flex;
       flex-direction: column;
       overflow: hidden;
       background: var(--admin-surface);
+      min-width: 0;
+      min-height: 0;
     }
 
     .msg-chat-header {
-      padding: 18px 24px;
+      padding: 16px 20px;
       border-bottom: 1px solid var(--admin-border);
       background: var(--admin-surface-alt);
       min-height: 72px;
       display: flex;
       align-items: center;
-      flex-shrink: 0;
+      gap: 12px;
+      flex: 0 0 auto;
+      min-width: 0;
+    }
+
+    .msg-chat-contact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .msg-chat-contact-details {
+      min-width: 0;
+    }
+
+    .msg-chat-contact-details .admin-card-title {
+      overflow-wrap: anywhere;
+    }
+
+    .msg-mobile-back {
+      display: none;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--admin-border);
+      border-radius: 10px;
+      color: var(--admin-text-main);
+      background: var(--admin-surface);
+      cursor: pointer;
+    }
+
+    [dir="rtl"] .msg-mobile-back svg {
+      transform: rotate(180deg);
     }
 
     .msg-thread-body {
-      flex: 1;
+      flex: 1 1 auto;
       overflow-y: auto;
-      padding: 24px;
+      overflow-x: hidden;
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 14px;
+      min-width: 0;
+      min-height: 0;
+      overscroll-behavior: contain;
+    }
+
+    .msg-thread-message {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .msg-thread-message.is-outgoing {
+      align-items: flex-end;
+    }
+
+    .msg-message-bubble {
+      box-sizing: border-box;
+      width: fit-content;
+      max-width: min(80%, 760px);
+      padding: 12px 16px;
+      border-radius: 14px;
+      color: var(--admin-text-main);
+      background: var(--admin-surface-alt);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .msg-thread-message.is-outgoing .msg-message-bubble {
+      color: #FFFFFF;
+      background: var(--ec-primary-purple);
+    }
+
+    [data-theme="dark"] .msg-thread-message.is-outgoing .msg-message-bubble {
+      color: #302347;
+    }
+
+    .msg-message-meta {
+      max-width: 100%;
+      margin-top: 3px;
+      color: var(--admin-text-subtle);
+      font-size: 0.7rem;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
     }
 
     .msg-empty-thread {
@@ -132,17 +312,26 @@
       padding: 16px 24px;
       border-top: 1px solid var(--admin-border);
       background: var(--admin-surface-alt);
-      flex-shrink: 0;
+      flex: 0 0 auto;
+      min-width: 0;
     }
 
     .msg-composer-form {
       display: flex;
       gap: 10px;
       align-items: center;
+      min-width: 0;
+    }
+
+    .msg-composer-form .btn-admin {
+      height: 44px;
+      padding-inline: 20px;
+      flex: 0 0 auto;
     }
 
     .msg-composer-input {
-      flex: 1;
+      flex: 1 1 auto;
+      min-width: 0;
       height: 44px;
       padding: 0 16px;
       border-radius: 12px;
@@ -160,36 +349,145 @@
       box-shadow: 0 0 0 3px rgba(114, 80, 165, 0.13);
     }
 
-    /* Responsive stacked for mobile */
+    @media (min-width: 769px) and (max-width: 1199px) {
+      .msg-pane-layout {
+        grid-template-columns: minmax(245px, 0.9fr) minmax(0, 1.35fr);
+      }
+
+      .msg-conversation-item {
+        grid-template-columns: 44px minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      .msg-thread-body {
+        padding: 18px;
+      }
+    }
+
     @media (max-width: 768px) {
       .msg-pane-layout {
-        grid-template-columns: 1fr;
-        height: auto;
-        min-height: unset;
+        display: block;
+        height: min(700px, calc(100vh - 260px));
+        height: min(700px, calc(100dvh - 260px));
+        min-height: 360px;
       }
-      .msg-conv-col {
-        border-inline-end: none;
-        border-bottom: 1px solid var(--admin-border);
-        max-height: 260px;
-      }
+
+      .msg-conv-col,
       .msg-chat-col {
-        min-height: 420px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .msg-chat-col {
+        display: none;
+      }
+
+      .msg-pane-layout.is-chat-open .msg-conv-col {
+        display: none;
+      }
+
+      .msg-pane-layout.is-chat-open .msg-chat-col {
+        display: flex;
+      }
+
+      .msg-conv-col {
+        border-inline-end: 0;
+      }
+
+      .msg-mobile-back {
+        display: inline-flex;
+      }
+
+      .msg-chat-header {
+        padding: 12px 14px;
+      }
+
+      .msg-thread-body {
+        padding: 16px;
+      }
+
+      .msg-message-bubble {
+        max-width: min(88%, 760px);
+      }
+
+      .msg-composer {
+        padding: 12px;
+      }
+
+      .msg-composer-form {
+        gap: 8px;
+      }
+
+      .msg-composer-input {
+        padding-inline: 12px;
+      }
+
+      .msg-composer-form .btn-admin {
+        padding-inline: 14px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .admin-messages-page .admin-topbar {
+        gap: 8px;
+        padding-inline: 10px;
+      }
+
+      .admin-messages-page .admin-topbar-right {
+        gap: 6px;
+      }
+
+      .admin-messages-page .admin-user-info {
+        display: none;
+      }
+
+      .msg-pane-layout {
+        height: min(700px, calc(100vh - 290px));
+        height: min(700px, calc(100dvh - 290px));
+        min-height: min(340px, calc(100dvh - 290px));
+      }
+
+      .msg-conversation-item {
+        grid-template-columns: 40px minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 10px 8px;
+      }
+
+      .msg-conversation-avatar {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+      }
+
+      .msg-conversation-preview {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow-wrap: break-word;
+      }
+
+      .msg-message-bubble {
+        max-width: 92%;
+        padding: 10px 12px;
       }
     }
   </style>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png?v=2">
+  <link rel="apple-touch-icon" href="../assets/logo/logo.png?v=2">
 </head>
-<body class="admin-body">
+<body class="admin-body admin-messages-page">
 
   <div class="admin-overlay" id="adminOverlay" aria-hidden="true"></div>
 
   <!-- SIDEBAR -->
   <aside class="admin-sidebar" id="adminSidebar" aria-label="Admin Navigation">
     <div class="admin-sidebar-brand">
-      <a href="dashboard.html" class="admin-brand-link">
+      <a href="../index.html" class="admin-brand-link" aria-label="Go to ElderCare Home">
         <div class="admin-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div>
         <div class="admin-brand-text">
           <span class="admin-brand-title">Elder<span class="accent">Care</span></span>
-          <span class="admin-brand-badge">Admin Portal</span>
         </div>
       </a>
       <button class="admin-sidebar-collapse-btn" id="adminSidebarCollapseBtn" title="Toggle Sidebar">
@@ -304,7 +602,7 @@
     <div class="admin-content">
 
       <!-- Page Header -->
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div class="msg-page-heading" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
         <div>
           <h2 class="admin-card-title" style="font-size: 1.5rem;">Family Communications</h2>
           <p style="color: var(--admin-text-muted); font-size: 0.9rem; margin-top: 4px;">Direct, compassionate messaging with families, emergency contacts, and care coordinators.</p>
@@ -351,7 +649,7 @@
           <div class="msg-composer">
             <form class="msg-composer-form" id="formAdminMessageReply" autocomplete="off">
               <input type="text" class="msg-composer-input" id="adminReplyInput" placeholder="Type a warm reply to the family..." required>
-              <button type="submit" class="btn-admin btn-admin-primary" style="height: 44px; padding: 0 20px; flex-shrink: 0;">
+              <button type="submit" class="btn-admin btn-admin-primary">
                 <span>Send</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               </button>
@@ -364,7 +662,7 @@
 
     <footer class="admin-footer">
       <div class="admin-footer-inner">
-        <span>&copy; 2026 <strong>ElderCare</strong> &mdash; Senior Day Care &amp; Activity Center Management Portal</span>
+        <span>&copy; 2026 <a href="../index.html" class="footer-brand-inline" aria-label="Go to ElderCare Home" style="color:inherit;text-decoration:none;"><strong>ElderCare</strong></a> &mdash; Senior Day Care &amp; Activity Center Management Portal</span>
         <div class="admin-footer-links">
           <a href="../privacy.html">Privacy</a>
           <a href="../terms.html">Terms</a>

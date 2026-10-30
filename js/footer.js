@@ -13,7 +13,6 @@ const FOOTER_HTML = `
             <img src="{{PREFIX}}assets/logo/logo.png" alt="ElderCare logo" data-light-src="{{PREFIX}}assets/logo/logo.png" data-dark-src="{{PREFIX}}assets/logo/logo.png" />
             <div class="footer-brand-text">
               <span class="footer-brand-name">ElderCare</span>
-              <span class="footer-brand-tagline">SENIOR DAY CARE &amp; ACTIVITY CENTER</span>
             </div>
           </a>
           <p class="footer-desc">

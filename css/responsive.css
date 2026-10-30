@@ -333,7 +333,7 @@
   }
 
   .hero-image-composition {
-    height: 540px;
+    height: 760px;
     position: relative;
   }
 
@@ -352,10 +352,12 @@
   }
 
   .hero-floating-card {
-    position: relative;
+    position: absolute;
+    top: 580px;
     bottom: auto;
-    right: auto;
-    margin: 1.5rem auto 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     width: 100%;
     max-width: 320px;
   }
@@ -565,4 +567,3 @@
     display: none;
   }
 }
-

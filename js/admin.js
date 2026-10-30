@@ -1434,25 +1434,42 @@ function initAdminMessagesPage() {
   const threadHeader = document.getElementById('adminMessageThreadHeader');
   const threadBody = document.getElementById('adminMessageThreadBody');
   const formReply = document.getElementById('formAdminMessageReply');
+  const searchInput = document.getElementById('adminMsgSearchInput');
+  const layoutEl = document.querySelector('.msg-pane-layout');
 
   let activeMsgId = data.messages[0] ? data.messages[0].id : null;
 
   function renderMessagesList() {
     if (!listEl) return;
-    listEl.innerHTML = data.messages.map(m => `
-      <div class="admin-attention-item ${m.id === activeMsgId ? 'active' : ''}" style="cursor: pointer; ${m.id === activeMsgId ? 'border-color: var(--ec-primary-purple); background: var(--admin-surface);' : ''}" onclick="selectMessageThread('${m.id}')">
-        <div class="admin-attention-main">
-          <div class="admin-user-avatar" style="width: 36px; height: 36px;">${m.familyName[0]}</div>
-          <div class="admin-attention-details">
-            <span class="admin-attention-title">${escapeHtml(m.familyName)} <small style="font-weight: normal; color: var(--admin-text-subtle);">(${escapeHtml(m.seniorName)})</small></span>
-            <span class="admin-attention-desc" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px;">${escapeHtml(m.preview)}</span>
-          </div>
-        </div>
-        <div style="text-align: end;">
-          <span style="font-size: 0.72rem; color: var(--admin-text-subtle); display: block;">${m.time}</span>
-          ${m.unread ? '<span class="admin-badge purple" style="margin-top: 4px;">New</span>' : ''}
-        </div>
-      </div>
+    const query = searchInput ? searchInput.value.trim().toLocaleLowerCase() : '';
+    const messages = data.messages.filter(message => {
+      const searchableText = `${message.familyName} ${message.seniorName} ${message.preview}`.toLocaleLowerCase();
+      return searchableText.includes(query);
+    });
+
+    if (messages.length === 0) {
+      listEl.innerHTML = '<div class="msg-no-results">No conversations found.</div>';
+      return;
+    }
+
+    listEl.innerHTML = messages.map(message => `
+      <button type="button" class="msg-conversation-item ${message.id === activeMsgId ? 'active' : ''}"
+        data-message-id="${escapeHtml(message.id)}"
+        aria-pressed="${message.id === activeMsgId}"
+        aria-label="Conversation with ${escapeHtml(message.familyName)} about ${escapeHtml(message.seniorName)}">
+        <span class="admin-user-avatar msg-conversation-avatar" aria-hidden="true">${escapeHtml(message.familyName[0] || '')}</span>
+        <span class="msg-conversation-details">
+          <span class="msg-conversation-names">
+            <span class="msg-conversation-family">${escapeHtml(message.familyName)}</span>
+            <span class="msg-conversation-senior">${escapeHtml(message.seniorName)}</span>
+          </span>
+          <span class="msg-conversation-preview">${escapeHtml(message.preview)}</span>
+        </span>
+        <span class="msg-conversation-meta">
+          <span class="msg-conversation-time">${escapeHtml(message.time)}</span>
+          ${message.unread ? '<span class="admin-badge purple">New</span>' : ''}
+        </span>
+      </button>
     `).join('');
   }
 
@@ -1468,9 +1485,14 @@ function initAdminMessagesPage() {
 
     if (threadHeader) {
       threadHeader.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="admin-user-avatar">${activeMsg.familyName[0]}</div>
-          <div>
+        <button type="button" class="msg-mobile-back" onclick="showAdminConversationList()" aria-label="Back to conversations">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="msg-chat-contact">
+          <span class="admin-user-avatar" aria-hidden="true">${escapeHtml(activeMsg.familyName[0] || '')}</span>
+          <div class="msg-chat-contact-details">
             <h3 class="admin-card-title" style="font-size: 1.1rem;">${escapeHtml(activeMsg.familyName)}</h3>
             <span class="admin-cell-sub">Senior: ${escapeHtml(activeMsg.seniorName)}</span>
           </div>
@@ -1479,21 +1501,46 @@ function initAdminMessagesPage() {
     }
 
     threadBody.innerHTML = activeMsg.thread.map(t => `
-      <div style="display: flex; flex-direction: column; align-items: ${t.sender === 'Admin' ? 'flex-end' : 'flex-start'}; margin-bottom: 14px;">
-        <div style="max-width: 80%; padding: 12px 16px; border-radius: 14px; background: ${t.sender === 'Admin' ? 'var(--ec-primary-purple)' : 'var(--admin-surface-alt)'}; color: ${t.sender === 'Admin' ? '#FFFFFF' : 'var(--admin-text-main)'}; font-size: 0.9rem;">
-          ${escapeHtml(t.text)}
-        </div>
-        <span style="font-size: 0.7rem; color: var(--admin-text-subtle); margin-top: 3px;">${t.sender} • ${t.time}</span>
+      <div class="msg-thread-message ${t.sender === 'Admin' ? 'is-outgoing' : 'is-incoming'}">
+        <div class="msg-message-bubble">${escapeHtml(t.text)}</div>
+        <span class="msg-message-meta">${escapeHtml(t.sender)} • ${escapeHtml(t.time)}</span>
       </div>
     `).join('');
 
     threadBody.scrollTop = threadBody.scrollHeight;
   }
 
+  if (listEl) {
+    listEl.addEventListener('click', event => {
+      const item = event.target instanceof Element ? event.target.closest('[data-message-id]') : null;
+      if (item) window.selectMessageThread(item.getAttribute('data-message-id'));
+    });
+
+    listEl.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const item = event.target instanceof Element ? event.target.closest('[data-message-id]') : null;
+      if (item && item !== event.target) return;
+      if (item) {
+        event.preventDefault();
+        window.selectMessageThread(item.getAttribute('data-message-id'));
+      }
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', renderMessagesList);
+  }
+
   window.selectMessageThread = function(msgId) {
+    if (!data.messages.some(message => message.id === msgId)) return;
     activeMsgId = msgId;
+    if (layoutEl) layoutEl.classList.add('is-chat-open');
     renderMessagesList();
     renderActiveThread();
+  };
+
+  window.showAdminConversationList = function() {
+    if (layoutEl) layoutEl.classList.remove('is-chat-open');
   };
 
   renderMessagesList();

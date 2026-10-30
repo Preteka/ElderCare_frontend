@@ -17,16 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initDashboardShell() {
   const data = typeof getDashboardData === 'function' ? getDashboardData() : null;
-  const currentPath = window.location.pathname.toLowerCase();
+  const normalizePath = path => path.replace(/\/+$/, '').toLowerCase() || '/';
+  const currentPath = normalizePath(window.location.pathname || '/');
+  const pagePath = currentPath.endsWith('/user') ? `${currentPath}/dashboard.html` : currentPath;
 
-  // Highlight active sidebar navigation item
+  // Highlight only the current sidebar navigation item.
   const navLinks = document.querySelectorAll('.dash-nav-item a');
-  navLinks.forEach(link => {
+  const activeMatch = Array.from(navLinks).find(link => {
     const href = link.getAttribute('href');
-    if (!href) return;
-    const cleanHref = href.replace('../', '').replace('./', '').toLowerCase();
-    if (currentPath.endsWith('/' + cleanHref) || currentPath.endsWith(cleanHref)) {
-      link.classList.add('active');
+    return href && normalizePath(new URL(href, window.location.href).pathname) === pagePath;
+  });
+
+  navLinks.forEach(link => {
+    const isActive = link === activeMatch;
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
     }
   });
 
@@ -250,4 +258,3 @@ function handleDashboardLogout() {
   }
 }
 window.handleDashboardLogout = handleDashboardLogout;
-

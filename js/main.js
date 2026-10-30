@@ -53,7 +53,14 @@ function initScrollAnimations() {
       rootMargin: '0px 0px -40px 0px'
     });
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-revealed');
+      } else {
+        observer.observe(el);
+      }
+    });
   } else {
     // Fallback if observer not supported
     elements.forEach(el => el.classList.add('is-revealed'));

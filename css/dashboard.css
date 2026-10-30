@@ -104,14 +104,6 @@ body.dashboard-body {
   font-style: italic;
 }
 
-.dash-brand-subtitle {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--muted-text);
-  text-transform: uppercase;
-}
-
 .dash-sidebar-close-btn {
   display: none;
   background: none;
@@ -174,6 +166,11 @@ body.dashboard-body {
   flex-shrink: 0;
   color: var(--ec-body);
   transition: color 0.2s ease;
+}
+
+.dash-nav-item a svg.dash-settings-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .dash-nav-item a:hover {
@@ -267,7 +264,6 @@ body.dashboard-body {
 }
 [data-theme="dark"] .dash-sidebar-brand { border-bottom-color: var(--dark-border); }
 [data-theme="dark"] .dash-brand-title { color: var(--dark-text); }
-[data-theme="dark"] .dash-brand-subtitle { color: var(--dark-text-muted); }
 [data-theme="dark"] .dash-nav-group-label { color: var(--dark-text-muted); }
 [data-theme="dark"] .dash-nav-item a { color: var(--dark-text-secondary); }
 [data-theme="dark"] .dash-nav-item a svg { color: var(--dark-text-muted); }
@@ -562,6 +558,7 @@ body.dashboard-body {
   border-color: var(--dark-border);
 }
 [data-theme="dark"] .dash-user-name { color: var(--dark-text); }
+[data-theme="dark"] .dash-user-role { color: var(--dark-text-muted); }
 [data-theme="dark"] .dash-dropdown {
   background: var(--ec-card);
   border-color: var(--dark-border);
@@ -584,6 +581,7 @@ body.dashboard-body {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
+  min-width: 0;
   padding: 2rem 2rem 3.5rem;
   display: flex;
   flex-direction: column;
@@ -715,11 +713,15 @@ body.dashboard-body {
 }
 [data-theme="dark"] .dash-welcome-title { color: var(--dark-text); }
 [data-theme="dark"] .dash-welcome-desc  { color: var(--dark-text-secondary); }
+[data-theme="dark"] .senior-profile-page .dash-welcome-eyebrow { color: var(--dark-purple-light); }
 [data-theme="dark"] .dash-welcome-date-badge {
   background: var(--ec-card);
   border-color: var(--dark-border);
 }
 [data-theme="dark"] .dash-date-val { color: var(--dark-text); }
+[data-theme="dark"] .dash-date-label { color: var(--dark-text-muted); }
+[data-theme="dark"] .senior-profile-page .dash-date-label { color: var(--dark-text-muted); }
+[data-theme="dark"] .senior-profile-page .dash-senior-care-status { color: var(--dark-success); }
 [data-theme="dark"] .dash-welcome-date-icon { background: #3E3152; color: var(--dark-purple-light); }
 
 /* --------------------------------------------------------------------------
@@ -820,26 +822,41 @@ body.dashboard-body {
 }
 [data-theme="dark"] .dash-overview-card:hover {
   background: var(--ec-card-hover);
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
 }
+[data-theme="dark"] .dash-card-label { color: var(--dark-text-muted); }
 [data-theme="dark"] .dash-card-val { color: var(--dark-text); }
 [data-theme="dark"] .dash-card-subtext { color: var(--dark-text-secondary); }
 [data-theme="dark"] .dash-card-icon.purple { background: #3E3152; color: var(--dark-purple-light); }
+[data-theme="dark"] .dash-card-icon.green  { background: rgba(46, 125, 79, 0.22); color: #81C784; }
+[data-theme="dark"] .dash-card-icon.blue   { background: rgba(37, 99, 235, 0.22); color: #93C5FD; }
+[data-theme="dark"] .dash-card-icon.amber  { background: rgba(217, 119, 6, 0.22); color: #FCD34D; }
+[data-theme="dark"] .dash-status-pill.success { background: rgba(46, 125, 79, 0.22); color: #81C784; }
+[data-theme="dark"] .dash-status-pill.purple  { background: #3E3152; color: var(--dark-purple-light); }
+[data-theme="dark"] .dash-status-pill.neutral { background: var(--ec-bg-secondary); color: var(--dark-text-secondary); }
 
 /* --------------------------------------------------------------------------
    7. GENERIC DASHBOARD CARD SYSTEM & 2-COLUMN GRID
    -------------------------------------------------------------------------- */
 .dash-grid-2col {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.6rem;
   align-items: start;
   width: 100%;
   box-sizing: border-box;
 }
 
-.dash-grid-2col.equal {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+.dash-grid-messages-quick {
+  grid-template-columns: minmax(0, 1.4fr) minmax(360px, 0.9fr);
+}
+
+.dashboard-services-page .dash-service-plan-banner {
+  background: linear-gradient(135deg, #EDE4F6, #F3EAF8);
+}
+
+[data-theme="dark"] .dashboard-services-page .dash-service-plan-banner {
+  background: linear-gradient(135deg, #312A3D, #382F45);
 }
 
 .dash-section-card {
@@ -862,12 +879,15 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 1.3rem;
   padding-bottom: 0.9rem;
   border-bottom: 1px solid var(--ec-border);
 }
 
 .dash-card-title {
+  min-width: 0;
   font-family: var(--font-heading);
   font-size: 1.18rem;
   font-weight: 700;
@@ -883,6 +903,8 @@ body.dashboard-body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  max-width: 100%;
+  min-width: 0;
   transition: all 0.2s ease;
 }
 
@@ -988,6 +1010,67 @@ body.dashboard-body {
 [data-theme="dark"] .dash-senior-meta-item strong { color: var(--dark-text); }
 [data-theme="dark"] .dash-senior-tag { background: #3E3152; color: var(--dark-purple-light); }
 
+.senior-profile-page .dash-senior-profile-summary {
+  background: linear-gradient(135deg, #F7F2FA, #F3ECF8);
+}
+
+.senior-profile-page .dash-senior-care-status {
+  color: #2E7D4F;
+}
+
+[data-theme="dark"] .senior-profile-page .dash-senior-profile-summary {
+  background: linear-gradient(135deg, #F7F2FA, #F3ECF8);
+  border-color: var(--ec-border);
+}
+
+[data-theme="dark"] .senior-profile-page .dash-senior-profile-summary .dash-senior-name,
+[data-theme="dark"] .senior-profile-page .dash-senior-profile-summary .dash-senior-meta-item strong {
+  color: #302347;
+}
+
+[data-theme="dark"] .senior-profile-page .dash-senior-profile-summary .dash-senior-meta {
+  color: #51445F;
+}
+
+.senior-profile-page .dash-care-label {
+  color: var(--muted-text);
+}
+
+.senior-profile-page .dash-care-description {
+  color: var(--ec-heading);
+}
+
+.senior-profile-page .dash-care-note {
+  background: var(--ec-lavender);
+  border: 1px solid var(--ec-border);
+}
+
+.senior-profile-page .dash-care-note-label {
+  color: var(--ec-primary-purple);
+}
+
+.senior-profile-page .dash-care-note-description {
+  color: var(--ec-body);
+}
+
+[data-theme="dark"] .senior-profile-page .dash-care-label {
+  color: var(--dark-text-muted);
+}
+
+[data-theme="dark"] .senior-profile-page .dash-care-description,
+[data-theme="dark"] .senior-profile-page .dash-care-note-description {
+  color: var(--dark-text-secondary);
+}
+
+[data-theme="dark"] .senior-profile-page .dash-care-note {
+  background: var(--ec-bg-alt);
+  border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .senior-profile-page .dash-care-note-label {
+  color: var(--dark-purple-light);
+}
+
 /* --------------------------------------------------------------------------
    9. TODAY AT ELDERCARE (VERTICAL TIMELINE)
    -------------------------------------------------------------------------- */
@@ -1088,6 +1171,7 @@ body.dashboard-body {
   justify-content: space-between;
   gap: 1rem;
   transition: var(--transition-smooth);
+  min-width: 0;
 }
 
 .dash-schedule-card:hover {
@@ -1104,6 +1188,7 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  min-width: 0;
 }
 
 .dash-sch-date-pill {
@@ -1137,6 +1222,7 @@ body.dashboard-body {
 .dash-sch-details {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .dash-sch-title {
@@ -1245,7 +1331,7 @@ body.dashboard-body {
 }
 
 [data-theme="dark"] .dash-att-stat-box { background: var(--ec-bg-secondary); border-color: var(--dark-border); }
-[data-theme="dark"] .dash-att-num { color: var(--dark-purple); }
+[data-theme="dark"] .dash-att-num { color: var(--ec-primary-purple); }
 [data-theme="dark"] .dash-chart-bar-wrap { background: var(--ec-bg-secondary); }
 [data-theme="dark"] .dash-chart-day { color: var(--dark-text); }
 
@@ -1260,6 +1346,8 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
   padding: 0.85rem 1rem;
   background: var(--ec-lavender);
   border: 1px solid var(--ec-border);
@@ -1270,6 +1358,7 @@ body.dashboard-body {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  min-width: 0;
 }
 
 .dash-act-name {
@@ -1343,6 +1432,7 @@ body.dashboard-body {
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
+  min-width: 0;
 }
 
 .dash-update-avatar {
@@ -1356,6 +1446,7 @@ body.dashboard-body {
 .dash-update-content {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .dash-update-title {
@@ -1408,6 +1499,7 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
 }
 
 .dash-rep-icon {
@@ -1436,6 +1528,7 @@ body.dashboard-body {
 .dash-rep-actions {
   display: flex;
   gap: 0.45rem;
+  flex-shrink: 0;
 }
 
 .dash-rep-btn {
@@ -1471,6 +1564,7 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
   font-size: 0.88rem;
 }
 
@@ -1488,7 +1582,7 @@ body.dashboard-body {
 [data-theme="dark"] .dash-rep-btn { background: var(--ec-card); border-color: var(--dark-border); color: var(--dark-text); }
 [data-theme="dark"] .dash-billing-box { background: linear-gradient(135deg, #312A3D, #382F45); border-color: var(--dark-border); }
 [data-theme="dark"] .dash-bill-row .b-val { color: var(--dark-text); }
-[data-theme="dark"] .dash-bill-row .b-val.price { color: var(--dark-purple); }
+[data-theme="dark"] .dash-bill-row .b-val.price { color: var(--ec-primary-purple); }
 
 /* --------------------------------------------------------------------------
    14. MESSAGES PREVIEW
@@ -1528,12 +1622,14 @@ body.dashboard-body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
 }
 
 .dash-msg-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 0.2rem;
 }
 
@@ -1568,15 +1664,18 @@ body.dashboard-body {
    -------------------------------------------------------------------------- */
 .dash-quick-actions-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: stretch;
 }
 
 .dash-quick-action-btn {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.95rem 1.2rem;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  min-height: 86px;
+  padding: 0.95rem 1rem;
   background: var(--ec-white);
   border: 1px solid var(--ec-border);
   border-radius: 14px;
@@ -1584,9 +1683,20 @@ body.dashboard-body {
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 600;
+  line-height: 1.35;
   color: var(--ec-heading);
   box-shadow: var(--shadow-subtle);
   transition: all 0.2s ease;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.dash-quick-action-btn > span {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: inline-block;
 }
 
 .dash-quick-action-btn svg {
@@ -1610,7 +1720,7 @@ body.dashboard-body {
 }
 [data-theme="dark"] .dash-quick-action-btn:hover {
   background: linear-gradient(135deg, #3E3152, #4A3B5C);
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
   color: var(--dark-purple-light);
 }
 
@@ -1649,7 +1759,11 @@ body.dashboard-body {
 [data-theme="dark"] .dash-footer {
   background: var(--ec-bg-secondary);
   border-top-color: var(--dark-border);
+  color: var(--dark-text-muted);
 }
+[data-theme="dark"] .dash-footer a { color: var(--dark-text-muted); }
+[data-theme="dark"] .dash-footer-links a { color: var(--dark-text-muted); }
+[data-theme="dark"] .dash-footer-links a:hover { color: var(--dark-purple-light); }
 
 /* --------------------------------------------------------------------------
    17. TOAST NOTIFICATIONS
@@ -1886,8 +2000,9 @@ body.dashboard-body {
   color: var(--dark-text-secondary);
 }
 [data-theme="dark"] .dash-tab-btn.active {
-  background: var(--dark-purple);
-  color: #292333;
+  background: var(--ec-primary-purple);
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
@@ -2145,11 +2260,15 @@ body.dashboard-body {
 [data-theme="dark"] .dash-chat-sidebar-header { border-bottom-color: var(--dark-border); color: var(--dark-text); }
 [data-theme="dark"] .dash-chat-convo-item { border-bottom-color: var(--dark-border); }
 [data-theme="dark"] .dash-chat-convo-item:hover { background: rgba(169, 132, 214, 0.12); }
-[data-theme="dark"] .dash-chat-convo-item.active { background: #3E3152; border-inline-start-color: var(--dark-purple); }
-[data-theme="dark"] .dash-chat-header { border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .dash-chat-convo-item.active { background: #3E3152; border-inline-start-color: var(--ec-primary-purple); }
+[data-theme="dark"] .dash-chat-header { border-bottom-color: var(--dark-border); background: var(--ec-card); }
+[data-theme="dark"] .dash-chat-header strong,
+[data-theme="dark"] .dash-chat-header [id="chatName"] { color: var(--dark-text) !important; }
 [data-theme="dark"] .dash-chat-messages { background: var(--ec-bg-main); }
 [data-theme="dark"] .dash-chat-bubble.incoming { background: var(--ec-card); color: var(--dark-text); border-color: var(--dark-border); }
 [data-theme="dark"] .dash-chat-input-row { background: var(--ec-card); border-top-color: var(--dark-border); }
+[data-theme="dark"] .dash-chat-input-row .dash-input { background: var(--ec-bg-secondary); border-color: var(--dark-border); color: var(--dark-text); }
+[data-theme="dark"] .dash-chat-input-row .dash-input::placeholder { color: var(--dark-text-muted); }
 
 /* --------------------------------------------------------------------------
    23. SETTINGS TOGGLE SWITCHES & CHECKBOXES
@@ -2236,7 +2355,7 @@ input:checked + .dash-slider:before {
 [data-theme="dark"] .dash-switch-title { color: var(--dark-text); }
 [data-theme="dark"] .dash-switch-desc { color: var(--dark-text-secondary); }
 [data-theme="dark"] .dash-slider { background-color: var(--dark-border); }
-[data-theme="dark"] input:checked + .dash-slider { background-color: var(--dark-purple); }
+[data-theme="dark"] input:checked + .dash-slider { background-color: var(--ec-primary-purple); }
 
 /* --------------------------------------------------------------------------
    24. PREVIEW MODAL (REPORTS & SERVICES)
@@ -2321,5 +2440,41 @@ input:checked + .dash-slider:before {
 [data-theme="dark"] .dash-modal-box { background: var(--ec-card); border-color: var(--dark-border); }
 [data-theme="dark"] .dash-modal-header { border-bottom-color: var(--dark-border); }
 [data-theme="dark"] .dash-modal-title { color: var(--dark-text); }
+[data-theme="dark"] .dash-modal-close-btn { color: var(--dark-text-secondary); }
+[data-theme="dark"] .dash-modal-close-btn:hover { background: rgba(169, 132, 214, 0.12); color: var(--dark-text); }
+[data-theme="dark"] .dash-modal-body { color: var(--dark-text-secondary); }
 [data-theme="dark"] .dash-modal-footer { border-top-color: var(--dark-border); }
 
+/* ============================================================
+   GLOBAL DASHBOARD DARK THEME FALLBACKS
+   Force-correct any remaining light-mode leaks
+   ============================================================ */
+
+/* Inline-style var() overrides: ensure CSS vars resolve correctly */
+[data-theme="dark"] .dash-chat-convo-item strong,
+[data-theme="dark"] .dash-chat-convo-item [style*="color:var(--ec-heading)"],
+[data-theme="dark"] .dash-chat-convo-item [style*="color: var(--ec-heading)"] {
+  color: var(--dark-text) !important;
+}
+[data-theme="dark"] .dash-chat-convo-item [style*="color:var(--muted-text)"],
+[data-theme="dark"] .dash-chat-convo-item [style*="color: var(--muted-text)"],
+[data-theme="dark"] .dash-chat-convo-item [style*="color:var(--ec-body)"],
+[data-theme="dark"] .dash-chat-convo-item [style*="color: var(--ec-body)"] {
+  color: var(--dark-text-muted) !important;
+}
+
+/* Dash Input / Placeholder in all dashboard inputs */
+[data-theme="dark"] .dash-input::placeholder,
+[data-theme="dark"] .dash-select::placeholder,
+[data-theme="dark"] .dash-textarea::placeholder {
+  color: var(--dark-text-muted);
+}
+
+/* Switch row border in dark */
+[data-theme="dark"] .dash-switch-row { border-bottom-color: var(--dark-border); }
+
+/* Section card body text */
+[data-theme="dark"] .dash-section-card { color: var(--dark-text-secondary); }
+
+/* Topbar user role */
+[data-theme="dark"] .dash-user-role { color: var(--dark-text-muted); }

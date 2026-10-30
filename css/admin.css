@@ -67,7 +67,7 @@
   --admin-border: #574B62;
   --admin-text-main: #F7F2FA;
   --admin-text-muted: #DDD4E5;
-  --admin-text-subtle: #A396AF;
+  --admin-text-subtle: #C4B8D1;
 
   --ec-primary-purple: #A984D6;
   --ec-purple-light: #BEA0E2;
@@ -215,20 +215,6 @@ button, input, select, textarea {
 .admin-brand-title .accent {
   color: var(--ec-primary-purple);
   font-style: italic;
-}
-
-.admin-brand-badge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--ec-primary-purple);
-  text-transform: uppercase;
-  background: var(--admin-surface-alt);
-  padding: 2px 6px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-top: 2px;
-  align-self: flex-start;
 }
 
 .admin-sidebar-collapse-btn,
@@ -1542,6 +1528,14 @@ body.sidebar-collapsed .admin-sidebar-footer button {
   color: #FFFFFF;
 }
 
+[data-theme="dark"] .btn-admin-primary {
+  color: #302347;
+}
+
+[data-theme="dark"] .admin-filter-tab.active {
+  color: #302347;
+}
+
 .btn-admin-primary:hover {
   background: var(--ec-purple-light);
   transform: translateY(-1px);
@@ -1556,6 +1550,18 @@ body.sidebar-collapsed .admin-sidebar-footer button {
 
 .btn-admin-secondary:hover {
   background: var(--admin-surface-hover);
+  border-color: var(--ec-purple-light);
+}
+
+[data-theme="dark"] .btn-admin-secondary {
+  color: var(--admin-text-main);
+  background: var(--admin-surface-alt);
+  border-color: var(--admin-border);
+}
+
+[data-theme="dark"] .btn-admin-secondary:hover {
+  background: var(--admin-surface-hover);
+  color: var(--ec-purple-light);
   border-color: var(--ec-purple-light);
 }
 

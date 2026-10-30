@@ -116,6 +116,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Clip horizontal overflow at html level to allow position:sticky on body children */
 }
 
 body {
@@ -123,7 +124,9 @@ body {
   color: var(--body-text);
   background-color: var(--white);
   line-height: 1.65;
-  overflow-x: hidden;
+  /* overflow-x removed from body — kept on html above.
+     overflow-x: hidden on body breaks position: sticky for child elements
+     because it creates a new scroll container. */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -1575,6 +1578,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(0, 0);
 }
 
+@media (max-width: 1200px) {
+  .reveal-right {
+    transform: translateX(0);
+  }
+}
+
 
 /* ==========================================================================
    DARK MODE - SOFT PLUM + DUSTY LAVENDER + WARM MAUVE PALETTE
@@ -1584,26 +1593,116 @@ h1, h2, h3, h4, h5, h6 {
 html[data-theme="dark"],
 body.dark-mode {
   background-color: #292333;
-  color: #F7F2FA;
+  color: #E8E0EE;
 }
 
 [data-theme="dark"] {
+  /* ========================================================================
+     ELDERCARE UNIFIED DARK THEME COLOR SYSTEM
+     Reference Palette - Consistent across Public, Auth & Dashboards
+     ======================================================================== */
+
+  /* Background Colors */
+  --bg-primary:           #292333; /* Main page background */
+  --bg-secondary:         #312A3D; /* Secondary background */
+  --bg-card:              #382F45; /* Card background */
+  --bg-elevated:          #40364D; /* Elevated card background */
+  --bg-sidebar:           #312A3D; /* Sidebar background */
+  --bg-header:            #312A3D; /* Header background */
+
+  /* Input and Interactive Surfaces */
+  --input-bg:             #382F45;
+  --input-border:         #574B62;
+  --border-color:         #574B62;
+  --border-card:          #574B62;
+  --border-divider:       #574B62;
+
+  /* Text Colors */
+  --text-primary:         #F7F2FA; /* Primary heading */
+  --text-body:            #E8E0EE; /* Primary body text */
+  --text-secondary:       #C9BED6; /* Secondary text */
+  --text-muted:           #C4B8D1; /* Muted text - high contrast */
+  --text-placeholder:     #B6A9C5; /* Placeholder text */
+  --text-disabled:        #998DA8; /* Disabled text */
+  --placeholder-color:    #B6A9C5;
+
+  /* Brand and Accent Colors */
+  --accent-primary:       #A984D6; /* Primary purple */
+  --accent-secondary:     #BEA0E2; /* Light purple */
+  --accent-purple:        #C9A9E8; /* Accent purple */
+  --btn-light-purple-text: #292333; /* Button text on light purple backgrounds */
+
+  /* Status Semantic Colors */
+  --color-success:        #75D6A1;
+  --color-warning:        #F2C879;
+  --color-error:          #F28D9A;
+  --color-info:           #91BDEB;
+
+  /* Backward Compatible Token Aliases in Dark Mode */
   --primary-purple:       #A984D6;
   --dark-purple:          #F7F2FA;
   --soft-lavender:        #40364D;
   --very-light-lavender:  #312A3D;
   --warm-cream:           #382F45;
-  --white:                #292333;
-  --body-text:            #DDD4E5;
-  --muted-text:           #B7ACBF;
-  --border-color:         #574B62;
-  --accent-purple:        #BEA0E2;
-  --success-bg:           rgba(139, 199, 154, 0.15);
+  --white:                #382F45;
+  --body-text:            #E8E0EE;
+  --muted-text:           #C4B8D1;
+  --accent-purple:        #C9A9E8;
+  --success-green:        #75D6A1;
+  --success-bg:           rgba(117, 214, 161, 0.16);
+
+  /* Global ElderCare Tokens (re-mapped for dark mode!) */
+  --ec-white:             #382F45;
+  --ec-cream:             #382F45;
+  --ec-lavender:          #292333;
+  --ec-soft-lavender:     #312A3D;
+  --ec-light-purple:      #40364D;
+  --ec-primary-purple:    #A984D6;
+  --ec-purple-light:      #BEA0E2;
+  --ec-purple-soft:       #C9A9E8;
+  --ec-heading:           #F7F2FA;
+  --ec-body:              #E8E0EE;
+  --ec-border:            #574B62;
+  --ec-success:           #75D6A1;
+  --ec-warning:           #F2C879;
+  --ec-error:             #F28D9A;
+  --ec-info:              #91BDEB;
+
+  /* Dark Theme Design Tokens */
+  --ec-bg-main:           #292333;
+  --ec-bg-secondary:      #312A3D;
+  --ec-bg-alt:            #382F45;
+  --ec-card:              #382F45;
+  --ec-card-hover:        #40364D;
+
+  --dark-bg:              #292333;
+  --dark-section:         #312A3D;
+  --dark-section-alt:     #382F45;
+  --dark-card:            #382F45;
+  --dark-card-hover:      #40364D;
+
+  --dark-text:            #F7F2FA;
+  --dark-text-secondary:  #C9BED6;
+  --dark-text-muted:      #C4B8D1;
+
+  --dark-purple:          #F7F2FA; /* Heading text alias matching line 25 --dark-purple: var(--ec-heading) */
+  --dark-accent-purple:   #A984D6; /* Accent purple */
+  --dark-purple-light:    #BEA0E2;
+  --dark-purple-soft:     #C9A9E8;
+
+  --dark-border:          #574B62;
+  --dark-border-light:    #665873;
+
+  --dark-cream:           #E8E0EE;
+  --dark-success:         #75D6A1;
+  --dark-warning:         #F2C879;
+  --dark-error:           #F28D9A;
+  --dark-info:            #91BDEB;
 }
 
 [data-theme="dark"] body {
   background-color: #292333;
-  color: #DDD4E5;
+  color: #E8E0EE;
 }
 
 /* --------------------------------------------------------------------------
@@ -2141,21 +2240,27 @@ body.dark-mode .gradient-blob {
 [data-theme="dark"] input,
 [data-theme="dark"] textarea,
 [data-theme="dark"] select {
-  background-color: #40364D;
-  border: 1px solid #665873;
+  background-color: #382F45;
+  border: 1px solid #574B62;
   color: #F7F2FA;
 }
 
 [data-theme="dark"] input::placeholder,
 [data-theme="dark"] textarea::placeholder {
-  color: #B7ACBF;
+  color: #B6A9C5;
+}
+
+[data-theme="dark"] select option {
+  background-color: #382F45;
+  color: #F7F2FA;
 }
 
 [data-theme="dark"] input:focus,
 [data-theme="dark"] textarea:focus,
 [data-theme="dark"] select:focus {
-  border-color: #A984D6;
+  border-color: #BEA0E2;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(190, 160, 226, 0.2);
 }
 
 /* --------------------------------------------------------------------------

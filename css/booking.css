@@ -364,6 +364,7 @@
 .form-textarea { min-height: 105px; resize: vertical; line-height: 1.6; }
 .form-error { font-size: 0.8rem; color: #C0392B; display: none; margin-top: 0.25rem; font-weight: 500; }
 .form-group.has-error .form-error { display: block; }
+[data-theme="dark"] .form-group.has-error .form-error { color: #FFB4AB; }
 .form-hint { font-size: 0.8rem; color: var(--muted-text); margin-top: 0.2rem; }
 
 /* Radio / Checkbox Pills */

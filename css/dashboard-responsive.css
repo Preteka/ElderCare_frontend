@@ -25,8 +25,69 @@
     gap: 1.5rem;
   }
 
+  .dashboard-services-page .dash-grid-2col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .dashboard-services-page .dash-grid-2col > *,
+  .dashboard-services-page .dash-grid-2col .dash-section-card {
+    min-width: 0;
+  }
+
+  .dashboard-services-page .dash-service-plan-details,
+  .dashboard-services-page .dash-service-plan-banner,
+  .dashboard-services-page .dash-service-info-list,
+  .dashboard-services-page .dash-service-benefit-list {
+    min-width: 0;
+  }
+
+  .dashboard-services-page .dash-service-plan-banner > div:nth-child(2) {
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-services-page .dash-service-info-row {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.75rem;
+  }
+
+  .dashboard-services-page .dash-service-info-row > * {
+    min-width: 0;
+  }
+
+  .dashboard-services-page .dash-service-info-row .dash-status-pill {
+    flex-shrink: 0;
+  }
+
+  .dashboard-services-page .dash-service-benefit-list li {
+    min-width: 0;
+    align-items: flex-start;
+  }
+
   .dash-quick-actions-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .dashboard-services-page .dash-welcome-banner,
+  .dashboard-activities-page .dash-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-services-page .dash-welcome-text,
+  .dashboard-activities-page .dash-welcome-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .dashboard-services-page .dash-welcome-date-badge,
+  .dashboard-activities-page .dash-welcome-date-badge {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -114,6 +175,10 @@
    3. MOBILE LANDSCAPE & TABLET (<= 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  .dashboard-services-page .dash-grid-2col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .dash-topbar {
     height: 64px;
     padding: 0 1.2rem;
@@ -186,6 +251,14 @@
     gap: 1.2rem;
   }
 
+  .dash-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dash-form-group.col-span-2 {
+    grid-column: auto;
+  }
+
   .dash-welcome-title {
     font-size: 1.65rem;
   }
@@ -206,10 +279,6 @@
 
   .dash-card-title {
     font-size: 1.05rem;
-  }
-
-  .dash-quick-actions-grid {
-    grid-template-columns: 1fr;
   }
 
   .dash-att-stats-row {

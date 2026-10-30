@@ -1,6 +1,6 @@
 /**
  * ElderCare - Navbar Component
- * Features: Profile dropdown, Dark mode, RTL/LTR toggle, Mobile menu
+ * Features: Dashboard navigation, Dark mode, RTL/LTR toggle, Mobile menu
  */
 
 const NAVBAR_HTML = `
@@ -11,7 +11,6 @@ const NAVBAR_HTML = `
       <img src="{{PREFIX}}assets/logo/logo.png" alt="ElderCare logo" data-light-src="{{PREFIX}}assets/logo/logo.png" data-dark-src="{{PREFIX}}assets/logo/logo.png" />
       <div class="brand-text">
         <span class="brand-name">ElderCare</span>
-        <span class="brand-tagline">SENIOR DAY CARE &amp; ACTIVITY CENTER</span>
       </div>
     </a>
 
@@ -23,6 +22,24 @@ const NAVBAR_HTML = `
         <li class="nav-item"><a href="{{PREFIX}}services.html" class="nav-link" data-page="services.html">Services</a></li>
         <li class="nav-item"><a href="{{PREFIX}}blog.html"    class="nav-link" data-page="blog.html">Blog</a></li>
         <li class="nav-item"><a href="{{PREFIX}}contact.html" class="nav-link" data-page="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <div class="dashboard-menu">
+            <button type="button" class="nav-link dashboard-menu-toggle" data-page="dashboard.html" data-dashboard-toggle aria-expanded="false" aria-controls="dashboardOptions">
+              <span>Dashboard</span>
+              <svg class="dashboard-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
+            </button>
+            <ul class="dashboard-dropdown" id="dashboardOptions" aria-label="Dashboard options" aria-hidden="true">
+              <li><a href="{{PREFIX}}user/dashboard.html" class="dashboard-option" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
+                <span>User Dashboard</span>
+              </a></li>
+              <li><a href="{{PREFIX}}admin/dashboard.html" class="dashboard-option" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Admin Dashboard</span>
+              </a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
 
@@ -45,45 +62,18 @@ const NAVBAR_HTML = `
         </svg>
       </button>
 
-      <button class="ctrl-btn ctrl-btn--dir" id="dirToggleBtn" aria-label="Switch to RTL" title="Switch to RTL">
-        <svg class="ctrl-icon icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 6h18M3 12h12M3 18h9"/>
-          <polyline points="17 15 20 18 17 21"/>
-        </svg>
-        <svg class="ctrl-icon icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 6H3M21 12H9M21 18H12"/>
-          <polyline points="7 15 4 18 7 21"/>
+      <button class="ctrl-btn ctrl-btn--dir" id="dirToggleBtn" aria-label="Switch Text Direction" title="Switch Text Direction">
+        <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 6h10M3 10h7M3 14h10M3 18h7"/>
+          <path d="M15 7h6M18 4l3 3-3 3"/>
+          <path d="M21 17h-6M18 14l-3 3 3 3"/>
         </svg>
       </button>
 
-      <div class="profile-wrap" id="profileWrap">
-        <button class="ctrl-btn profile-btn" id="profileBtn" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false">
-          <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </button>
-        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
-          <div class="dropdown-header">Account</div>
-          <div class="dropdown-divider"></div>
-          <a href="{{PREFIX}}login.html" class="dropdown-item" role="menuitem" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-            Login
-          </a>
-          <a href="{{PREFIX}}signup.html" class="dropdown-item" role="menuitem" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-            Sign Up
-          </a>
-          <a href="{{PREFIX}}user/dashboard.html" class="dropdown-item" role="menuitem" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            User Dashboard
-          </a>
-          <a href="{{PREFIX}}admin/dashboard.html" class="dropdown-item" role="menuitem" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Admin Dashboard
-          </a>
-        </div>
-      </div>
+      <a href="{{PREFIX}}login.html" class="header-cta">
+        <span>Get Started</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+      </a>
 
       <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="bar bar-1"></span>
@@ -101,7 +91,6 @@ const NAVBAR_HTML = `
           <img src="{{PREFIX}}assets/logo/logo.png" alt="ElderCare logo" data-light-src="{{PREFIX}}assets/logo/logo.png" data-dark-src="{{PREFIX}}assets/logo/logo.png" />
           <div class="brand-text">
             <span class="brand-name">ElderCare</span>
-            <span class="brand-tagline">SENIOR DAY CARE &amp; ACTIVITY CENTER</span>
           </div>
         </a>
         <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">
@@ -119,6 +108,22 @@ const NAVBAR_HTML = `
         <li><a href="{{PREFIX}}services.html" class="mobile-nav-link" data-page="services.html">Services</a></li>
         <li><a href="{{PREFIX}}blog.html"    class="mobile-nav-link" data-page="blog.html">Blog</a></li>
         <li><a href="{{PREFIX}}contact.html" class="mobile-nav-link" data-page="contact.html">Contact</a></li>
+        <li class="mobile-dashboard-item">
+          <button type="button" class="mobile-nav-link mobile-dashboard-toggle" data-page="dashboard.html" data-dashboard-toggle aria-expanded="false" aria-controls="mobileDashboardOptions">
+            <span>Dashboard</span>
+            <svg class="dashboard-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
+          </button>
+          <ul class="mobile-dashboard-options" id="mobileDashboardOptions" aria-label="Dashboard options" aria-hidden="true">
+            <li><a href="{{PREFIX}}user/dashboard.html" class="mobile-dashboard-option" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
+              <span>User Dashboard</span>
+            </a></li>
+            <li><a href="{{PREFIX}}admin/dashboard.html" class="mobile-dashboard-option" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Admin Dashboard</span>
+            </a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="mobile-section-divider"></div>
@@ -126,9 +131,12 @@ const NAVBAR_HTML = `
       <ul class="mobile-nav-list">
         <li><a href="{{PREFIX}}login.html"           class="mobile-nav-link">Login</a></li>
         <li><a href="{{PREFIX}}signup.html"          class="mobile-nav-link">Sign Up</a></li>
-        <li><a href="{{PREFIX}}user/dashboard.html"  class="mobile-nav-link">User Dashboard</a></li>
-        <li><a href="{{PREFIX}}admin/dashboard.html" class="mobile-nav-link">Admin Dashboard</a></li>
       </ul>
+
+      <a href="{{PREFIX}}login.html" class="header-cta mobile-nav-cta">
+        <span>Get Started</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+      </a>
 
       <div class="mobile-section-divider"></div>
       <div class="mobile-controls-row">
@@ -137,9 +145,8 @@ const NAVBAR_HTML = `
           <svg class="ctrl-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <span id="mobileThemeLabel">Dark Mode</span>
         </button>
-        <button class="mobile-ctrl-btn" id="mobileDirBtn" aria-label="Toggle direction">
-          <svg class="ctrl-icon icon-ltr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h12M3 18h9"/><polyline points="17 15 20 18 17 21"/></svg>
-          <svg class="ctrl-icon icon-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 6H3M21 12H9M21 18H12"/><polyline points="7 15 4 18 7 21"/></svg>
+        <button class="mobile-ctrl-btn mobile-ctrl-btn--dir" id="mobileDirBtn" aria-label="Switch Text Direction" title="Switch Text Direction">
+          <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h10M3 10h7M3 14h10M3 18h7"/><path d="M15 7h6M18 4l3 3-3 3"/><path d="M21 17h-6M18 14l-3 3 3 3"/></svg>
           <span id="mobileDirLabel">Switch to RTL</span>
         </button>
       </div>
@@ -163,10 +170,84 @@ function renderNavbar(targetContainer) {
   initNavbar();
 }
 
+function _initDashboardDropdowns() {
+  const toggles = [...document.querySelectorAll('[data-dashboard-toggle]')];
+  if (!toggles.length) return;
+
+  function setOpen(toggle, isOpen) {
+    const menu = document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!menu) return;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.closest('.dashboard-menu, .mobile-dashboard-item')?.classList.toggle('is-open', isOpen);
+    menu.setAttribute('aria-hidden', String(!isOpen));
+    menu.querySelectorAll('a').forEach(link => link.tabIndex = isOpen ? 0 : -1);
+  }
+
+  function closeAll() {
+    toggles.forEach(toggle => setOpen(toggle, false));
+  }
+
+  toggles.forEach(toggle => {
+    const menu = document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!menu) return;
+
+    toggle.addEventListener('click', event => {
+      event.stopPropagation();
+      const shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      closeAll();
+      setOpen(toggle, shouldOpen);
+    });
+
+    toggle.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      closeAll();
+      setOpen(toggle, true);
+      const links = [...menu.querySelectorAll('a')];
+      (event.key === 'ArrowUp' ? links[links.length - 1] : links[0])?.focus();
+    });
+
+    menu.addEventListener('keydown', event => {
+      const links = [...menu.querySelectorAll('a')];
+      const currentIndex = links.indexOf(document.activeElement);
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setOpen(toggle, false);
+        toggle.focus();
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        const offset = event.key === 'ArrowDown' ? 1 : -1;
+        links[(currentIndex + offset + links.length) % links.length]?.focus();
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        links[0]?.focus();
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        links[links.length - 1]?.focus();
+      }
+    });
+
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeAll));
+  });
+
+  document.addEventListener('click', event => {
+    if (event.target.closest('.dashboard-menu, .mobile-dashboard-item')) return;
+    closeAll();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openToggle = toggles.find(toggle => toggle.getAttribute('aria-expanded') === 'true');
+    if (!openToggle) return;
+    closeAll();
+    openToggle.focus();
+  });
+}
+
 function initNavbar() {
   _initStickyHeader();
   _initActiveLink();
-  _initProfileDropdown();
+  _initDashboardDropdowns();
   _initMobileMenu();
   _initTheme();
   _initDirection();
@@ -188,29 +269,6 @@ function _initActiveLink() {
   document.querySelectorAll('.nav-link, .mobile-nav-link[data-page]').forEach(link => {
     link.classList.toggle('active', link.getAttribute('data-page') === page);
   });
-}
-
-function _initProfileDropdown() {
-  const btn      = document.getElementById('profileBtn');
-  const dropdown = document.getElementById('profileDropdown');
-  if (!btn || !dropdown) return;
-
-  function openDD() {
-    dropdown.classList.add('is-open');
-    dropdown.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    dropdown.querySelectorAll('.dropdown-item').forEach(el => el.setAttribute('tabindex', '0'));
-  }
-  function closeDD() {
-    dropdown.classList.remove('is-open');
-    dropdown.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    dropdown.querySelectorAll('.dropdown-item').forEach(el => el.setAttribute('tabindex', '-1'));
-  }
-
-  btn.addEventListener('click', e => { e.stopPropagation(); dropdown.classList.contains('is-open') ? closeDD() : openDD(); });
-  document.addEventListener('click', e => { const w = document.getElementById('profileWrap'); if (w && !w.contains(e.target)) closeDD(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDD(); btn.focus(); } });
 }
 
 function _initMobileMenu() {
@@ -241,7 +299,7 @@ function _initMobileMenu() {
     if (header && !header.contains(e.target) && drawer.classList.contains('is-open')) closeMenu();
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) { closeMenu(); openBtn.focus(); } });
-  drawer.querySelectorAll('.mobile-nav-link').forEach(link => link.addEventListener('click', closeMenu));
+  drawer.querySelectorAll('.mobile-nav-link, .mobile-dashboard-option').forEach(link => link.addEventListener('click', closeMenu));
 }
 
 function _initTheme() {
@@ -290,7 +348,9 @@ function _applyDirection(dir) {
   localStorage.setItem('eldercare-direction', dir);
   const isRTL = dir === 'rtl';
   const desktopBtn = document.getElementById('dirToggleBtn');
-  if (desktopBtn) { desktopBtn.setAttribute('aria-label', isRTL ? 'Switch to LTR' : 'Switch to RTL'); desktopBtn.setAttribute('title', isRTL ? 'Switch to LTR' : 'Switch to RTL'); }
+  if (desktopBtn) { desktopBtn.setAttribute('aria-label', 'Switch Text Direction'); desktopBtn.setAttribute('title', 'Switch Text Direction'); }
   const mobileLabel = document.getElementById('mobileDirLabel');
   if (mobileLabel) mobileLabel.textContent = isRTL ? 'Switch to LTR' : 'Switch to RTL';
+  const mobileBtn = document.getElementById('mobileDirBtn');
+  if (mobileBtn) { mobileBtn.setAttribute('aria-label', 'Switch Text Direction'); mobileBtn.setAttribute('title', 'Switch Text Direction'); }
 }

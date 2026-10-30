@@ -371,7 +371,7 @@
 [data-theme="dark"] .svc-intro-title { color: var(--dark-text); }
 [data-theme="dark"] .svc-intro-lead  { color: var(--dark-text-secondary); }
 [data-theme="dark"] .svc-intro-stats { border-top-color: var(--dark-border); }
-[data-theme="dark"] .svc-stat-num    { color: var(--dark-purple); }
+[data-theme="dark"] .svc-stat-num    { color: var(--ec-primary-purple); }
 [data-theme="dark"] .svc-stat-label  { color: var(--dark-text); }
 
 /* --------------------------------------------------------------------------
@@ -542,7 +542,7 @@
 [data-theme="dark"] .svc-checklist-item svg { color: var(--dark-purple-light); }
 [data-theme="dark"] .svc-featured-footer { border-top-color: var(--dark-border); }
 [data-theme="dark"] .svc-featured-price .p-label { color: var(--dark-text-secondary); }
-[data-theme="dark"] .svc-featured-price .p-amount { color: var(--dark-purple); }
+[data-theme="dark"] .svc-featured-price .p-amount { color: var(--ec-primary-purple); }
 
 /* --------------------------------------------------------------------------
    6. CATEGORY FILTER PILLS
@@ -588,7 +588,7 @@
   color: var(--dark-text-secondary);
 }
 [data-theme="dark"] .svc-filter-pill:hover {
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
   color: var(--dark-purple-light);
 }
 [data-theme="dark"] .svc-filter-pill.active {
@@ -771,7 +771,7 @@
 }
 [data-theme="dark"] .svc-card-item:hover {
   background: var(--ec-card-hover);
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
 }
 [data-theme="dark"] .svc-card-category-badge {
   background: linear-gradient(135deg, #3E3152, #4A3B5C);
@@ -781,7 +781,7 @@
 [data-theme="dark"] .svc-card-item:hover .svc-card-title { color: var(--dark-purple-light); }
 [data-theme="dark"] .svc-card-desc { color: var(--dark-text-secondary); }
 [data-theme="dark"] .svc-card-footer { border-top-color: var(--dark-border); }
-[data-theme="dark"] .svc-card-price-text { color: var(--dark-purple); }
+[data-theme="dark"] .svc-card-price-text { color: var(--ec-primary-purple); }
 
 /* --------------------------------------------------------------------------
    8. WHY ELDERCARE (3 LARGE HORIZONTAL FEATURE BLOCKS)
@@ -843,9 +843,9 @@
 }
 [data-theme="dark"] .svc-feature-block:hover {
   background: var(--ec-card-hover);
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
 }
-[data-theme="dark"] .svc-feat-num   { color: var(--dark-purple); opacity: 0.5; }
+[data-theme="dark"] .svc-feat-num   { color: var(--ec-primary-purple); opacity: 0.5; }
 [data-theme="dark"] .svc-feat-title { color: var(--dark-text); }
 [data-theme="dark"] .svc-feat-desc  { color: var(--dark-text-secondary); }
 
@@ -1037,12 +1037,12 @@
 [data-theme="dark"] .svc-timeline-list::before { background: var(--dark-border); }
 [data-theme="dark"] .svc-timeline-dot {
   background: var(--ec-card);
-  border-color: var(--dark-purple);
+  border-color: var(--ec-primary-purple);
 }
 [data-theme="dark"] .svc-timeline-node:hover .svc-timeline-dot {
-  background: var(--dark-purple);
+  background: var(--ec-primary-purple);
 }
-[data-theme="dark"] .svc-timeline-time { color: var(--dark-purple); }
+[data-theme="dark"] .svc-timeline-time { color: var(--ec-primary-purple); }
 [data-theme="dark"] .svc-timeline-heading { color: var(--dark-text); }
 [data-theme="dark"] .svc-timeline-text { color: var(--dark-text-secondary); }
 
@@ -1173,7 +1173,7 @@
   background: var(--ec-card);
   border-color: var(--dark-border);
 }
-[data-theme="dark"] .svc-preview-badge { color: var(--dark-purple); }
+[data-theme="dark"] .svc-preview-badge { color: var(--ec-primary-purple); }
 [data-theme="dark"] .svc-preview-title { color: var(--dark-text); }
 [data-theme="dark"] .svc-preview-desc  { color: var(--dark-text-secondary); }
 [data-theme="dark"] .svc-preview-bullet-item { color: var(--dark-text); }

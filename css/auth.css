@@ -3,10 +3,11 @@
    ========================================================================== */
 
 .auth-section {
-  min-height: calc(100vh - 76px);
+  min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, #FCFBFE 0%, var(--very-light-lavender) 60%, var(--soft-lavender) 100%);
   display: flex; align-items: center; justify-content: center;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
   position: relative; overflow: hidden;
 }
 
@@ -30,6 +31,19 @@
   width: 100%; max-width: 520px;
 }
 
+.auth-back-link {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  min-height: 44px; margin-bottom: 0.5rem;
+  color: var(--ec-primary-purple); font-size: 0.88rem; font-weight: 600;
+  text-decoration: none; transition: color 0.2s ease;
+}
+.auth-back-arrow { display: inline-block; transition: transform 0.2s ease; }
+.auth-back-link:hover { color: var(--ec-purple-light); }
+.auth-back-link:hover .auth-back-arrow { transform: translateX(-3px); }
+.auth-back-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 3px; }
+html[dir="rtl"] .auth-wrapper .auth-back-arrow { transform: scaleX(-1); }
+html[dir="rtl"] .auth-wrapper .auth-back-link:hover .auth-back-arrow { transform: translateX(3px) scaleX(-1); }
+
 .auth-logo-link {
   display: flex; align-items: center; justify-content: center; gap: 1rem;
   text-decoration: none; margin-bottom: 2rem;
@@ -50,10 +64,6 @@
 
 .auth-brand-name {
   font-family: var(--font-heading); font-size: 2rem; font-weight: 600; color: var(--dark-purple); letter-spacing: -0.04em;
-}
-
-.auth-brand-tagline {
-  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; color: var(--muted-text); text-transform: uppercase; margin-top: 0.25rem;
 }
 
 .auth-card {
@@ -89,6 +99,21 @@
 
 .auth-submit-btn { width: 100%; margin-top: 1.2rem; min-height: 50px; }
 
+.auth-social { margin-top: 1.25rem; text-align: center; }
+.auth-social-label { color: var(--ec-body); font-size: 0.88rem; font-weight: 600; margin-bottom: 0.75rem; }
+.auth-social-buttons { display: flex; justify-content: center; gap: 0.75rem; }
+.auth-social-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  flex: 1; min-width: 0; min-height: 46px; padding: 0.65rem 0.75rem;
+  border: 1px solid var(--ec-border); border-radius: 10px;
+  color: var(--ec-heading); background: transparent;
+  font: inherit; font-size: 0.88rem; font-weight: 600;
+  direction: ltr; opacity: 1;
+}
+.auth-social-button:disabled { cursor: not-allowed; }
+.auth-social-button svg { width: 19px; height: 19px; flex: 0 0 19px; }
+.auth-social-note { margin-top: 0.55rem; color: var(--muted-text); font-size: 0.72rem; line-height: 1.4; }
+
 .auth-divider { display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0; }
 .auth-divider::before,.auth-divider::after { content:""; flex:1; height:1px; background:var(--ec-border); }
 .auth-divider-text { font-size: 0.8rem; color: var(--muted-text); white-space: nowrap; }
@@ -98,6 +123,8 @@
 .auth-switch-text a:hover { text-decoration: underline; }
 
 [data-theme="dark"] .auth-section { background: linear-gradient(135deg,#2E2640,#292333,#312A3D); }
+html[data-theme="dark"] .auth-back-link { color: #BEA0E2; }
+html[data-theme="dark"] .auth-back-link:hover { color: #F7F2FA; }
 [data-theme="dark"] .auth-card { background: var(--ec-card); border-color: var(--dark-border); }
 [data-theme="dark"] .auth-card-heading { color: var(--dark-text); }
 [data-theme="dark"] .auth-card-desc { color: var(--dark-text-secondary); }
@@ -105,3 +132,15 @@
 [data-theme="dark"] .auth-tab-btn { background: var(--ec-card); color: var(--dark-text-secondary); }
 [data-theme="dark"] .auth-divider::before,[data-theme="dark"] .auth-divider::after { background: var(--dark-border); }
 [data-theme="dark"] .auth-switch-text { color: var(--dark-text-secondary); }
+[data-theme="dark"] .auth-social-label { color: var(--dark-text-secondary); }
+[data-theme="dark"] .auth-social-button { color: var(--dark-text); border-color: var(--dark-border); }
+[data-theme="dark"] .auth-social-note { color: var(--dark-text-muted); }
+
+@media (max-width: 380px) {
+  .auth-logo-link { gap: 0.7rem; }
+  .auth-logo { width: 52px; height: 52px; }
+  .auth-brand-name { font-size: 1.8rem; }
+  .auth-card { padding: 1.8rem 1.25rem; border-radius: 20px; }
+  .auth-social-buttons { gap: 0.5rem; }
+  .auth-social-button { gap: 0.4rem; padding-inline: 0.45rem; }
+}

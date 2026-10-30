@@ -21,7 +21,25 @@
       display: flex;
       gap: 1.2rem;
       align-items: flex-start;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
       transition: all 0.2s ease;
+    }
+    .activity-card > div:nth-child(2) {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .activity-card strong {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .activity-card .dash-status-pill {
+      flex-shrink: 0;
+    }
+    #activityList {
+      width: 100%;
+      min-width: 0;
     }
     .activity-card:hover { transform: translateX(4px); border-color: var(--ec-purple-soft); }
     [dir="rtl"] .activity-card:hover { transform: translateX(-4px); }
@@ -40,13 +58,15 @@
     [data-theme="dark"] .activity-card:hover { border-color: var(--dark-purple); }
     .act-hidden { display: none; }
   </style>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png?v=2">
+  <link rel="apple-touch-icon" href="../assets/logo/logo.png?v=2">
 </head>
-<body class="dashboard-body">
+<body class="dashboard-body dashboard-activities-page">
   <div class="dash-overlay" id="dashOverlay" aria-hidden="true"></div>
 
   <aside class="dash-sidebar" id="dashSidebar">
     <div class="dash-sidebar-brand">
-      <a href="../index.html" class="dash-brand-link"><div class="dash-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div><div class="dash-brand-text"><span class="dash-brand-title">Elder<span class="accent">Care</span></span><span class="dash-brand-subtitle">Family Portal</span></div></a>
+      <a href="../index.html" class="dash-brand-link"><div class="dash-brand-logo-wrap"><img src="../assets/logo/logo.png" alt="ElderCare logo" /></div><div class="dash-brand-text"><span class="dash-brand-title">Elder<span class="accent">Care</span></span></div></a>
       <button class="dash-sidebar-close-btn" id="dashSidebarClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <nav class="dash-sidebar-nav">
@@ -64,11 +84,10 @@
         <li class="dash-nav-item"><a href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg><span>My Profile</span></a></li>
         <li class="dash-nav-item"><a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>Billing</span></a></li>
         <li class="dash-nav-item"><a href="messages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span><span class="dash-nav-badge">1</span></a></li>
-        <li class="dash-nav-item"><a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></a></li>
+        <li class="dash-nav-item"><a href="settings.html"><svg class="dash-settings-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a></li>
       </ul></div>
     </nav>
     <div class="dash-sidebar-footer">
-      <a href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Help &amp; Support</span></a>
       <button class="dash-logout-btn" id="dashLogoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></button>
     </div>
   </aside>
@@ -194,8 +213,8 @@
     </main>
 
     <footer class="dash-footer">
-      <div>&copy; 2026 ElderCare Senior Day Care &amp; Activity Center. All rights reserved.</div>
-      <div class="dash-footer-links"><a href="../about.html">About Us</a><a href="../contact.html">Support</a></div>
+      <div>&copy; 2026 <a href="../index.html" class="footer-brand-inline" aria-label="Go to ElderCare Home" style="color:inherit;text-decoration:none;font-weight:700;">ElderCare</a> Senior Day Care &amp; Activity Center. All rights reserved.</div>
+      <div class="dash-footer-links"><a href="../about.html">About Us</a></div>
     </footer>
   </div>
 
